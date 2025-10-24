@@ -1,0 +1,60 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 2,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "1AbCdEfG123",
+      "etag": "XYZ123",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/1AbCdEfG123",
+      "volumeInfo": {
+        "title": "Effective Java",
+        "authors": ["Joshua Bloch"],
+        "publisher": "Addison-Wesley",
+        "publishedDate": "2018-01-06",
+        "description": "A comprehensive guide to best practices in Java programming.",
+        "pageCount": 416,
+        "categories": ["Programming"],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=abc123&printsec=frontcover&img=1&zoom=5",
+          "thumbnail": "http://books.google.com/books/content?id=abc123&printsec=frontcover&img=1&zoom=1"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=abc123&dq=java",
+        "infoLink": "http://books.google.com/books?id=abc123"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "FOR_SALE",
+        "isEbook": true
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "9XyZqW987",
+      "etag": "ABC456",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/9XyZqW987",
+      "volumeInfo": {
+        "title": "Head First Java",
+        "authors": ["Kathy Sierra", "Bert Bates"],
+        "publisher": "O'Reilly Media",
+        "publishedDate": "2005-02-09",
+        "description": "An accessible introduction to Java programming concepts and object-oriented principles.",
+        "pageCount": 720,
+        "categories": ["Computers"],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=xyz456&printsec=frontcover&img=1&zoom=5",
+          "thumbnail": "http://books.google.com/books/content?id=xyz456&printsec=frontcover&img=1&zoom=1"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=xyz456&dq=java",
+        "infoLink": "http://books.google.com/books?id=xyz456"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      }
+    }
+  ]
+}

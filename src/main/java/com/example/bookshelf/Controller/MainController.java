@@ -13,7 +13,7 @@ public class MainController {
     @Autowired
     private BookService service;
 
-    @RequestMapping(value="/get/getBooks", method = RequestMethod.GET)
+    @RequestMapping(value="/getBooks", method = RequestMethod.GET)
     public String welcome_connection(Model model){
         model.addAttribute("fictionBooks", service.getAllFictionBooks());
         return "index";
