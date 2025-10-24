@@ -8,7 +8,10 @@ import java.util.List;
 public class VolumeInfo {
     private String title, publisher,publishedDate, description, pageCount;
     private List<String> authors;
+    private ImageLinks imageLinks;
 
+    public VolumeInfo() {
+    }
 
     public String getTitle() {
         return title;
@@ -56,5 +59,13 @@ public class VolumeInfo {
 
     public void setAuthors(List<String> authors) {
         this.authors = authors;
+    }
+
+    public ImageLinks getImageLinks() {
+        return imageLinks;
+    }
+
+    public void setImageLinks(ImageLinks imageLinks) {
+        this.imageLinks = imageLinks;
     }
 }
