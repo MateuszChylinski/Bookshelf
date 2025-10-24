@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### credentials ###
+/env.properties
+env.properties
+/src/main/resources/env.properties
+
