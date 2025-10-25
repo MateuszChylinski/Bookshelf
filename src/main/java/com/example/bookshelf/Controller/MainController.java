@@ -14,7 +14,7 @@ public class MainController {
     private BookService service;
 
     @RequestMapping(value="/getBooks", method = RequestMethod.GET)
-    public String welcome_connection(Model model){
+    public String getRandomBooks(Model model){
         model.addAttribute("fictionBooks", service.getAllFictionBooks());
         return "index";
     }
