@@ -9,10 +9,12 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
+    //TODO temporary authorization for get** requests
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception{
         security
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/get**").permitAll()
+//                        .requestMatchers("/get**").permitAll()
+                        .requestMatchers("/get**", "/makeQuery**").permitAll()
                         .anyRequest().authenticated());
         return security.build();
     }
