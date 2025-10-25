@@ -24,14 +24,14 @@ public class BookService {
     // TODO Add enum with categories to the database, to allow randomness
 
     /**
-     * Generate random number that is between 1 and 200. By doing that, api can generate random books each time the main page will be visited.
+     * Generate random number that is between 1 and 100. By doing that, api can generate random books each time the main page will be visited.
      * Make an api call, that will return random books. Parameter 'q' will fetch any book that contains letter 'a in it.
      * After the call is done, change the link with BookUtility class to change the link to the thumbnail, to avoid blurry book covers
      * If wrapper is not null, then return list with books, otherwise, return empty list
      */
 
     public List<Book> getAllFictionBooks() {
-        int random = (int) (Math.random() * 200) + 1;
+        int random = (int) (Math.random() * 100) + 1;
         BooksWrapper wrapper = restClient.get()
                 .uri("/books/v1/volumes?q=a&startIndex="
                         + random + "&maxResult=40&key=" + apikey)
