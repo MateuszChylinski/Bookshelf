@@ -17,6 +17,20 @@ public class BookService {
     private String apikey;
     private final RestClient restClient;
 
+    public List<Book> getBooksForUserQuery(String userQuery) {
+        BooksWrapper booksWrapper = restClient.get()
+                .uri("/books/v1/volumes?q=" + userQuery + "&key=" + apikey)
+                .retrieve()
+                .body(BooksWrapper.class);
+
+        if (booksWrapper != null) {
+            BookUtility.changeUrl(Collections.singletonList(booksWrapper));
+        }
+
+        return booksWrapper != null ? booksWrapper.getBookItems() : List.of();
+    }
+
+
     public BookService(RestClient client) {
         this.restClient = client;
     }
