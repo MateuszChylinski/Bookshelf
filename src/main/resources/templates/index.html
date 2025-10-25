@@ -13,8 +13,10 @@
 <nav class="navbar navbar-light bg-light ">
     <a class="navbar-brand ms-3 mt-1" href="#">Bookshelf</a>
     <form class="d-flex w-50" role="search">
-        <input class="form-control me-2 mt-1" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success mt-1" type="submit">Search</button>
+        <label for="validateSearch" class="form-label"></label>
+        <input class="form-control me-2 mt-1" id="validateSearch" type="search" placeholder="Search" aria-label="Search" required>
+        <button class="btn btn-outline-success mt-1" type="submit"
+        th:action="@{makeCallByUserSeach}">Search</button>
     </form>
     <!--  TODO: Change visibility depending on whether user is logged in  -->
     <div class="d-flex align-items-center ms-3">
