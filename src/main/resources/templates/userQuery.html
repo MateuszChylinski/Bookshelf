@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <title>Bookshelf</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
 <!--TOP NAVIGATION BAR-->
 <nav class="navbar navbar-light bg-light ">
     <a class="navbar-brand ms-3 mt-1" href="#">Bookshelf</a>
     <form action="#" th:action="@{/makeQuery}" th:method="get" class="d-flex w-50" role="search">
-        <input class="form-control me-2 mt-1" name="userData" th:value="*{userData}"type="search" placeholder="Search" aria-label="Search" required>
+        <input class="form-control me-2 mt-1" name="userData" th:value="*{userData}" type="search" placeholder="Search"
+               aria-label="Search" required>
         <button class="btn btn-outline-success mt-1" type="submit">Search</button>
     </form>
     <!--  TODO: Change visibility depending on whether user is logged in  -->
@@ -21,14 +22,12 @@
     </div>
 </nav>
 <br><br>
-<p class="text-center fs-2">Here's some books, that might interest you!</p>
-<br><br>
 
 <!--TEMPLATE FOR DISPLAYING RANDOM BOOKS IN WELCOME PAGE-->
 <div class="d-flex flex-row flex-wrap gap-4 justify-content-center ">
-    <div class="card" th:each="book : ${fictionBooks}" style="width: 18rem;">
+    <div class="card" th:each="book : ${userQuery}" style="width: 18rem;">
         <div style="height: 21rem; overflow: hidden">
-            <img th:src="@{${book.getVolumeInfo().getImageLinks().getSmallThumbnail()}}"
+            <img th:src="@{${book.volumeInfo.imageLinks.smallThumbnail}}"
                  alt="Image not available"
                  class="card-img-top img-fluid w-100 h-100"
                  style="object-fit: cover">
@@ -37,15 +36,11 @@
             <h4 class="card-title"
                 th:text="${book.volumeInfo.authors != null ? #strings.listJoin(book.volumeInfo.authors, ', ') : 'Unknown author'}">
             </h4>
-            <p class="card-text" th:text="${book.getVolumeInfo().getTitle()}"></p>
+            <p class="card-text" th:text="${book.volumeInfo.title}"></p>
             <!--            TODO modify button-->
             <a href="#" class="btn btn-primary mt-auto">Details</a>
         </div>
     </div>
 </div>
-
-
-
-
 </body>
 </html>
