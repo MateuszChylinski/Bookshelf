@@ -1,0 +1,24 @@
+{
+  "error": {
+    "code": 400,
+    "message": "Invalid value at 'start_index' (TYPE_UINT32), \"-1\"",
+    "errors": [
+      {
+        "message": "Invalid value at 'start_index' (TYPE_UINT32), \"-1\"",
+        "reason": "invalid"
+      }
+    ],
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.BadRequest",
+        "fieldViolations": [
+          {
+            "field": "start_index",
+            "description": "Invalid value at 'start_index' (TYPE_UINT32), \"-1\""
+          }
+        ]
+      }
+    ]
+  }
+}

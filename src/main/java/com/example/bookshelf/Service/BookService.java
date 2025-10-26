@@ -44,7 +44,7 @@ public class BookService {
      * If wrapper is not null, then return list with books, otherwise, return empty list
      */
 
-    public List<Book> getAllFictionBooks() {
+    public List<Book> getRandomBooks() {
         int random = (int) (Math.random() * 100) + 1;
         BooksWrapper wrapper = restClient.get()
                 .uri("/books/v1/volumes?q=a&startIndex="

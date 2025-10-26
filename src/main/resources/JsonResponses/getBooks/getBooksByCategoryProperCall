@@ -1,0 +1,758 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1000000,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "3r6oKs4oWx0C",
+      "etag": "+iMOkUe7JN4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/3r6oKs4oWx0C",
+      "volumeInfo": {
+        "title": "Grammaire analytique et pratique de la langue polonaise a l'usage des francais par N. Orda",
+        "authors": [
+          "Napoleon Orda"
+        ],
+        "publishedDate": "1856",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "IBNR:CR102000993"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 452,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.5.7.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=3r6oKs4oWx0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=3r6oKs4oWx0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "pl",
+        "previewLink": "http://books.google.pl/books?id=3r6oKs4oWx0C&pg=PA152&dq=a&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=3r6oKs4oWx0C&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=3r6oKs4oWx0C"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=3r6oKs4oWx0C&rdid=book-3r6oKs4oWx0C&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Grammaire_analytique_et_pratique_de_la_l.epub?id=3r6oKs4oWx0C&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=3r6oKs4oWx0C&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e , e . Ciśniony , \u003cb\u003ea\u003c/b\u003e , e . Ciągnąć , trainer , allonger . Ciągnę . Ciągnąłem . Ciągnąć będę . Ciągnij . Ciągnąc . Ciągnący , \u003cb\u003ea\u003c/b\u003e , e . Ciągniony , \u003cb\u003ea\u003c/b\u003e , e . Prząść , filer . Przędę . Prządłem . Prząść będę . Prządź . Przędąc . Przędzący&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "MVk1DwAAQBAJ",
+      "etag": "cGFWGg9D6ZQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/MVk1DwAAQBAJ",
+      "volumeInfo": {
+        "title": "Między zabawą a dydaktyką. Literacka twórczość Adama Bahdaja dla dzieci i młodzieży",
+        "authors": [
+          "ELŻBIETA KRUSZYŃSKA"
+        ],
+        "publisher": "Wydawnictwo Naukowe Uniwersytetu Mikołaja Kopernika",
+        "publishedDate": "2017",
+        "description": "Któż z nas w dzieciństwie nie czytał Podróży za jeden uśmiech, Wakacji z duchami czy Stawiam na Tolka Banana? Dziś to niemal kultowe książki kilku pokoleń czytelników. Niezaprzeczalne walory prozy, której autorem jest Adam Bahdaj, to: intersujące kreacje bohaterów literackich, doskonała znajomość psychiki dziecięcej, atrakcyjna fabuła, zręcznie zawiązana intryga, szybka akcja i spiętrzanie przygód, wartości wychowawcze, humor i optymizm wyrastający z humanistycznej wiary w człowieka. Bahdaj to doskonały obserwator dziecięcych zabaw, miłośnik gór, sportów narciarskich, znawca topografii Warszawy. Jako pisarz doskonale realizował się w różnych odmianach gatunkowych powieści, prowadził intertekstualne gry z tradycją literacką, włączając znane motywy baśniowe w nowy kontekst czy też przywołując przykłady z klasyki literatury. Wszystko to stawia go w gronie najlepszych polskich pisarzy dla dzieci i młodzieży XX wieku. Jego twórczość nabiera szczególnej mocy w czasach, gdy wiele wartości się dezawuuje; staje się ona dla młodego czytelnika drogowskazem i przywraca mu wiarę w porządek świata, w którym dobro zawsze triumfuje nad złem.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9788323138327"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "832313832X"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 40,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.1.0.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=MVk1DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=MVk1DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "pl",
+        "previewLink": "http://books.google.pl/books?id=MVk1DwAAQBAJ&pg=PA30&dq=a&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=MVk1DwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=MVk1DwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 0,
+          "currencyCode": "PLN"
+        },
+        "retailPrice": {
+          "amount": 0,
+          "currencyCode": "PLN"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=MVk1DwAAQBAJ&rdid=book-MVk1DwAAQBAJ&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=MVk1DwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eA\u003c/b\u003e., Dan Drewer i Indianie, Warszawa 1984. Bahdaj \u003cb\u003eA\u003c/b\u003e., Do przerwy 0:1, Warszawa 1957. Bahdaj \u003cb\u003eA\u003c/b\u003e., Droga przez góry, Warszawa 1956. Bahdaj \u003cb\u003eA\u003c/b\u003e., Festyn w Bławatkowie, Warszawa 1958. Bahdaj \u003cb\u003eA\u003c/b\u003e., Gdzie twój dom, Telemachu?, Warszawa 1982. Bahdaj \u003cb\u003eA\u003c/b\u003e&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "XLpADwAAQBAJ",
+      "etag": "AziQillsAYA",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/XLpADwAAQBAJ",
+      "volumeInfo": {
+        "title": "„Officium a rationibus”. Studium z dziejów administracji rzymskiej w okresie pryncypatu",
+        "authors": [
+          "KAROL KŁODZIŃSKI"
+        ],
+        "publisher": "Wydawnictwo Naukowe Uniwersytetu Mikołaja Kopernika",
+        "publishedDate": "2017",
+        "description": "Fenomen istnienia wielkich imperiów, w tym Cesarstwa Rzymskiego, cieszy się niesłabnącym zainteresowaniem uczonych. Do dziś nie do końca rozpoznane pozostaje zagadnienie funkcjonowania administracji rzymskiej w okresie pryncypatu. Kolejnym pokoleniom badaczy przychodzi zmierzyć się z pytaniami, jak były zorganizowane struktury administracyjne tak rozległego imperium, w jakim sposób było ono zarządzane, kim byli urzędnicy cesarscy i jakie posiadali kompetencje. Książka „Officium a rationibus”. Studium z dziejów administracji rzymskiej w okresie pryncypatu została poświęcona urzędowi „a rationibus” („do spraw rachunkowości/od rachunków”), głównej centralnej instytucji zarządzającej finansami wczesnego Cesarstwa Rzymskiego, oraz urzędnikom, którzy piastowali to stanowisko. Studium to nie tylko prezentuje jeden z najważniejszych elementów administracji wczesnego Cesarstwa, lecz także daje cenny wgląd w funkcjonowanie tejże administracji jako całości. Urząd „a rationibus”, choć opisywany przez uczonych już od XIX wieku, do dziś nie doczekał się osobnego opracowania monograficznego. Odkrywane i publikowane niemal każdego roku źródła epigraficzne, a także potrzeba reinterpretacji tych dobrze już znanych źródeł (głównie narracyjnych) oraz narosłych w historiografii opinii, skłaniają do nowego spojrzenia na funkcjonowanie „officium a rationibus” w okresie pryncypatu.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9788323138808"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "832313880X"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 536,
+        "printType": "BOOK",
+        "categories": [
+          "History"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.1.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=XLpADwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=XLpADwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "pl",
+        "previewLink": "http://books.google.pl/books?id=XLpADwAAQBAJ&pg=PA67&dq=a&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=XLpADwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=XLpADwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 0,
+          "currencyCode": "PLN"
+        },
+        "retailPrice": {
+          "amount": 0,
+          "currencyCode": "PLN"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=XLpADwAAQBAJ&rdid=book-XLpADwAAQBAJ&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=XLpADwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e li- bellis , \u003cb\u003ea\u003c/b\u003e cognitionibus i a memoria154 . Tak samo uczynił Max Zoeller , wykluczając urząd \u003cb\u003ea\u003c/b\u003e rationibus ze struktur kancelarii cesarskiej155 . Stwierdził bowiem wyraźnie : „ [ ... ] doch verwandelt sich der \u003cb\u003ea\u003c/b\u003e ra- tionibus später&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "D6bkBgAAQBAJ",
+      "etag": "3NgC50wkT8o",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/D6bkBgAAQBAJ",
+      "volumeInfo": {
+        "title": "Przesiedlenia a pamięć",
+        "subtitle": "Studium (nie)pamięci społecznej na przykładzie ukraińskiej Galicji i polskich \"ziem odzyskanych\"",
+        "authors": [
+          "Anna Wylegała"
+        ],
+        "publisher": "Wydawnictwo Naukowe Uniwersytetu Mikołaja Kopernika",
+        "publishedDate": "2014",
+        "description": "Książka stanowi porównawcze case study pamięci społecznej w miejscach, które na skutek wojennych i tużpowojennych czystek etnicznych, masowych przesiedleń i migracji doświadczyły niemal całkowitej wymiany ludności. Żółkiew – do 1939 roku wieloetniczne (zamieszkane przez Żydów, Polaków i Ukraińców) miasteczko w województwie lwowskim, należące do II Rzeczpospolitej – po wojnie weszła w skład Ukraińskiej SRR. Krzyż, przed wojną niemiecki Kreuz (Ostbahn), znalazł się po 1945 roku w granicach polskich „ziem odzyskanych”. Oba miasta nie tylko straciły większość swoich mieszkańców i znaczną część tkanki miejskiej, zostały również pozbawione dotychczasowej tożsamości i historii. To samo spotkało ludzi, którzy do Krzyża i Żółkwi przyjechali: niezależnie od tego, czy byli migrantami przymusowymi, czy dobrowolnymi, musieli rozpocząć nowe życie i przystosować się do zupełnie nowych warunków. Musieli też – fizycznie i symbolicznie – zająć miejsce tych, których we wspomnianych miejscowościach już nie było. Na podstawie analizy ponad stu pięćdziesięciu wywiadów biograficznych i biograficzno-tematycznych autorka odtwarza proces kształtowania się nowej, powojennej rzeczywistości społecznej w obu miastach, ograniczony przez represywny system polityczny, wewnętrzne konflikty i indywidualne ludzkie dramaty. Pokazuje, w jaki sposób różne grupy nowych mieszkańców odnoszą się do przeszłości grupy własnej, obcego miejsca zamieszkania oraz ludzi, którzy żyli tu przed nimi. Pamięć przesiedlenia i postmigracyjna rekonstrukcja tożsamości, dynamika procesów zakorzenienia w różnych pokoleniach mieszkańców Krzyża i Żółkwi, lokalne spory o bohaterów i zdrajców – to najważniejsze tematy pojawiające się w książce. Osadzając analizę empiryczną w instrumentarium teoretycznym współczesnych studiów nad pamięcią biograficzną i zbiorową, praca proponuje oryginalne spojrzenie porównawcze na problematykę pamięci w Europie Środkowo-Wschodniej.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9788323131809"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "8323131805"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 526,
+        "printType": "BOOK",
+        "categories": [
+          "Collective memory"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.0.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=D6bkBgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=D6bkBgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "pl",
+        "previewLink": "http://books.google.pl/books?id=D6bkBgAAQBAJ&pg=PA457&dq=a&hl=&cd=5&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=D6bkBgAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=D6bkBgAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 0,
+          "currencyCode": "PLN"
+        },
+        "retailPrice": {
+          "amount": 0,
+          "currencyCode": "PLN"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=D6bkBgAAQBAJ&rdid=book-D6bkBgAAQBAJ&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.pl/books/download/Przesiedlenia_a_pami%C4%99%C4%87-sample-pdf.acsm?id=D6bkBgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=D6bkBgAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eA\u003c/b\u003e. , Druga wojna światowa – pamięć i tożsamość , „ Kultura i Społeczeństwo ” 2001 , nr 3/4 , s . 167-180 . Rokuszewska - Pawełek \u003cb\u003eA\u003c/b\u003e. , Chaos i przymus . Trajektorie wojenne Polaków analiza biograficzna , Łódź 2002 . Romanow Z. , Polityka&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "EECuDwAAQBAJ",
+      "etag": "YG8K641fJ1k",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/EECuDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Utopia a edukacja. Tom I O wyobrażeniach świata możliwego",
+        "authors": [
+          "Jowita Gromysz",
+          "Rafał Włodarczyk"
+        ],
+        "publisher": "Uniwersytet Wrocławski. Instytut Pedagogiki",
+        "publishedDate": "2016-01-01",
+        "description": "Przedstawione w niniejszym tomie prace ukazują, w jak rożny sposób edukacyjne przestrzenie są przeniknięte rozmaitymi wizjami utopii, których twórcami są filozofowie, pedagodzy, socjologowie, badacze kultury. Artykuły stanowią zbiór głosów, zarówno na poziomie wywodow teoretycznych, jak i prezentacji punktu widzenia praktyków, w dyskusji o edukacji i jej powiązaniach z utopijnymi koncepcjami. Choć ich autorami są głównie badacze teorii i praktycy edukacji, to książka przedstawia znacznie szerszą niż pedagogiczną, interdyscyplinarną perspektywę. I tak, część pierwsza publikacji zawiera rzetelny namysł teoretyczny, wskazujący na niezwykły potencjał, jaki niesie ze sobą myślenie o edukacji i pedagogice w perspektywie utopii. Jest to także zbiór tekstow, w których przywoływane są myśli wielkich „utopistów”. Ich projekty stają się cennym źrodłem refleksji pedagogicznej i mogą być z powodzeniem odnoszone do współczesnych realiów. Drugą część tomu cechuje przyjęta przez autorów perspektywa krytyki społecznej przyłożonej do zagadnień pedagogicznych. Rownież w ich ujęciach problematyka utopii odgrywa znaczącą rolę. W tej części umieściliśmy także teksty praktyków, którzy w szkole i innych działaniach edukacyjnych upatrują znamion utopijności.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9788362618231"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "836261823X"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 195,
+        "printType": "BOOK",
+        "categories": [
+          "Juvenile Nonfiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.2.3.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=EECuDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=EECuDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "pl",
+        "previewLink": "http://books.google.pl/books?id=EECuDwAAQBAJ&pg=PA85&dq=a&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.pl/books?id=EECuDwAAQBAJ&dq=a&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Utopia_a_edukacja_Tom_I_O_wyobra%C5%BCeniach.html?hl=&id=EECuDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.pl/books/download/Utopia_a_edukacja_Tom_I_O_wyobra%C5%BCeniach-sample-pdf.acsm?id=EECuDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=EECuDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eA\u003c/b\u003e. Czajka , „ Studia Filozoficzne ” 1982 , nr 7–8 . Cassirer E. , Esej o człowieku . Wstęp do filozofii kultury , przekł . \u003cb\u003eA\u003c/b\u003e. Staniewska , Czytelnik , Warszawa 1971 . Cyrzan H. , O potrzebie utopii . Z dziejów utopii stosowanej XX&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "1kQWAAAAYAAJ",
+      "etag": "7LJ7tc8cgkU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/1kQWAAAAYAAJ",
+      "volumeInfo": {
+        "title": "Cervantes' a. Don Kiszot z Manszy. Przekład W. Zakrzewskiego",
+        "authors": [
+          "Miguel de Cervantes Saavedra"
+        ],
+        "publishedDate": "1855",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "HARVARD:HN5NAA"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 254,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.8.9.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=1kQWAAAAYAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=1kQWAAAAYAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "pl",
+        "previewLink": "http://books.google.pl/books?id=1kQWAAAAYAAJ&pg=PA134&dq=a&hl=&cd=7&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=1kQWAAAAYAAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=1kQWAAAAYAAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=1kQWAAAAYAAJ&rdid=book-1kQWAAAAYAAJ&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Cervantes_a_Don_Kiszot_z_Manszy_Przek%C5%82a.epub?id=1kQWAAAAYAAJ&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "downloadLink": "http://books.google.pl/books/download/Cervantes_a_Don_Kiszot_z_Manszy_Przek%C5%82a.pdf?id=1kQWAAAAYAAJ&hl=&output=pdf&sig=ACfU3U024lKsgpTXjHHqRgv3WUTur5XJww&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=1kQWAAAAYAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e na lichaby aku ulicy obaczyli . Posłu- z miasta , schrońmy się do tu powrócę i od domu do pałacu naszéj pani ; zjadł \u003cb\u003ea\u003c/b\u003e jak go znajdę , oświadczę czekacie tu blisko i upra- Szaszczyt widzieć się z nią , woła Don Kiszot , - tysiąc ach&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "LqHqZNbdkXAC",
+      "etag": "C50if3q4flk",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/LqHqZNbdkXAC",
+      "volumeInfo": {
+        "title": "A. Mickiewicza Rzecz o Literaturze Słowiańskiej, wykładana w Kolegium Francuzkiém. [Translated from the French work entitled “Les Slaves,” by F. Wrotnowski.] Wydamie drugie poprawione",
+        "authors": [
+          "Adam Mickiewicz"
+        ],
+        "publishedDate": "1850",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BL:A0027050013"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 384,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.2.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=LqHqZNbdkXAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=LqHqZNbdkXAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "pl",
+        "previewLink": "http://books.google.pl/books?id=LqHqZNbdkXAC&pg=PA285&dq=a&hl=&cd=8&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=LqHqZNbdkXAC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=LqHqZNbdkXAC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=LqHqZNbdkXAC&rdid=book-LqHqZNbdkXAC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/A_Mickiewicza_Rzecz_o_Literaturze_S%C5%82owi.epub?id=LqHqZNbdkXAC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=LqHqZNbdkXAC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eA\u003c/b\u003e oni dwa gdy się trafią między ludźmi co z sobą różno chodzą , \u003cb\u003ea\u003c/b\u003e jako wilcy z daleka na się zaglądają , téż się im ludzie jako wilkom z da- leka dziwują , i owszem się ich strzegą , \u003cb\u003ea\u003c/b\u003e żonom uczciwym za- kazują aby z takiemi&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "dhT1EAAAQBAJ",
+      "etag": "bj2LHwOgQMM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/dhT1EAAAQBAJ",
+      "volumeInfo": {
+        "title": "The Diary of a CEO. 33 zasady biznesu i życia",
+        "authors": [
+          "Steven Bartlett"
+        ],
+        "publisher": "Insignis",
+        "publishedDate": "2024-02-28",
+        "description": "To nie jest książka o strategii biznesowej. Strategia zmienia się jak pory roku. To książka o czymś znacznie trwalszym. U podstaw wszelkich sukcesów i porażek, z którymi się zetknąłem – zarówno w mojej karierze przedsiębiorcy, jak i podczas setek przeprowadzonych przeze mnie wywiadów w moim podcaście „The Diary of a CEO” – leży pewien zestaw zasad. Wytrzymują one próbę czasu, mają zastosowanie w dowolnej branży i nadają się do wykorzystania przez każdego, kto chce stworzyć coś wielkiego lub stać się kimś wielkim. To fundamentalne zasady, które pomagają osiągać doskonałe wyniki. Są one zakorzenione w psychologii i naukach behawioralnych, czerpią z mądrości dziesiątek tysięcy osób, które ankietowałem na wszystkich kontynentach i w każdej grupie wiekowej, i pochodzą z rozmów z ludźmi odnoszącymi największe sukcesy na świecie. Te zasady sprawdzają się teraz i będą się sprawdzać za sto lat. Gotowi? Zaczynamy? *** Podcast Stevena Bartletta „The Diary of a CEO” (najpopularniejszy w Europie i plasujący się w pierwszej dziesiątce na świecie) to pozbawiona filtrów opowieść o niezwykłych losach ludzi, którzy zdefiniowali kulturę, wspięli się na szczyty i wykreowali historie warte poznania. Rozmawiając z najbardziej wpływowymi osobistościami, ekspertami i myślicielami, Steven za każdym razem wyrusza w inspirującą podróż – odkrywa niewypowiedziane dotąd prawdy i zdobywa nowe doświadczenia, które wzbogacają życie zarówno jego, jak i jego widzów. Podcast „The Diary of a CEO” jest wyjątkowy ze względu na swoją surowość, szczerość i emocjonalność. Zgodnie ze słowem „pamiętnik” („diary”) w tytule przedstawia sprawy, którymi ludzie zwykle się nie dzielą, opowiedziane ze szczerością, jakiej na próżno szukać w większości podcastów z wywiadami. *** Steven Bartlett to nagradzany brytyjski przedsiębiorca, inwestor w ponad czterdziestu spółkach, prelegent, poczytny autor i twórca kontentu internetowego. Mając dwadzieścia dwa lata, założył agencję reklamową Social Chain, a w wieku dwudziestu siedmiu lat wprowadził ją na giełdę. Jest założycielem spółki thirdweb z siedzibą w San Francisco oraz nowatorskiej firmy marketingowej Flight Story. Pisano o nim w „Forbesie”, „Business Insiderze”, „Financial Timesie” i „Guardianie”. Został zaliczony do grona „30 Under 30” „Forbesa” (30 najbardziej wpływowych osób poniżej 30. roku życia) i jest najmłodszym zwycięzcą „Dragons’ Den”. Przemawiał na forum Organizacji Narodów Zjednoczonych, na festiwalu SXSW wspierającym kreatywne jednostki, w ramach wykładów TEDx i obok Baracka Obamy podczas VTEX Day. Jego pierwsza książka „Happy Sexy Millionaire” trafiła na drugie miejsce listy bestsellerów „Sunday Timesa”. *** Książka równie zaskakująca, co przekonująca. Rady Stevena zwielokrotnią twoje szanse na realizację najśmielszych marzeń. – Marie Forleo, autorka bestsellera „Wszystko da się ogarnąć” Splatając wyniki najnowszych badań naukowych, własne doświadczenia i fascynujące historie, Steven podpowiada czytelnikom, jak na nowo zdefiniować sukces i wykorzystać w pełni swój potencjał. Lektura obowiązkowa dla każdego, kto ma odwagę marzyć o rzeczach wielkich. – Jay Shetty, autor bestsellerów „Zacznij myśleć jak mnich” i „8 zasad miłości” „Nigdy nie sprzeciwiaj się rozmówcy”, „nie zwalczaj przekonań, tylko wzbudzaj nowe”… Ta książka jest pełna zaskakującej mądrości, dzięki której dokonasz postępów w życiu osobistym i zawodowym. Szczerze polecam. – Scott Galloway, profesor Stern School of Business przy Uniwersytecie Nowojorskim Nowa generacja CEO przejmuje świat biznesu. Hardzi, nieomylni prezesi ustępują miejsca tym, którzy mówią o swoich uczuciach, kierują się ciekawością i są gotowi pracować nad sobą (…) Steven Bartlett przewodzi tej rewolucji! Jego książka to niezbędnik każdego lidera, który chce wprowadzić siebie i nas w nową erę. – Simon Sinek, optymista, autor bestsellerów „Zaczynaj od DLACZEGO” i „Gra bez końca”",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9788367710978"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "8367710975"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 256,
+        "printType": "BOOK",
+        "categories": [
+          "Business & Economics"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.2.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=dhT1EAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=dhT1EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "pl",
+        "previewLink": "http://books.google.pl/books?id=dhT1EAAAQBAJ&pg=PT249&dq=a&hl=&cd=9&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=dhT1EAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=dhT1EAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 36.74,
+          "currencyCode": "PLN"
+        },
+        "retailPrice": {
+          "amount": 24.98,
+          "currencyCode": "PLN"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=dhT1EAAAQBAJ&rdid=book-dhT1EAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 36740000,
+              "currencyCode": "PLN"
+            },
+            "retailPrice": {
+              "amountInMicros": 24980000,
+              "currencyCode": "PLN"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.pl/books/download/The_Diary_of_a_CEO_33_zasady_biznesu_i-sample-epub.acsm?id=dhT1EAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.pl/books/download/The_Diary_of_a_CEO_33_zasady_biznesu_i-sample-pdf.acsm?id=dhT1EAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=dhT1EAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eA\u003c/b\u003e. Czajkowska. Muza. Kahneman D. (2012). Pułapki myślenia. O myśleniu szybkim i wolnym. Przeł. P. Szymczak. Media Rodzina. Klein G. (wrzesień 2007). Performing \u003cb\u003ea\u003c/b\u003e Project Premortem. „Harvard Business Review”. hbr.org/2007/09/performing&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "5I_q52-HJCYC",
+      "etag": "ICsAtHsCgyM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/5I_q52-HJCYC",
+      "volumeInfo": {
+        "title": "A Dictionary of Music and Musicians",
+        "subtitle": "(A.D. 1450-1880)",
+        "authors": [
+          "George Grove"
+        ],
+        "publishedDate": "1879",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UCI:31970001387718"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 784,
+        "printType": "BOOK",
+        "categories": [
+          "Music"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.5.5.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=5I_q52-HJCYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=5I_q52-HJCYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=5I_q52-HJCYC&pg=PA530&dq=a&hl=&cd=10&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=5I_q52-HJCYC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=5I_q52-HJCYC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=5I_q52-HJCYC&rdid=book-5I_q52-HJCYC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/A_Dictionary_of_Music_and_Musicians.epub?id=5I_q52-HJCYC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=5I_q52-HJCYC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e vast number of letters and documents , many of which no longer exist ; of memoranda and remarks scribbled by Beethoven in pocket - books and journals ; of the personal recollections of his intimate friend Zmeskall ; and of \u003cb\u003ea\u003c/b\u003e few&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "a-xOnCp-3noC",
+      "etag": "TniOXLCsKIs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/a-xOnCp-3noC",
+      "volumeInfo": {
+        "title": "Free Trade in Land ... With a reprint of the ... pamphlet published by the Anti-Corn-Law League “The Constituional right to a revision of the Land Tax” ... Second edition",
+        "authors": [
+          "James Beal"
+        ],
+        "publishedDate": "1876",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BL:A0022108572"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 180,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.7.7.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=a-xOnCp-3noC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=a-xOnCp-3noC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=a-xOnCp-3noC&pg=RA1-PA10&dq=a&hl=&cd=11&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=a-xOnCp-3noC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=a-xOnCp-3noC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=a-xOnCp-3noC&rdid=book-a-xOnCp-3noC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Free_Trade_in_Land_With_a_reprint_of_the.epub?id=a-xOnCp-3noC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=a-xOnCp-3noC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e tenure of this kind , \u003cb\u003ea\u003c/b\u003e certain quantity of land , called \u003cb\u003ea\u003c/b\u003e knight&#39;s - fee , was necessary . What the precise quantity in value of land that constituted \u003cb\u003ea\u003c/b\u003e knight&#39;s - fee was , is not clear , there being \u003cb\u003ea\u003c/b\u003e diversity of opinions on&nbsp;..."
+      }
+    }
+  ]
+}

@@ -5,12 +5,10 @@ import com.example.bookshelf.Model.BooksWrapper;
 import com.example.bookshelf.Service.BookService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.ModelAndViewAssert;
@@ -38,19 +36,19 @@ public class MainControllerTest {
 
     @Test
     void shouldReturnAllFictionBooks() throws Exception {
-        String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooksByCategory"));
+        String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksByCategoryProperCall"));
 
         ObjectMapper objectMapper = new ObjectMapper();
         BooksWrapper booksWrapper = objectMapper.readValue(response, BooksWrapper.class);
         List<Book> books = booksWrapper.getBookItems();
 
-        when(mockService.getAllFictionBooks()).thenReturn(books);
+        when(mockService.getRandomBooks()).thenReturn(books);
 
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("index"))
-                .andExpect(model().attribute("fictionBooks", books))
+                .andExpect(model().attribute("randomBooks", books))
                 .andReturn();
 
         ModelAndView modelAndView = mvcResult.getModelAndView();

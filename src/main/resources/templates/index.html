@@ -26,7 +26,7 @@
 
 <!--TEMPLATE FOR DISPLAYING RANDOM BOOKS IN WELCOME PAGE-->
 <div class="d-flex flex-row flex-wrap gap-4 justify-content-center ">
-    <div class="card" th:each="book : ${fictionBooks}" style="width: 18rem;">
+    <div class="card" th:each="book : ${randomBooks}" style="width: 18rem;">
         <div style="height: 21rem; overflow: hidden">
             <img th:src="@{${book.getVolumeInfo().getImageLinks().getSmallThumbnail()}}"
                  alt="Image not available"
@@ -43,9 +43,5 @@
         </div>
     </div>
 </div>
-
-
-
-
 </body>
 </html>
