@@ -7,7 +7,7 @@ import java.util.List;
 
 public class BookUtility {
 
-    public static void changeUrl(List<BooksWrapper> booksWrapperList) {
+    public static void changeListOfUrls(List<BooksWrapper> booksWrapperList) {
         for (BooksWrapper booksWrapper : booksWrapperList) {
             List<Book> books = booksWrapper.getBookItems();
             for (Book book : books) {
@@ -18,5 +18,13 @@ public class BookUtility {
                 );
             }
         }
+    }
+
+    public static void changeObjectUrl(Book book) {
+        String id = book.getId();
+        book.getVolumeInfo().getImageLinks().setSmallThumbnail(
+                "https://books.google.com/books/publisher/content/" +
+                        "images/frontcover/" + id + "?fife=w600-h600&source=gbs_api"
+        );
     }
 }

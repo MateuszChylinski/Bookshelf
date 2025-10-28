@@ -1,7 +1,7 @@
 {
   "kind": "books#volume",
   "id": "zyTCAlFPjgYC",
-  "etag": "uROh++NKk9I",
+  "etag": "qjue+O1XXZg",
   "selfLink": "https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC",
   "volumeInfo": {
     "title": "The Google Story (2018 Updated Edition)",
@@ -48,14 +48,67 @@
       "containsImageBubbles": false
     },
     "imageLinks": {
-      "smallThumbnail": "http://books.google.com/books/content?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE723JBB4LpzA5rrUZF3Ha_nIGVUqYf538SxuYEaMd7HYoSHdFTB_AIiA7fVE4S2whDoz5y2mhK1xyHzuf0w4weJAQGk3Pvmem5FBhsrwYfBbc1UbBeAhMpow31W9qI1UY7uGX0wF&source=gbs_api",
-      "thumbnail": "http://books.google.com/books/content?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE712iaH1FGfb-e1-T6_wX2uIgJTIn4acWwRT77oCj_QPuFpCeb_eyH-ylIYVzhInAWjd4tekNORAAxTpE9bD_zZT7reZ5Uw_NNcvWUAqObcpYnWqz1fpNURFwAn0nM-QDcgGM0O1&source=gbs_api",
-      "small": "http://books.google.com/books/content?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE73nXFyud39l5-ONHmw7MvNSWB9qwCNc4U2uvIrBDkXp87YvCJGSz1EVmNQH6HDNtSchaJeZwYu7cLrVjZzg_JEIWDlS-_vs6wyskTDXfbNqFGAxBXplXg164zIsC1N7PNH9CDKK&source=gbs_api",
-      "medium": "http://books.google.com/books/content?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71TCaBEDvV-6NKX_jYGQk3-qSzYgn7puTOcGaGYxy14GFLFkZlKuPxts18ybBfwBWsNaTo1BspoHNbAhHGVikI4WUt8FBfj46u-pU0IoBdq30PydnwW6tv3V0QV1Cb9OPmSiiHF&source=gbs_api",
-      "large": "http://books.google.com/books/content?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70cYuJTf_bHKyhhw9ObIFsz3CjoUPUMhaogdVewj9Lslg5xLyWYda_3Uf7CsZczUWu7MTAvoHlJIlSlIW8-6XXygzbvhvQHC7SVoSYcteKsv9iKgQP4AhjOnyNg-lyzROdSxeGb&source=gbs_api"
+      "smallThumbnail": "http://books.google.com/books/content?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE7105E_xY9T0xaMrGWeCswIYEjWXAwrHozz22UUhJBkrtU-gu_lhS7ClbkkfbrUFLTilMO0ntr-C4zFdNd0oFi1CX3BW9bzrZ6j_rYFl33EoKj6dxSepWoFcThreeGpjfgALMCts&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE70os9M3dImzJmxBqthYQ7GMHisCWGRwg8cCoZHgWEA5K2JQP8S11LuNCdXbTnPbeHmBSz8Deu1ldRGGvSMfpH3ydWR-bedImfFLcSCy6Srbg5jTP5NIPP9ABJ1gJVWNRSb7zQ3R&source=gbs_api",
+      "small": "http://books.google.com/books/content?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE72pJqsGlvakkZ9hloNxsz-dKU4sJjP7XJuy4FgD5tymZMqK4AcPvJMSwgmdOlbuibKyg9bh5O2aPpWkl2crSnTLNlv2CEHpK_cKtqIX9GhIiTnMujPYHB7M5wge4hQv1uopR6WN&source=gbs_api",
+      "medium": "http://books.google.com/books/content?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72oSbbT8DKpuUIML1IU18b-aDElU6STUlav7xvjGFRdgAqdg_9pGHT3xvSOH8ott43OW14HG6N_wukInsFR4VsoH7NOPJEbBriE8LiTNHZ1livHGIDzblrRX8RPGdwZpBP9u-om&source=gbs_api",
+      "large": "http://books.google.com/books/content?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE71-V-j_k7WaS8YmlTCeRrT8sjmXvqMQB5yHQhJ6TKPRE8v8oRjMjUKS5IKObXvfjaeuFvMzFMoksFVwYz665kPSeQMAmI4uolwYz4weiehvdN3W2A_fJhFNwWCdtm9tz2ORD5pu&source=gbs_api"
     },
     "language": "en",
     "previewLink": "http://books.google.pl/books?id=zyTCAlFPjgYC&hl=&source=gbs_api",
     "infoLink": "https://play.google.com/store/books/details?id=zyTCAlFPjgYC&source=gbs_api",
     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=zyTCAlFPjgYC"
   },
+  "layerInfo": {
+    "layers": [
+      {
+        "layerId": "geo",
+        "volumeAnnotationsVersion": "10"
+      }
+    ]
+  },
+  "saleInfo": {
+    "country": "PL",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+      "amount": 54.9,
+      "currencyCode": "PLN"
+    },
+    "retailPrice": {
+      "amount": 54.9,
+      "currencyCode": "PLN"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=zyTCAlFPjgYC&rdid=book-zyTCAlFPjgYC&rdot=1&source=gbs_api",
+    "offers": [
+      {
+        "finskyOfferType": 1,
+        "listPrice": {
+          "amountInMicros": 54900000,
+          "currencyCode": "PLN"
+        },
+        "retailPrice": {
+          "amountInMicros": 54900000,
+          "currencyCode": "PLN"
+        }
+      }
+    ]
+  },
+  "accessInfo": {
+    "country": "PL",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+      "isAvailable": true,
+      "acsTokenLink": "http://books.google.pl/books/download/The_Google_Story_2018_Updated_Edition-sample-epub.acsm?id=zyTCAlFPjgYC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+      "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=zyTCAlFPjgYC&hl=&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+  }
+}

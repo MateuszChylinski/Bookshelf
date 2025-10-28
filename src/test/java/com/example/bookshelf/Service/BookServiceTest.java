@@ -44,7 +44,7 @@ public class BookServiceTest {
         mockWebServer.shutdown();
     }
 
-    // proper call without errors
+    // get random books | proper call without errors
     @Test
     void shouldReturnBookData() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksByCategoryProperCall"));
@@ -60,7 +60,7 @@ public class BookServiceTest {
         assertEquals("Grammaire analytique et pratique de la langue polonaise a l'usage des francais par N. Orda", books.getFirst().getVolumeInfo().getTitle());
     }
 
-    // missing 'q' parameter key, call cannot succeed
+    // get random books | missing 'q' parameter key, call cannot succeed
     @Test
     void shouldReturnMissingParameter() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksMissingParameter"));
@@ -77,7 +77,7 @@ public class BookServiceTest {
         assertEquals("Required parameter: q", error.getMessage());
     }
 
-    // missing parameter value for 'q'. Call cannot succeed
+    // get random books | missing parameter value for 'q'. Call cannot succeed
     @Test
     void shouldReturnErrorMissingQuery() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksMissingQuery"));
@@ -94,7 +94,7 @@ public class BookServiceTest {
         assertEquals("Missing query.", errorResponse.getError().getMessage());
     }
 
-    // wrong api key. Call cannot succeed
+    // get random books | wrong api key. Call cannot succeed
     @Test
     void shouldReturnErrorWrongApiKey() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/GetBooksBadApiKey"));
@@ -112,7 +112,7 @@ public class BookServiceTest {
         assertEquals("API key not valid. Please pass a valid API key.", error.getMessage());
     }
 
-    // invalid starting index of -1. Call cannot succeed
+    // get random books | invalid starting index of -1. Call cannot succeed
     @Test
     void shouldReturnErrorInvalidValueAtStartingIndex() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksStartingIndex=-1"));
@@ -130,7 +130,7 @@ public class BookServiceTest {
         assertEquals("Invalid value at 'start_index' (TYPE_UINT32), \"-1\"", error.getMessage());
     }
 
-    // set starting index as 999, return totalItems object with value of zero, due to api limit results
+    // get random books | set starting index as 999, return totalItems object with value of zero, due to api limit results
     @Test
     void shouldReturnZeroTotalItems() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksStartingIndex999"));
@@ -145,5 +145,58 @@ public class BookServiceTest {
 
         assertThat(response).isNotNull();
         assertEquals(0, bookCount);
+    }
+
+    // get detailed books | proper call without errors
+    @Test
+    void shouldReturnDetailsAboutBook() throws IOException {
+        String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBookDetail/getBookDetailsProperCall"));
+
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader("Content-Type", "application/json")
+                .setBody(response));
+
+        Book book = service.getBookDetails("bookId");
+
+        assertThat(response).isNotNull();
+        assertThat(book).isNotNull();
+        assertEquals("The Google Story (2018 Updated Edition)", book.getVolumeInfo().getTitle());
+    }
+
+    // get detailed books | call is missing 'q' parameter
+    @Test
+    void getBookDetails_shouldReturnMissingQParameter() throws IOException {
+        String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBookDetail/getBookDetailsRequiredQ"));
+
+
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader("Content-Type", "application/json")
+                .setBody(response));
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        ErrorMapper errorMapper = objectMapper.readValue(response, ErrorMapper.class);
+        Error error = errorMapper.getError();
+
+        assertThat(response).isNotNull();
+        assertEquals("Required parameter: q", error.getMessage());
+        assertEquals(400, error.getCode());
+    }
+
+    // get detailed books | whenever app will try to reach a book with wrong ID, service temporarily unavailable will be thrown
+    @Test
+    void getBookDetails_shouldReturnServiceTemporarilyUnavailable() throws IOException {
+        String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBookDetail/getBooksDetailServiceTemporarilyUnavailable"));
+
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader("Content-Type", "application/json")
+                .setBody(response));
+
+        ObjectMapper mapper = new ObjectMapper();
+        ErrorMapper errorMapper = mapper.readValue(response, ErrorMapper.class);
+        Error error = errorMapper.getError();
+
+        assertThat(response).isNotNull();
+        assertEquals("Service temporarily unavailable.", error.getMessage());
+        assertEquals(503, error.getCode());
     }
 }

@@ -34,8 +34,10 @@ public class MainControllerTest {
     @MockitoBean
     private BookService mockService;
 
+
+    // get random books | prepare a proper call for getting random books
     @Test
-    void shouldReturnAllFictionBooks() throws Exception {
+    void shouldReturnRandomBooks() throws Exception {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksByCategoryProperCall"));
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -56,4 +58,17 @@ public class MainControllerTest {
         Assertions.assertNotNull(modelAndView);
         ModelAndViewAssert.assertViewName(modelAndView, "index");
     }
+
+    // get detailed book| prepare a proper call for getting details about chosen book
+    @Test
+    void shouldReturnDetailsAboutBook(){
+
+    }
+
+
+//        @RequestMapping(value = "/makeQuery", method = RequestMethod.GET)
+//    public String makeCallByUserSearch(@RequestParam(name = "userData") String userQuery, Model model){
+//        model.addAttribute("userQuery", service.getBooksForUserQuery(userQuery));
+//        return "userQuery";
+//    }
 }

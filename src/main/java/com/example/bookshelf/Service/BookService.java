@@ -24,7 +24,7 @@ public class BookService {
                 .body(BooksWrapper.class);
 
         if (booksWrapper != null) {
-            BookUtility.changeUrl(Collections.singletonList(booksWrapper));
+            BookUtility.changeListOfUrls(Collections.singletonList(booksWrapper));
         }
 
         return booksWrapper != null ? booksWrapper.getBookItems() : List.of();
@@ -53,9 +53,22 @@ public class BookService {
                 .body(BooksWrapper.class);
 
         if (wrapper != null) {
-            BookUtility.changeUrl(Collections.singletonList(wrapper));
+            BookUtility.changeListOfUrls(Collections.singletonList(wrapper));
         }
 
         return wrapper != null ? wrapper.getBookItems() : List.of();
+    }
+
+    public Book getBookDetails(String id) {
+        Book book = restClient.get()
+                .uri("/books/v1/volumes/{bookId}", id)
+                .retrieve()
+                .body(Book.class);
+
+        if (book != null) {
+            BookUtility.changeObjectUrl(book);
+        }
+
+        return book != null ? book : new Book();
     }
 }
