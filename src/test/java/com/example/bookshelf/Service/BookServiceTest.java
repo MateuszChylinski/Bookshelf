@@ -46,7 +46,7 @@ public class BookServiceTest {
 
     // get random books | proper call without errors
     @Test
-    void shouldReturnBookData() throws IOException {
+    void getRandomBooks_shouldReturnBookData() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksByCategoryProperCall"));
 
         mockWebServer.enqueue(new MockResponse()
@@ -62,7 +62,7 @@ public class BookServiceTest {
 
     // get random books | missing 'q' parameter key, call cannot succeed
     @Test
-    void shouldReturnMissingParameter() throws IOException {
+    void getRandomBooks_shouldReturnMissingParameter() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksMissingParameter"));
         mockWebServer.enqueue(new MockResponse()
                 .addHeader("Content-Type", "application/json")
@@ -79,7 +79,7 @@ public class BookServiceTest {
 
     // get random books | missing parameter value for 'q'. Call cannot succeed
     @Test
-    void shouldReturnErrorMissingQuery() throws IOException {
+    void getRandomBooks_shouldReturnErrorMissingQuery() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksMissingQuery"));
 
         mockWebServer.enqueue(new MockResponse()
@@ -96,8 +96,8 @@ public class BookServiceTest {
 
     // get random books | wrong api key. Call cannot succeed
     @Test
-    void shouldReturnErrorWrongApiKey() throws IOException {
-        String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/GetBooksBadApiKey"));
+    void getRandomBooks_shouldReturnErrorWrongApiKey() throws IOException {
+        String response = Files.readString(Path.of("src/main/resources/JsonResponses/global/GetBooksBadApiKey"));
 
         mockWebServer.enqueue(new MockResponse()
                 .addHeader("Content-Type", "application/json")
@@ -114,7 +114,7 @@ public class BookServiceTest {
 
     // get random books | invalid starting index of -1. Call cannot succeed
     @Test
-    void shouldReturnErrorInvalidValueAtStartingIndex() throws IOException {
+    void getRandomBooks_shouldReturnErrorInvalidValueAtStartingIndex() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksStartingIndex=-1"));
 
         mockWebServer.enqueue(new MockResponse()
@@ -130,9 +130,9 @@ public class BookServiceTest {
         assertEquals("Invalid value at 'start_index' (TYPE_UINT32), \"-1\"", error.getMessage());
     }
 
-    // get random books | set starting index as 999, return totalItems object with value of zero, due to api limit results
+    // get book detail | set starting index as 999, return totalItems object with value of zero, due to api limit results
     @Test
-    void shouldReturnZeroTotalItems() throws IOException {
+    void getRandomBooks_shouldReturnZeroTotalItems() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksStartingIndex999"));
 
         mockWebServer.enqueue(new MockResponse()
@@ -147,9 +147,9 @@ public class BookServiceTest {
         assertEquals(0, bookCount);
     }
 
-    // get detailed books | proper call without errors
+    // get book detail | proper call without errors
     @Test
-    void shouldReturnDetailsAboutBook() throws IOException {
+    void getBookDetails_shouldReturnDetailsAboutBook() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBookDetail/getBookDetailsProperCall"));
 
         mockWebServer.enqueue(new MockResponse()
@@ -163,7 +163,7 @@ public class BookServiceTest {
         assertEquals("The Google Story (2018 Updated Edition)", book.getVolumeInfo().getTitle());
     }
 
-    // get detailed books | call is missing 'q' parameter
+    // get book detail | call is missing 'q' parameter
     @Test
     void getBookDetails_shouldReturnMissingQParameter() throws IOException {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBookDetail/getBookDetailsRequiredQ"));
