@@ -93,7 +93,7 @@ public class MainControllerTest {
         ModelAndViewAssert.assertViewName(modelAndView, "error");
     }
 
-    //     get random books | prepare a call with missing parameter q
+    // get random books | prepare a call with missing parameter q
     @Test
     void getRandomBooks_shouldReturnMissingParameterQException() throws Exception {
         String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksMissingParameter"));
@@ -150,7 +150,7 @@ public class MainControllerTest {
 
     }
 
-    //    // get random books | prepare a call with starting index which is not supported
+    // get random books | prepare a call with starting index which is not supported
     @Test
     void getRandomBooks_shouldReturnEmptyList() throws Exception {
         when(mockService.getRandomBooks()).thenReturn(Collections.emptyList());
