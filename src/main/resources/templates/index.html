@@ -12,7 +12,8 @@
 <nav class="navbar navbar-light bg-light ">
     <a class="navbar-brand ms-3 mt-1" href="#">Bookshelf</a>
     <form action="#" th:action="@{/makeQuery}" th:method="get" class="d-flex w-50" role="search">
-        <input class="form-control me-2 mt-1" name="userData" th:value="*{userData}"type="search" placeholder="Search" aria-label="Search" required>
+        <input class="form-control me-2 mt-1" name="userData" th:value="*{userData}" type="search" placeholder="Search"
+               aria-label="Search" required>
         <button class="btn btn-outline-success mt-1" type="submit">Search</button>
     </form>
     <!--  TODO: Change visibility depending on whether user is logged in  -->
@@ -28,16 +29,17 @@
 <div class="d-flex flex-row flex-wrap gap-4 justify-content-center ">
     <div class="card" th:each="book : ${randomBooks}" style="width: 18rem;">
         <div style="height: 21rem; overflow: hidden">
-            <img th:src="@{${book.getVolumeInfo().getImageLinks().getSmallThumbnail()}}"
+            <!--             TODO alternative img-->
+            <img th:src="@{${book?.volumeInfo?.imageLinks?.smallThumbnail}}"
                  alt="Image not available"
                  class="card-img-top img-fluid w-100 h-100"
                  style="object-fit: cover">
         </div>
         <div class="card-body d-flex flex-column">
             <h4 class="card-title"
-                th:text="${book.volumeInfo.authors != null ? #strings.listJoin(book.volumeInfo.authors, ', ') : 'Unknown author'}">
+                th:text="${book?.volumeInfo?.authors != null ? #strings.listJoin(book.volumeInfo.authors, ', ') : 'Unknown author'}">
             </h4>
-            <p class="card-text" th:text="${book.getVolumeInfo().getTitle()}"></p>
+            <p class="card-text" th:text="${book?.volumeInfo?.title}"></p>
             <!--            TODO modify button-->
             <a href="#" class="btn btn-primary mt-auto">Details</a>
         </div>

@@ -1,9 +1,11 @@
 package com.example.bookshelf.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class BooksWrapper {
 
     private String kind;
@@ -11,6 +13,7 @@ public class BooksWrapper {
 
     @JsonProperty("items")
     private List<Book> bookItems;
+    private Book book;
 
 
     public BooksWrapper() {}
@@ -43,5 +46,13 @@ public class BooksWrapper {
 
     public void setBookItems(List<Book> bookItems) {
         this.bookItems = bookItems;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
     }
 }

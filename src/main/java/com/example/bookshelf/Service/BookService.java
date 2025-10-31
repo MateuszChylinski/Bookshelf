@@ -17,6 +17,13 @@ public class BookService {
     private String apikey;
     private final RestClient restClient;
 
+    /**
+     * Retrieve value entered into top navigation bar, and make an api call with it
+     * The api will search for books, that meet user requirements
+     * After the call is done, change the link with BookUtility class to change the link to the thumbnail, to avoid blurry book covers
+     * If wrapper is not null, then return list with books, otherwise, return empty list
+     */
+
     public List<Book> getBooksForUserQuery(String userQuery) {
         BooksWrapper booksWrapper = restClient.get()
                 .uri("/books/v1/volumes?q=" + userQuery + "&key=" + apikey)
@@ -24,7 +31,7 @@ public class BookService {
                 .body(BooksWrapper.class);
 
         if (booksWrapper != null) {
-            BookUtility.changeUrl(Collections.singletonList(booksWrapper));
+            BookUtility.changeListOfUrls(Collections.singletonList(booksWrapper));
         }
 
         return booksWrapper != null ? booksWrapper.getBookItems() : List.of();
@@ -34,7 +41,6 @@ public class BookService {
     public BookService(RestClient client) {
         this.restClient = client;
     }
-
     // TODO Add enum with categories to the database, to allow randomness
 
     /**
@@ -53,9 +59,29 @@ public class BookService {
                 .body(BooksWrapper.class);
 
         if (wrapper != null) {
-            BookUtility.changeUrl(Collections.singletonList(wrapper));
+            BookUtility.changeListOfUrls(Collections.singletonList(wrapper));
         }
 
         return wrapper != null ? wrapper.getBookItems() : List.of();
+    }
+
+    /**
+     * Whenever user will click on any book, this method will be triggered.
+     * Prepare an api call with specific book ID.
+     * After the call is done, change the link with BookUtility class to change the link to the thumbnail, to avoid blurry book covers
+     * If wrapper is not null, then return list with books, otherwise, return empty list
+     */
+
+    public Book getBookDetails(String id) {
+        Book book = restClient.get()
+                .uri("/books/v1/volumes/{bookId}", id)
+                .retrieve()
+                .body(Book.class);
+
+        if (book != null) {
+            BookUtility.changeObjectUrl(book);
+        }
+
+        return book != null ? book : new Book();
     }
 }
