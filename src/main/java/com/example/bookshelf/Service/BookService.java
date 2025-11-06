@@ -25,6 +25,7 @@ public class BookService {
      */
 
     public List<Book> getBooksForUserQuery(String userQuery) {
+
         BooksWrapper booksWrapper = restClient.get()
                 .uri("/books/v1/volumes?q=" + userQuery + "&key=" + apikey)
                 .retrieve()
@@ -41,6 +42,7 @@ public class BookService {
     public BookService(RestClient client) {
         this.restClient = client;
     }
+
     // TODO Add enum with categories to the database, to allow randomness
 
     /**
