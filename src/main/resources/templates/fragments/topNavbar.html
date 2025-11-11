@@ -10,25 +10,13 @@
     <nav class="navbar navbar-light bg-light ">
         <a class="navbar-brand ms-3 mt-1" href="#">Bookshelf</a>
         <div class="d-flex align-items-center">
-            <p class=" mb-0 text-center me-3">Specific query</p>
+            <p class=" mb-0 text-center me-3 mt-1">Specific query</p>
 
-
-            <form action="#" th:action="@{/bookQuery}" th:object="${userInput}" method="post">
-                <!--                Propose more specific topic of the search-->
-                <label>
-                    <select class="form-select w-auto me-2" th:field="*{userSubject}">
-                        <option th:value="any">Any</option>
-                        <option th:value="title">Title</option>
-                        <option th:value="author">Author</option>
-                        <option th:value="publisher">Publisher</option>
-                        <option th:value="subject">Subject</option>
-                    </select>
-                </label>
-
-                <input class="form-control d-flex me-2 mt-1" type="text" th:field="*{userQuery}"
+            <form class="d-flex" action="#" th:action="@{/bookQuery}" th:object="${userTopNavbarQuery}" method="post">
+                <input th:field="*{userQuery}" class="form-control d-flex me-2 mt-1" type="text"
                        placeholder="Search"
-                       aria-label="Search" required>
-            <button class="btn btn-outline-success mt-1" type="submit">Search</button>
+                       aria-label="Search" required >
+                <button class="btn btn-outline-success mt-1" type="submit">Search</button>
             </form>
 
             <!--  TODO: Change visibility depending on whether user is logged in  -->
