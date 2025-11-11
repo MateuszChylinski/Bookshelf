@@ -59,4 +59,16 @@ public class ErrorDetails {
     public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
+
+    @Override
+    public String toString() {
+        return "ErrorDetails{" +
+                "errorType='" + errorType + '\'' +
+                ", domain='" + domain + '\'' +
+                ", reason='" + reason + '\'' +
+                ", locale='" + locale + '\'' +
+                ", message='" + message + '\'' +
+                ", metadata=" + metadata +
+                '}';
+    }
 }

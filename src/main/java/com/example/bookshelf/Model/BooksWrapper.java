@@ -55,4 +55,14 @@ public class BooksWrapper {
     public void setBook(Book book) {
         this.book = book;
     }
+
+    @Override
+    public String toString() {
+        return "BooksWrapper{" +
+                "kind='" + kind + '\'' +
+                ", totalItems=" + totalItems +
+                ", bookItems=" + bookItems +
+                ", book=" + book +
+                '}';
+    }
 }

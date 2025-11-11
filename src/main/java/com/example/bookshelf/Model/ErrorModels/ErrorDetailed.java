@@ -44,4 +44,15 @@ public class ErrorDetailed {
     public void setLocationType(String locationType) {
         this.locationType = locationType;
     }
+
+    @Override
+    public String toString() {
+        return "ErrorDetailed{" +
+                "message='" + message + '\'' +
+                ", domain='" + domain + '\'' +
+                ", reason='" + reason + '\'' +
+                ", location='" + location + '\'' +
+                ", locationType='" + locationType + '\'' +
+                '}';
+    }
 }

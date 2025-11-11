@@ -21,4 +21,12 @@ public class UserQuery {
     public void setUserQuery(String userQuery) {
         this.userQuery = userQuery;
     }
+
+    @Override
+    public String toString() {
+        return "UserQuery{" +
+                "userSubject='" + userSubject + '\'' +
+                ", userQuery='" + userQuery + '\'' +
+                '}';
+    }
 }
