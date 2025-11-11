@@ -55,14 +55,14 @@ public class MainControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("index"))
+                .andExpect(view().name("/templates/index"))
                 .andExpect(model().attribute("randomBooks", books))
                 .andReturn();
 
         ModelAndView modelAndView = mvcResult.getModelAndView();
 
         Assertions.assertNotNull(modelAndView);
-        ModelAndViewAssert.assertViewName(modelAndView, "index");
+        ModelAndViewAssert.assertViewName(modelAndView, "/templates/index");
     }
 
     // get random books | make a call with wrong api key
@@ -158,13 +158,13 @@ public class MainControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(view().name("index"))
+                .andExpect(view().name("/templates/index"))
                 .andExpect(model().attribute("randomBooks", Collections.emptyList()))
                 .andReturn();
 
         ModelAndView modelAndView = mvcResult.getModelAndView();
         Assertions.assertNotNull(modelAndView);
-        ModelAndViewAssert.assertViewName(modelAndView, "index");
+        ModelAndViewAssert.assertViewName(modelAndView, "/templates/index");
     }
 
     // get random books | prepare a call with negative starting index

@@ -22,4 +22,12 @@ public class Book {
     public void setId(String id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id='" + id + '\'' +
+                ", volumeInfo=" + volumeInfo +
+                '}';
+    }
 }

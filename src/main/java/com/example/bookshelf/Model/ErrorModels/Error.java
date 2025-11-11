@@ -53,4 +53,15 @@ public class Error {
     public void setErrorDetailsList(List<ErrorDetails> errorDetailsList) {
         this.errorDetailsList = errorDetailsList;
     }
+
+    @Override
+    public String toString() {
+        return "Error{" +
+                "code=" + code +
+                ", message='" + message + '\'' +
+                ", status='" + status + '\'' +
+                ", errorsList=" + errorsList +
+                ", errorDetailsList=" + errorDetailsList +
+                '}';
+    }
 }

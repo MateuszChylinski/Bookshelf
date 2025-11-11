@@ -6,7 +6,7 @@ import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VolumeInfo {
-    private String title, publisher,publishedDate, description, pageCount;
+    private String title, publisher, publishedDate, description, pageCount;
     private List<String> authors;
     private ImageLinks imageLinks;
 
@@ -67,5 +67,18 @@ public class VolumeInfo {
 
     public void setImageLinks(ImageLinks imageLinks) {
         this.imageLinks = imageLinks;
+    }
+
+    @Override
+    public String toString() {
+        return "VolumeInfo{" +
+                "title='" + title + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", publishedDate='" + publishedDate + '\'' +
+                ", description='" + description + '\'' +
+                ", pageCount='" + pageCount + '\'' +
+                ", authors=" + authors +
+                ", imageLinks=" + imageLinks +
+                '}';
     }
 }

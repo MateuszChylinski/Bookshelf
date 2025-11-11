@@ -12,4 +12,11 @@ public class Metadata {
     public void setService(String service) {
         this.service = service;
     }
+
+    @Override
+    public String toString() {
+        return "Metadata{" +
+                "service='" + service + '\'' +
+                '}';
+    }
 }

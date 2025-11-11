@@ -8,19 +8,10 @@
     <title>Bookshelf</title>
 </head>
 <body>
-<!--TOP NAVIGATION BAR-->
-<nav class="navbar navbar-light bg-light ">
-    <a class="navbar-brand ms-3 mt-1" href="#">Bookshelf</a>
-    <form action="#" th:action="@{/makeQuery}" th:method="get" class="d-flex w-50" role="search">
-        <input class="form-control me-2 mt-1" name="userData" th:value="*{userData}" type="search" placeholder="Search"
-               aria-label="Search" required>
-        <button class="btn btn-outline-success mt-1" type="submit">Search</button>
-    </form>
-    <!--  TODO: Change visibility depending on whether user is logged in  -->
-    <div class="d-flex align-items-center ms-3">
-        <button type="button" class="btn btn-primary me-3">Sign in/up</button>
-    </div>
-</nav>
+
+<div th:replace="~{fragments/topNavbar :: top-navbar}"></div>
+
+
 <br><br>
 <p class="text-center fs-2">Here's some books, that might interest you!</p>
 <br><br>

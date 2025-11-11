@@ -11,9 +11,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception{
         security
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/get**", "/makeQuery**").permitAll()
-                        .anyRequest().authenticated());
+                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
+//                        .requestMatchers("/get**", "/bookQuery**").permitAll()
+//                        .anyRequest().authenticated());
         return security.build();
     }
 }

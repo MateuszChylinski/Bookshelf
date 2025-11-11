@@ -17,4 +17,11 @@ public class ErrorMapper {
     public void setError(Error error) {
         this.error = error;
     }
+
+    @Override
+    public String toString() {
+        return "ErrorMapper{" +
+                "error=" + error +
+                '}';
+    }
 }
