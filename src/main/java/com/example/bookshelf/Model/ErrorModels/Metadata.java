@@ -1,22 +1,14 @@
 package com.example.bookshelf.Model.ErrorModels;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class Metadata {
     private String service;
-
-    public Metadata() {}
-
-    public String getService() {
-        return service;
-    }
-
-    public void setService(String service) {
-        this.service = service;
-    }
-
-    @Override
-    public String toString() {
-        return "Metadata{" +
-                "service='" + service + '\'' +
-                '}';
-    }
 }
