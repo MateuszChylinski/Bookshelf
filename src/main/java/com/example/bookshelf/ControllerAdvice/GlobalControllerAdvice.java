@@ -19,7 +19,7 @@ public class GlobalControllerAdvice {
     }
 
     @ModelAttribute("userTopNavbarQuery")
-    public UserQuery getUserInput(){
+    public UserQuery getUserInput() {
         return new UserQuery();
     }
 }
