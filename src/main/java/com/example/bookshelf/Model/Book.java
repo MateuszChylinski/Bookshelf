@@ -14,5 +14,4 @@ import lombok.ToString;
 public class Book {
     private String id;
     private VolumeInfo volumeInfo;
-
 }

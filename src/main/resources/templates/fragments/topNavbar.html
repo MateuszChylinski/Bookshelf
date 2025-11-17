@@ -12,14 +12,14 @@
         <div class="d-flex align-items-center">
             <p class=" mb-0 text-center me-3 mt-1">Specific query</p>
 
-            <form class="d-flex" action="#" th:action="@{/bookQuery}" th:object="${userTopNavbarQuery}" method="post">
+            <form class="d-flex" th:object="${userTopNavbarQuery}"
+                  th:action="@{/books/search}" method="get">
+
                 <input th:field="*{userQuery}" class="form-control d-flex me-2 mt-1" type="text"
                        placeholder="Search"
-                       aria-label="Search" required >
+                       aria-label="Search" required>
                 <button class="btn btn-outline-success mt-1" type="submit">Search</button>
             </form>
-
-            <!--  TODO: Change visibility depending on whether user is logged in  -->
         </div>
     </nav>
 </header>
