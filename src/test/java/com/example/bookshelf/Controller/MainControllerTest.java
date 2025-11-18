@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.TestPropertySource;
@@ -22,9 +24,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
 
@@ -44,7 +45,9 @@ public class MainControllerTest {
     // get random books | proper call for getting random books
     @Test
     void getRandomBooks_shouldReturnRandomBooks() throws Exception {
-        String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksByCategoryProperCall"));
+        String response = loadJsonFromResource(
+                "jsonResponses/getBooks/getBooksByCategoryProperCall.json"
+        );
 
         ObjectMapper objectMapper = new ObjectMapper();
         BooksWrapper booksWrapper = objectMapper.readValue(response, BooksWrapper.class);
@@ -55,20 +58,23 @@ public class MainControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/templates/index"))
+                .andExpect(view().name("/index"))
                 .andExpect(model().attribute("randomBooks", books))
                 .andReturn();
 
         ModelAndView modelAndView = mvcResult.getModelAndView();
 
         Assertions.assertNotNull(modelAndView);
-        ModelAndViewAssert.assertViewName(modelAndView, "/templates/index");
+        ModelAndViewAssert.assertViewName(modelAndView, "/index");
     }
 
     // get random books | make a call with wrong api key
     @Test
     void getRandomBooks_shouldReturnApiKeyNotValidException() throws Exception {
-        String response = Files.readString(Path.of("src/main/resources/JsonResponses/global/getBooksBadApiKey"));
+        String response = loadJsonFromResource(
+                "jsonResponses/global/getBooksBadApiKey.json"
+        );
+
 
         ObjectMapper objectMapper = new ObjectMapper();
         ErrorMapper errorMapper = objectMapper.readValue(response, ErrorMapper.class);
@@ -96,7 +102,9 @@ public class MainControllerTest {
     // get random books | prepare a call with missing parameter q
     @Test
     void getRandomBooks_shouldReturnMissingParameterQException() throws Exception {
-        String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksMissingParameter"));
+        String response = loadJsonFromResource(
+                "jsonResponses/getBooks/getBooksMissingParameter.json"
+        );
 
         ObjectMapper objectMapper = new ObjectMapper();
         ErrorMapper errorMapper = objectMapper.readValue(response, ErrorMapper.class);
@@ -123,7 +131,9 @@ public class MainControllerTest {
     // get random books | prepare a call with missing query
     @Test
     void getRandomBooks_shouldReturnMissingQException() throws Exception {
-        String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksMissingQuery"));
+        String response = loadJsonFromResource(
+                "jsonResponses/getBooks/getBooksMissingQuery.json"
+        );
 
         ObjectMapper objectMapper = new ObjectMapper();
         ErrorMapper errorMapper = objectMapper.readValue(response, ErrorMapper.class);
@@ -158,19 +168,21 @@ public class MainControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(view().name("/templates/index"))
+                .andExpect(view().name("/index"))
                 .andExpect(model().attribute("randomBooks", Collections.emptyList()))
                 .andReturn();
 
         ModelAndView modelAndView = mvcResult.getModelAndView();
         Assertions.assertNotNull(modelAndView);
-        ModelAndViewAssert.assertViewName(modelAndView, "/templates/index");
+        ModelAndViewAssert.assertViewName(modelAndView, "/index");
     }
 
     // get random books | prepare a call with negative starting index
     @Test
     void getRandomBooks_shouldReturnInvalidStartingIndex() throws Exception {
-        String response = Files.readString(Path.of("src/main/resources/JsonResponses/getBooks/getBooksStartingIndex=-1"));
+        String response = loadJsonFromResource(
+                "jsonResponses/getBooks/getBooksStartingIndex=-1.json"
+        );
 
         ObjectMapper objectMapper = new ObjectMapper();
         ErrorMapper errorMapper = objectMapper.readValue(response, ErrorMapper.class);
@@ -193,5 +205,12 @@ public class MainControllerTest {
         ModelAndView modelAndView = mvcResult.getModelAndView();
         Assertions.assertNotNull(modelAndView);
         ModelAndViewAssert.assertViewName(modelAndView, "error");
+    }
+
+
+    // TODO MISSING TESTS FOR QUERY AND DETAILED
+    protected String loadJsonFromResource(String path) throws IOException {
+        Resource resource = new ClassPathResource(path);
+        return new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
     }
 }
