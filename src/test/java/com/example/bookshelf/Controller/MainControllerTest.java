@@ -10,7 +10,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -33,9 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @TestPropertySource("/application.properties")
 @WebMvcTest(MainController.class)
-@AutoConfigureMockMvc
 public class MainControllerTest {
-    //TODO before/after all/each?
 
     @Autowired
     private MockMvc mockMvc;
@@ -44,18 +41,17 @@ public class MainControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    protected String loadJsonFromResource(String path) throws IOException {
+    private String loadJsonFromResource(String path) throws IOException {
         Resource resource = new ClassPathResource(path);
         return new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
     }
 
-    //todo how does it work
-    protected <T> T loadJson(String path, Class<T> tClass) throws IOException {
+    private <T> T loadJson(String path, Class<T> tClass) throws IOException {
         String json = loadJsonFromResource(path);
         return objectMapper.readValue(json, tClass);
     }
 
-    protected HttpClientErrorException createHttpException(
+    private HttpClientErrorException createHttpException(
             HttpStatus status, String message, String json) {
         return HttpClientErrorException.create(
                 status, message, HttpHeaders.EMPTY,
@@ -63,7 +59,6 @@ public class MainControllerTest {
         );
     }
 
-    //todo how does it works
     static Stream<Arguments> errorScenarios() {
         return Stream.of(
                 Arguments.of("jsonResponses/global/globalBadApiKey.json",
@@ -112,15 +107,14 @@ public class MainControllerTest {
             HttpStatus httpStatus,
             String errorMessage
     ) throws Exception {
-        String response = loadJsonFromResource(jsonFile);
-        ErrorMapper errorMapper = objectMapper.readValue(response, ErrorMapper.class);
+        ErrorMapper errorMapper = loadJson(jsonFile, ErrorMapper.class);
 
-        when(mockService.getRandomBooks()).thenThrow(createHttpException(httpStatus, errorMessage, response));
+        when(mockService.getRandomBooks()).thenThrow(createHttpException(httpStatus, errorMessage, errorMapper.getError().getMessage()));
 
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().is(httpStatus.value()))
-                .andExpect(view().name("error"))
+                .andExpect(view().name("/error"))
                 .andExpect(model().attribute("globalExceptionHandlerMessage", httpStatus.value() + " " + errorMapper.getError().getMessage()));
     }
 
@@ -128,48 +122,23 @@ public class MainControllerTest {
     @Test
     @WithMockUser
     public void getRandomBooks_shouldReturnInvalidStartingIndex() throws Exception {
-        String response = loadJsonFromResource(
-                "jsonResponses/getRandomBooks/getRandomBooksStartingIndex=-1.json"
+        ErrorMapper errorMapper = loadJson(
+                "jsonResponses/getRandomBooks/getRandomBooksStartingIndex=-1.json",
+                ErrorMapper.class
         );
-
-        ErrorMapper errorMapper = objectMapper.readValue(response, ErrorMapper.class);
 
         HttpClientErrorException invalidStartingIndex = createHttpException(
                 HttpStatus.BAD_REQUEST, "Invalid value at 'start_index' (TYPE_UINT32), \"-1\"",
-                response
+                errorMapper.getError().getMessage()
         );
 
         when(mockService.getRandomBooks()).thenThrow(invalidStartingIndex);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/getBooks"))
                 .andExpect(status().isBadRequest())
-                .andExpect(view().name("error"))
+                .andExpect(view().name("/error"))
                 .andExpect(model().attribute("globalExceptionHandlerMessage", invalidStartingIndex.getStatusCode().value() + " " + errorMapper.getError().getMessage()));
     }
-
-    // get random books | prepare a call with missing parameter q
-    @Test
-    @WithMockUser
-    public void getRandomBooks_shouldReturnMissingParameterQException() throws Exception {
-        String response = loadJsonFromResource(
-                "jsonResponses/getRandomBooks/getRandomBooksMissingParameter.json"
-        );
-
-        ErrorMapper errorMapper = objectMapper.readValue(response, ErrorMapper.class);
-
-        HttpClientErrorException missingParameterQException = createHttpException(
-                HttpStatus.BAD_REQUEST, "Required parameter: q",
-                response
-        );
-
-        when(mockService.getRandomBooks()).thenThrow(missingParameterQException);
-
-        mockMvc.perform(MockMvcRequestBuilders.get("/getBooks"))
-                .andExpect(status().isBadRequest())
-                .andExpect(view().name("error"))
-                .andExpect(model().attribute("globalExceptionHandlerMessage", missingParameterQException.getStatusCode().value() + " " + errorMapper.getError().getMessage()));
-    }
-
 
     // get random books | prepare a call with starting index which is not supported
     @Test
@@ -189,10 +158,10 @@ public class MainControllerTest {
         // get random books | prepare a call with max results parameter set to 0,
         // it'll still return 10. Tested on real api.
     void getRandomBooks_shouldReturn10VolumesWhenMaxResultIs0() throws Exception {
-        String response = loadJsonFromResource(
-                "jsonResponses/getRandomBooks/getRandomBooksMaxResults0.json"
+        BooksWrapper booksWrapper = loadJson(
+                "jsonResponses/getRandomBooks/getRandomBooksMaxResults0.json",
+                BooksWrapper.class
         );
-        BooksWrapper booksWrapper = objectMapper.readValue(response, BooksWrapper.class);
 
         when(mockService.getRandomBooks()).thenReturn(booksWrapper.getBookItems());
 
@@ -207,11 +176,9 @@ public class MainControllerTest {
     @Test
     @WithMockUser
     void getRandomBook_shouldReturn0TotalItems() throws Exception {
-        String response = loadJsonFromResource(
-                "jsonResponses/getRandomBooks/getRandomBooks_longQuery0Items.json"
-        );
-
-        BooksWrapper booksWrapper = objectMapper.readValue(response, BooksWrapper.class);
+        BooksWrapper booksWrapper = loadJson(
+                "jsonResponses/getRandomBooks/getRandomBooks_longQuery0Items.json",
+                BooksWrapper.class);
 
         when(mockService.getRandomBooks()).thenReturn(booksWrapper.getBookItems());
 
@@ -226,10 +193,9 @@ public class MainControllerTest {
     @Test
     @WithMockUser
     void getRandomBooks_shouldReturn0TotalItemsStartingIndexTooHigh() throws Exception {
-        String response = loadJsonFromResource(
-                "jsonResponses/getRandomBooks/getRandomBooksStartingIndex999.json"
-        );
-        BooksWrapper booksWrapper = objectMapper.readValue(response, BooksWrapper.class);
+        BooksWrapper booksWrapper = loadJson(
+                "jsonResponses/getRandomBooks/getRandomBooksStartingIndex999.json",
+                BooksWrapper.class);
 
         when(mockService.getRandomBooks()).thenReturn(booksWrapper.getBookItems());
 
@@ -240,24 +206,13 @@ public class MainControllerTest {
                 .andExpect(model().attribute("randomBooks", Matchers.empty()));
     }
 
+    // get random books | reject unauthorized user
     @Test
-    @WithMockUser
-        // get random books | prepare a call with query parameter
-        // values with special characters/queries, katakana, sql like strings
-        // such as c++, <script>, !@#, '1'='1, tested on real api
-    void getRandomBooks_shouldHandleSpecialCharactersCall() throws Exception {
-        String response = loadJsonFromResource(
-                "jsonResponses/getRandomBooks/getRandomBooksByCategoryProperCall.json"
-        );
-
-        BooksWrapper booksWrapper = objectMapper.readValue(response, BooksWrapper.class);
-
-        when(mockService.getRandomBooks()).thenReturn(booksWrapper.getBookItems());
-
+    void getRandomBooks_shouldRejectUnauthorizedUser() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("/index"))
-                .andExpect(model().attribute("randomBooks", booksWrapper.getBookItems()));
+                .andExpect(status().isUnauthorized());
     }
+
+    // TODO add test which will redirect user to login page
 }

@@ -15,10 +15,7 @@ public class GlobalControllerAdvice {
     public String handleHttpClientError(HttpClientErrorException httpClientErrorException, Model model, HttpServletResponse response) {
         response.setStatus(httpClientErrorException.getStatusCode().value());
         model.addAttribute("globalExceptionHandlerMessage", httpClientErrorException.getMessage());
-        //TODO ?
-//        model.addAttribute("userTopNavbarQuery", new UserQuery()); // ADD THIS LINE
-
-        return "error";
+        return "/error";
     }
 
     @ModelAttribute("userTopNavbarQuery")
