@@ -14,7 +14,7 @@ public class DetailsController {
     private BookService service;
 
     @GetMapping("/books/details/{id}")
-    private String getBookDetails(
+    public String getBookDetails(
             @PathVariable("id") String bookId,
             Model model) {
         model.addAttribute("bookDetails", service.getBookDetails(bookId));

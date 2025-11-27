@@ -1,5 +1,6 @@
 package com.example.bookshelf.Model.ErrorModels;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @ToString
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Error {
     private int code;
     private String message, status;
