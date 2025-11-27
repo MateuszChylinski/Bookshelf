@@ -1,12 +1,10 @@
 package com.example.bookshelf.Controller;
 
 import com.example.bookshelf.Model.Book;
-import com.example.bookshelf.Model.BooksWrapper;
 import com.example.bookshelf.Model.ErrorModels.ErrorMapper;
 import com.example.bookshelf.Service.BookService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.parallel.Resources;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -26,7 +24,6 @@ import org.springframework.web.client.HttpClientErrorException;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
 import java.util.stream.Stream;
 
 import static org.mockito.Mockito.when;
@@ -36,7 +33,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(DetailsController.class)
 @AutoConfigureMockMvc
 public class DetailedControllerTest {
-    //TODO before/after all/each?
 
     @Autowired
     private MockMvc mockMvc;
@@ -45,25 +41,24 @@ public class DetailedControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    protected String loadJsonFromResource(String pathToFile) throws IOException {
+    private String loadJsonFromResource(String pathToFile) throws IOException {
         Resource resource = new ClassPathResource(pathToFile);
         return new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
     }
 
-    protected <T> T loadAndMapJsonFile(String pathToFile, Class<T> tClass) throws IOException {
+    private <T> T loadAndMapJsonFile(String pathToFile, Class<T> tClass) throws IOException {
         String json = loadJsonFromResource(pathToFile);
         return objectMapper.readValue(json, tClass);
     }
 
-
-    protected HttpClientErrorException createHttpException(HttpStatus httpStatus, String message, String json) {
+    private HttpClientErrorException createHttpException(HttpStatus httpStatus, String message, String json) {
         return HttpClientErrorException.create(
                 httpStatus, message, HttpHeaders.EMPTY,
                 json.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8
         );
     }
 
-    static Stream<Arguments> errorScenarios() {
+    private static Stream<Arguments> errorScenarios() {
         return Stream.of(
                 Arguments.of("jsonResponses/global/globalBadApiKey.json",
                         HttpStatus.BAD_REQUEST,
@@ -84,33 +79,29 @@ public class DetailedControllerTest {
         );
     }
 
-    // Detailed book
-
+    // parameterize error tests
     @WithMockUser
     @ParameterizedTest
     @MethodSource("errorScenarios")
     void getDetailedBook_handleErrorScenarios(String json, HttpStatus httpStatus, String message) throws Exception {
-        String response = loadJsonFromResource(json);
-        ErrorMapper errorMapper = objectMapper.readValue(response, ErrorMapper.class);
+        ErrorMapper errorMapper = loadAndMapJsonFile(json, ErrorMapper.class);
 
-        when(mockService.getBookDetails("zyTCAlFPjgYC")).thenThrow(createHttpException(httpStatus, message, response
+        when(mockService.getBookDetails("id")).thenThrow(createHttpException(httpStatus, message, errorMapper.getError().getMessage()
         ));
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/books/details/{id}", "zyTCAlFPjgYC"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/books/details/{id}", "id"))
                 .andExpect(status().is(httpStatus.value()))
-                .andExpect(view().name("error"))
-                .andExpect(model().attribute("globalExceptionHandlerMessage", httpStatus.value()+ " " + errorMapper.getError().getMessage()));
+                .andExpect(view().name("/error"))
+                .andExpect(model().attribute("globalExceptionHandlerMessage", httpStatus.value() + " " + errorMapper.getError().getMessage()));
     }
-//proper call
 
+    // make a proper call
     @WithMockUser
     @Test
     void getDetailedBook_shouldReturnProperCall() throws Exception {
-        String response = loadJsonFromResource(
-                "jsonResponses/getBookDetail/getBookDetailsProperCall.json"
-        );
-
-        Book book = objectMapper.readValue(response, Book.class);
+        Book book = loadAndMapJsonFile(
+                "jsonResponses/getBookDetail/getBookDetailsProperCall.json",
+                Book.class);
 
         when(mockService.getBookDetails("testId")).thenReturn(book);
 
@@ -145,6 +136,9 @@ public class DetailedControllerTest {
 //        Assertions.assertNotNull(modelAndView);
 //    }
 //
+
+
+
 
 // TODO ADD TO PARAMETRIZED getRandomBooks_shouldReturnInvalidStartingIndex
 //getRandomBooks_shouldReturnMissingParameterQException
