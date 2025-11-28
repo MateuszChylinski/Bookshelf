@@ -1,27 +1,14 @@
 package com.example.bookshelf.Model.ErrorModels;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class ErrorMapper {
     private Error error;
-
-    public ErrorMapper() {
-    }
-
-    public ErrorMapper(Error error) {
-        this.error = error;
-    }
-
-    public Error getError() {
-        return error;
-    }
-
-    public void setError(Error error) {
-        this.error = error;
-    }
-
-    @Override
-    public String toString() {
-        return "ErrorMapper{" +
-                "error=" + error +
-                '}';
-    }
 }

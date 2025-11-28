@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--    Tag for making fragment responsive. Control page dimensions of different devices    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search results</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!--Fragment declaration -->
+<div th:fragment="bookCards(books)">
+
+    <!--    Display alert if there's no books data  -->
+    <div th:if="${books == null or #lists.isEmpty(books)}"
+         class="alert alert-info">No result found
+    </div>
+
+    <div class="d-flex flex-row flex-wrap gap-4 justify-content-center">
+
+        <!--        Iterate through results     -->
+        <div th:if="${books != null and !#lists.isEmpty(books)}"
+             th:each="book : ${books}"
+             class="card"
+             style="width:18rem;">
+
+            <!--            Display book covers-->
+            <div style="height: 21rem; overflow: hidden">
+                <img th:src="${book?.volumeInfo?.imageLinks?.smallThumbnail ?: 'static/images/bookCoverNotFound.png'}"
+                     th:alt="${book?.volumeInfo?.title ?: 'Book cover'}"
+                     class="card-imt-top img-fluid w-100 h-100"
+                     style="object-fit: cover">
+            </div>
+
+            <!--            Display book data such as author, title and button leading to book details-->
+            <div class="card-body d-flex flex-column">
+                <h4 class=card-title
+                    th:text="${book?.volumeInfo?.title ?: 'Unknown title'}">
+                </h4>
+
+                <p class="card-text text-muted"
+                   th:if="${book?.volumeInfo?.authors != null and !#lists.isEmpty(book.volumeInfo?.authors)}"
+                   th:text="${#strings.listJoin(book?.volumeInfo?.authors, ', ')}">
+                </p>
+
+                <p class="cards-text text-muted"
+                   th:unless="${book.volumeInfo?.authors == null and #lists.isEmpty(book.volumeInfo.authors)}">
+                </p>
+
+                <!--                Send user to bookDetails page that display detailed information about given book       -->
+                <form th:action="@{/books/details/{id}(id=${book?.id})}" method="get">
+                    <button class="btn btn-primary mt-auto" type="submit">Details
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

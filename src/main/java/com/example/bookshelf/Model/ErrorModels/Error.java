@@ -1,9 +1,19 @@
 package com.example.bookshelf.Model.ErrorModels;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Error {
     private int code;
     private String message, status;
@@ -11,57 +21,4 @@ public class Error {
     private List<ErrorDetailed> errorsList;
     @JsonProperty("details")
     private List<ErrorDetails> errorDetailsList;
-
-    public Error() {}
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public List<ErrorDetailed> getErrorsList() {
-        return errorsList;
-    }
-
-    public void setErrorsList(List<ErrorDetailed> errorsList) {
-        this.errorsList = errorsList;
-    }
-
-    public List<ErrorDetails> getErrorDetailsList() {
-        return errorDetailsList;
-    }
-
-    public void setErrorDetailsList(List<ErrorDetails> errorDetailsList) {
-        this.errorDetailsList = errorDetailsList;
-    }
-
-    @Override
-    public String toString() {
-        return "Error{" +
-                "code=" + code +
-                ", message='" + message + '\'' +
-                ", status='" + status + '\'' +
-                ", errorsList=" + errorsList +
-                ", errorDetailsList=" + errorDetailsList +
-                '}';
-    }
 }

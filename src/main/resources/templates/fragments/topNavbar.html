@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
 <header th:fragment="top-navbar">
     <nav class="navbar navbar-light bg-light ">
         <a class="navbar-brand ms-3 mt-1" href="#">Bookshelf</a>
         <div class="d-flex align-items-center">
             <p class=" mb-0 text-center me-3 mt-1">Specific query</p>
 
-            <form class="d-flex" action="#" th:action="@{/bookQuery}" th:object="${userTopNavbarQuery}" method="post">
-                <input th:field="*{userQuery}" class="form-control d-flex me-2 mt-1" type="text"
+            <form class="d-flex" th:action="@{/books/search}" method="get">
+
+                <input th:field="${userTopNavbarQuery.providedQuery}" class="form-control d-flex me-2 mt-1" type="text"
                        placeholder="Search"
-                       aria-label="Search" required >
+                       aria-label="Search" required>
                 <button class="btn btn-outline-success mt-1" type="submit">Search</button>
             </form>
-
-            <!--  TODO: Change visibility depending on whether user is logged in  -->
         </div>
     </nav>
 </header>

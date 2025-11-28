@@ -1,32 +1,14 @@
 package com.example.bookshelf.Model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class UserQuery {
-    private String userSubject, userQuery;
-
-    public UserQuery() {
-    }
-
-    public String getUserSubject() {
-        return userSubject;
-    }
-
-    public void setUserSubject(String userSubject) {
-        this.userSubject = userSubject;
-    }
-
-    public String getUserQuery() {
-        return userQuery;
-    }
-
-    public void setUserQuery(String userQuery) {
-        this.userQuery = userQuery;
-    }
-
-    @Override
-    public String toString() {
-        return "UserQuery{" +
-                "userSubject='" + userSubject + '\'' +
-                ", userQuery='" + userQuery + '\'' +
-                '}';
-    }
+    private String providedQuery;
 }

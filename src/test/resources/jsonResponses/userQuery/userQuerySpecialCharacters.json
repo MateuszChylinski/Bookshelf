@@ -1,0 +1,689 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1000000,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "4yU5AAAAIAAJ",
+      "etag": "za/KvNy0wgU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/4yU5AAAAIAAJ",
+      "volumeInfo": {
+        "title": "The Code of Federal Regulations of the United States of America",
+        "publishedDate": "1993",
+        "description": "The Code of Federal Regulations is the codification of the general and permanent rules published in the Federal Register by the executive departments and agencies of the Federal Government.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105063454636"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 928,
+        "printType": "BOOK",
+        "categories": [
+          "Administrative law"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.8.13.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=4yU5AAAAIAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=4yU5AAAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=4yU5AAAAIAAJ&pg=PA913&dq=%3Cscript%3E+%271%27%3D%271&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=4yU5AAAAIAAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=4yU5AAAAIAAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=4yU5AAAAIAAJ&rdid=book-4yU5AAAAIAAJ&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/The_Code_of_Federal_Regulations_of_the_U.epub?id=4yU5AAAAIAAJ&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "downloadLink": "http://books.google.pl/books/download/The_Code_of_Federal_Regulations_of_the_U.pdf?id=4yU5AAAAIAAJ&hl=&output=pdf&sig=ACfU3U3zgs06rKjUL70YXhK19yeL6Cr2XQ&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=4yU5AAAAIAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... ( \u003cb\u003e1\u003c/b\u003e ) ( i ) ( D ) and ( H ) amended ; ( m ) added ; eff . 2-\u003cb\u003e1\u003c/b\u003e-92 .... new ( j ) ( 3 ) ( iv ) and ( 4 ) redesignated as ( j ) ( 3 ) ( iii ) ( D ) and ( 5 ) ; ( b ) ( \u003cb\u003e1\u003c/b\u003e ) ( v ) , ( vi ) , ( vii ) , ( 3 ) , ( j ) in- troductory text , ( \u003cb\u003e1\u003c/b\u003e )&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "bDanpcT7oH4C",
+      "etag": "Rc4nj/H3E4s",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/bDanpcT7oH4C",
+      "volumeInfo": {
+        "title": "Revised Basic Criminal Code for the District of Columbia",
+        "subtitle": "Hearings Before the Subcommittee on Governmental Efficiency and the District of Columbia of the Committee on Governmental Affairs, United States Senate, Ninety-fifth Congress, Second Session",
+        "authors": [
+          "United States. Congress. Senate. Committee on Governmental Affairs. Subcommittee on Governmental Efficiency and the District of Columbia"
+        ],
+        "publishedDate": "1978",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105045364416"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 606,
+        "printType": "BOOK",
+        "categories": [
+          "Criminal law"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.9.10.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=bDanpcT7oH4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=bDanpcT7oH4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=bDanpcT7oH4C&pg=PA564&dq=%3Cscript%3E+%271%27%3D%271&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=bDanpcT7oH4C&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=bDanpcT7oH4C"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=bDanpcT7oH4C&rdid=book-bDanpcT7oH4C&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Revised_Basic_Criminal_Code_for_the_Dist.epub?id=bDanpcT7oH4C&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=bDanpcT7oH4C&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... CODE TIT . 13A ( 1977 Special Pamphlet : Criminal Code ) ; 5/17/1978 . ARIZ . REV . STAT . ANN . TIT . 13 ( 1977 Special Pamphlet : Revised Criminal Code ) ; 10/\u003cb\u003e1\u003c/b\u003e/1978 . &quot; ARK . STAT . ANN . TIT . 41 ( Special Booklet : Criminal Code , 1975 )&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "Cqn2R2vufWUC",
+      "etag": "olWP7v6pLwc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/Cqn2R2vufWUC",
+      "volumeInfo": {
+        "title": "Code of Federal Regulations",
+        "subtitle": "Public health. 42",
+        "publishedDate": "2000",
+        "description": "Special edition of the Federal register, containing a codification of documents of general applicability and future effect as of ... with ancillaries.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UCR:31210027008919"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 990,
+        "printType": "BOOK",
+        "categories": [
+          "Government publications"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.0.1.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=Cqn2R2vufWUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=Cqn2R2vufWUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=Cqn2R2vufWUC&pg=PA969&dq=%3Cscript%3E+%271%27%3D%271&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=Cqn2R2vufWUC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Cqn2R2vufWUC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=Cqn2R2vufWUC&rdid=book-Cqn2R2vufWUC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Code_of_Federal_Regulations.epub?id=Cqn2R2vufWUC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=Cqn2R2vufWUC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... text revised 25853 409.65 ( a ) ( \u003cb\u003e1\u003c/b\u003e ) , ( 3 ) , ( 4 ) , ( d ) ( \u003cb\u003e1\u003c/b\u003e ) , ( 2 ) , ( 3 ) , ( a ) amended .25855 ( e ) ( \u003cb\u003e1\u003c/b\u003e ) , ( 2 ) introductory text , ( i ) 405.801 Revised 405.802 Amended 25853 and ( ii ) amended 46037 25853 409.66 ( b )&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "CLTwSARlpGgC",
+      "etag": "88IUzymAjFQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/CLTwSARlpGgC",
+      "volumeInfo": {
+        "title": "Lexicon Zu Shakespeares Werken",
+        "subtitle": "",
+        "authors": [
+          "Alexander Schmidt"
+        ],
+        "publishedDate": "1886",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BML:37001103884818"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 782,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.5.8.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=CLTwSARlpGgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=CLTwSARlpGgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=CLTwSARlpGgC&pg=PA1194&dq=%3Cscript%3E+%271%27%3D%271&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=CLTwSARlpGgC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=CLTwSARlpGgC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=CLTwSARlpGgC&rdid=book-CLTwSARlpGgC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Lexicon_Zu_Shakespeares_Werken.epub?id=CLTwSARlpGgC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=CLTwSARlpGgC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003e1\u003c/b\u003e , 30. Caes . III , 2 , 135. 158. Per . IV , 2 , 107. he is come to open ... \u003cb\u003e1\u003c/b\u003e , 3 , 96 ( Pistol&#39;s speech ) . cf. Testril . Testern , to present with ... Text , \u003cb\u003e1\u003c/b\u003e ) something written for instruction : and t . underneath , &#39; Here&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "L375wZIl0TsC",
+      "etag": "OnlIEZafpLU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/L375wZIl0TsC",
+      "volumeInfo": {
+        "title": "The Irish Liber Hymnorum",
+        "subtitle": "Translation and notes",
+        "publishedDate": "1898",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BSB:BSB11867629"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 332,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.0.1.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=L375wZIl0TsC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=L375wZIl0TsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=L375wZIl0TsC&pg=PA234&dq=%3Cscript%3E+%271%27%3D%271&hl=&cd=5&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=L375wZIl0TsC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=L375wZIl0TsC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=L375wZIl0TsC&rdid=book-L375wZIl0TsC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/The_Irish_Liber_Hymnorum.epub?id=L375wZIl0TsC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=L375wZIl0TsC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003e1\u003c/b\u003e. 526. The pedigree is this ( as given in the Book of Leinster , 347ẞ ) ... \u003cb\u003e1\u003c/b\u003e. 539. Credulous chariot &#39; does not convey any meaning ; but we must ... text . \u003cb\u003e1\u003c/b\u003e. 611. In the Stowe MS . , as well as in T , what follows is marked&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "-e47AQAAMAAJ",
+      "etag": "VQr45X+op1E",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/-e47AQAAMAAJ",
+      "volumeInfo": {
+        "title": "Proceedings of the London Mathematical Society",
+        "authors": [
+          "London Mathematical Society"
+        ],
+        "publishedDate": "1911",
+        "description": "\"Papers presented to J. E. Littlewood on his 80th birthday\" issued as 3d ser., v. 14 A, 1965.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "MSU:31293002104838"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 516,
+        "printType": "BOOK",
+        "categories": [
+          "Mathematics"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.8.7.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=-e47AQAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=-e47AQAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=-e47AQAAMAAJ&q=%3Cscript%3E+%271%27%3D%271&dq=%3Cscript%3E+%271%27%3D%271&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.pl/books?id=-e47AQAAMAAJ&dq=%3Cscript%3E+%271%27%3D%271&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Proceedings_of_the_London_Mathematical_S.html?hl=&id=-e47AQAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=-e47AQAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003e1\u003c/b\u003e text dt = r !, λη λη + \u003cb\u003e1\u003c/b\u003e tedt ≥ hr !. ( 6a ) \u003cb\u003e1\u003c/b\u003e λμ lim | om | x + \u003cb\u003e1\u003c/b\u003e Σ 20 λμ +\u003cb\u003e1\u003c/b\u003e An + \u003cb\u003e1\u003c/b\u003e log ( λη / λm ) text dt &lt; text λι λη and therefore 8 lim +12 log ( m / m ) m8 &lt; lim xr + \u003cb\u003e1\u003c/b\u003e m - ∞ where we have written In the third term , since&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "hjVGAQAAMAAJ",
+      "etag": "XXxmcm61po4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/hjVGAQAAMAAJ",
+      "volumeInfo": {
+        "title": "Sessional Papers",
+        "authors": [
+          "Canada. Parliament"
+        ],
+        "publishedDate": "1899",
+        "description": "\"Report of the Dominion fishery commission on the fisheries of the province of Ontario, 1893\", issued as an addendum to vol. 26, no. 7.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OSU:32435063955033"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 1988,
+        "printType": "BOOK",
+        "categories": [
+          "Canada"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.14.14.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=hjVGAQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=hjVGAQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=hjVGAQAAMAAJ&pg=RA6-PA5&dq=%3Cscript%3E+%271%27%3D%271&hl=&cd=7&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=hjVGAQAAMAAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=hjVGAQAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=hjVGAQAAMAAJ&rdid=book-hjVGAQAAMAAJ&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Sessional_Papers.epub?id=hjVGAQAAMAAJ&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=hjVGAQAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003e1\u003c/b\u003e , $ 3.20 .... Blue boards , 2 doz . , 72c .; laces , 29 doz . , 85.24 ; straps , 30 , $ 2.64 ; leather wallets , 3 ... Code , Quebec , $ 20 . Clarke&#39;s Magistrates &#39; Manual , $ 5 ; Code of Procedure , $ 10 ; Code Napoleon , $ 2&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "qO12sujyPncC",
+      "etag": "vHpYFw6JHEw",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/qO12sujyPncC",
+      "volumeInfo": {
+        "title": "Annals of Scottish Printing",
+        "subtitle": "From the Introduction of the Art in 1507 to the Beginning of the Seventeenth Century",
+        "authors": [
+          "Robert Dickson",
+          "John Philip Edmond"
+        ],
+        "publishedDate": "1890",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BSB:BSB11529153"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 300,
+        "printType": "BOOK",
+        "categories": [
+          "Printing"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.2.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=qO12sujyPncC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=qO12sujyPncC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=qO12sujyPncC&pg=PA80&dq=%3Cscript%3E+%271%27%3D%271&hl=&cd=8&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=qO12sujyPncC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=qO12sujyPncC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=qO12sujyPncC&rdid=book-qO12sujyPncC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Annals_of_Scottish_Printing.epub?id=qO12sujyPncC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=qO12sujyPncC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... ( \u003cb\u003e1\u003c/b\u003e ) . &quot; first 6 leaves ( 7 ) . &quot; title and \u003cb\u003eone\u003c/b\u003e leaf or more at end ( 5 ) . 3 intermediate and ultimate leaves ( 3 ) . Four want end of text ... text ( 2 , 4 , 6 ) . Eight have beginning of text ( 2 , 3 , 4 , 5 , 6 , 8 , 9 , 11 ) . Seven&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "ZHcNAQAAMAAJ",
+      "etag": "4wR6VtnQMkk",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/ZHcNAQAAMAAJ",
+      "volumeInfo": {
+        "title": "The Collected Mathematical Papers of Arthur Cayley ...",
+        "authors": [
+          "Arthur Cayley"
+        ],
+        "publishedDate": "1889",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "PSU:000025168600"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 628,
+        "printType": "BOOK",
+        "categories": [
+          "Mathematics"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.6.7.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=ZHcNAQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=ZHcNAQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=ZHcNAQAAMAAJ&pg=PA287&dq=%3Cscript%3E+%271%27%3D%271&hl=&cd=9&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=ZHcNAQAAMAAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=ZHcNAQAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=ZHcNAQAAMAAJ&rdid=book-ZHcNAQAAMAAJ&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/The_Collected_Mathematical_Papers_of_Art.epub?id=ZHcNAQAAMAAJ&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "downloadLink": "http://books.google.pl/books/download/The_Collected_Mathematical_Papers_of_Art.pdf?id=ZHcNAQAAMAAJ&hl=&output=pdf&sig=ACfU3U0do-OG8gN9yVUe8rY_UEqWcOvVxw&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=ZHcNAQAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... code - c2de2 38 d&#39;e + 16 a bef 12 2a2 bef ef 5 a2bcf3 6 e2 f2 2 \u003cb\u003e1 1\u003c/b\u003e def2 + 11 b ° c2f3 5 \u003cb\u003e1\u003c/b\u003e b&#39;cef 11 e3 f 5 cdef2 + 17 2 3 d2f2 4 b ° c2ef2 + 4 ce3 f - 7 5 de f 4 cdf2 2 e4 + 17 cde2f + 4 d3 f2 def 4 + - 2 b ° c2df2 + 6 a1 b2df3 + 2 2 ce&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "vh8br_FTpG8C",
+      "etag": "7GQytdvWEsI",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/vh8br_FTpG8C",
+      "volumeInfo": {
+        "title": "Information Systems in ADOT: Appendices",
+        "authors": [
+          "William C. Moor"
+        ],
+        "publishedDate": "1985",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UCBK:C101233867"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 152,
+        "printType": "BOOK",
+        "categories": [
+          "Highway departments"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=vh8br_FTpG8C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=vh8br_FTpG8C&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=vh8br_FTpG8C&q=%3Cscript%3E+%271%27%3D%271&dq=%3Cscript%3E+%271%27%3D%271&hl=&cd=10&source=gbs_api",
+        "infoLink": "http://books.google.pl/books?id=vh8br_FTpG8C&dq=%3Cscript%3E+%271%27%3D%271&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Information_Systems_in_ADOT_Appendices.html?hl=&id=vh8br_FTpG8C"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=vh8br_FTpG8C&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... CODE INTO TOP , MIDDLE AND BOTTOM PARTS FOR PRINT HEADING 190 INPUT \u003cb\u003e1\u003c/b\u003e , CODE ( \u003cb\u003e1\u003c/b\u003e ) : CODES STRS ( CODE ( I ) ) &#39; BEWARE CODES CONTAIN A SPACE AHEAD 200 TOPS ( I ) = MIDS ( CODES , 2,\u003cb\u003e1\u003c/b\u003e ) 210 MCSI ) = MIDS ( CODES , 3,\u003cb\u003e1\u003c/b\u003e ) 220 80 ( I )&nbsp;..."
+      }
+    }
+  ]
+}

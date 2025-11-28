@@ -1,0 +1,676 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1000000,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "5I_q52-HJCYC",
+      "etag": "6jHt8wQ4ASg",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/5I_q52-HJCYC",
+      "volumeInfo": {
+        "title": "A Dictionary of Music and Musicians",
+        "subtitle": "(A.D. 1450-1880)",
+        "authors": [
+          "George Grove"
+        ],
+        "publishedDate": "1879",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UCI:31970001387718"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 784,
+        "printType": "BOOK",
+        "categories": [
+          "Music"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.5.5.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=5I_q52-HJCYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=5I_q52-HJCYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=5I_q52-HJCYC&pg=PA530&dq=a&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=5I_q52-HJCYC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=5I_q52-HJCYC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=5I_q52-HJCYC&rdid=book-5I_q52-HJCYC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/A_Dictionary_of_Music_and_Musicians.epub?id=5I_q52-HJCYC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=5I_q52-HJCYC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e vast number of letters and documents , many of which no longer exist ; of memoranda and remarks scribbled by Beethoven in pocket - books and journals ; of the personal recollections of his intimate friend Zmeskall ; and of \u003cb\u003ea\u003c/b\u003e few&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "gQo24ZEO67oC",
+      "etag": "rVE9PDXfWiM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/gQo24ZEO67oC",
+      "volumeInfo": {
+        "title": "The Wants and Means of India. A Paper, Etc",
+        "authors": [
+          "Dadabhai Naoroji"
+        ],
+        "publishedDate": "1870",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BL:A0021869697"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 12,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.6.6.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=gQo24ZEO67oC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=gQo24ZEO67oC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=gQo24ZEO67oC&pg=PA6&dq=a&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=gQo24ZEO67oC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=gQo24ZEO67oC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=gQo24ZEO67oC&rdid=book-gQo24ZEO67oC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/The_Wants_and_Means_of_India_A_Paper_Etc.epub?id=gQo24ZEO67oC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=gQo24ZEO67oC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e high esti- mate . This makes 40s . \u003cb\u003ea\u003c/b\u003e head for the gross production of India . Add 75,000,000l . more if you like , and make the gross production 50s . \u003cb\u003ea\u003c/b\u003e head ; and what is that after all ! The people of the United Kingdom pay above&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "XA1CN22onEgC",
+      "etag": "WGcXpyV49Zg",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/XA1CN22onEgC",
+      "volumeInfo": {
+        "title": "A Shaker's Answer to the Oft-repeated Question, \"What Would Become of the World If All Should Become Shakers?\"",
+        "authors": [
+          "Richard W. Pelham"
+        ],
+        "publishedDate": "1874",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:69015000001103"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 36,
+        "printType": "BOOK",
+        "categories": [
+          "Celibacy"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.6.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=XA1CN22onEgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=XA1CN22onEgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=XA1CN22onEgC&pg=PA13&dq=a&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=XA1CN22onEgC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=XA1CN22onEgC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=XA1CN22onEgC&rdid=book-XA1CN22onEgC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/A_Shaker_s_Answer_to_the_Oft_repeated_Qu.epub?id=XA1CN22onEgC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=XA1CN22onEgC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e trap , to save its life . Jesus and Nature teach men to act on \u003cb\u003ea\u003c/b\u003e similar principle ; but these acts are not violations of Nature , for they accord with her highest man- dates . The power to live \u003cb\u003ea\u003c/b\u003e holy inner and outer life of strict&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "SxME5j7U4QEC",
+      "etag": "h0r2xbw95Bs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/SxME5j7U4QEC",
+      "volumeInfo": {
+        "title": "French-English and English-French Dictionary, Comprising All the Improvements of the Latest London and Paris Editions, with the Pronunciation of Each Word, According to the Dictionary of the Abbé Tardy",
+        "authors": [
+          "Abel Boyer"
+        ],
+        "publishedDate": "1881",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UIUC:30112088352577"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 798,
+        "printType": "BOOK",
+        "categories": [
+          "English language"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.5.7.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=SxME5j7U4QEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=SxME5j7U4QEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=SxME5j7U4QEC&pg=PA38&dq=a&hl=&cd=5&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=SxME5j7U4QEC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=SxME5j7U4QEC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=SxME5j7U4QEC&rdid=book-SxME5j7U4QEC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/French_English_and_English_French_Dictio.epub?id=SxME5j7U4QEC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=SxME5j7U4QEC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e . to cut out wood for sale . || ( of \u003cb\u003ea\u003c/b\u003e married woman , ) friend , lover . Ami AMENDABLE , \u003cb\u003eå\u003c/b\u003e - men - dabl , adj . finable al bose , båt : jeûne , même , beurre : : so , mendable ... \u003cb\u003ea\u003c/b\u003e baptistry . ANABAPTISTE , \u003cb\u003eå\u003c/b\u003e - na - ba - 38 AMO AMI."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "a-xOnCp-3noC",
+      "etag": "kIhQrGfi1IE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/a-xOnCp-3noC",
+      "volumeInfo": {
+        "title": "Free Trade in Land ... With a reprint of the ... pamphlet published by the Anti-Corn-Law League “The Constituional right to a revision of the Land Tax” ... Second edition",
+        "authors": [
+          "James Beal"
+        ],
+        "publishedDate": "1876",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BL:A0022108572"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 180,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.7.7.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=a-xOnCp-3noC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=a-xOnCp-3noC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=a-xOnCp-3noC&pg=RA1-PA10&dq=a&hl=&cd=6&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=a-xOnCp-3noC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=a-xOnCp-3noC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=a-xOnCp-3noC&rdid=book-a-xOnCp-3noC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Free_Trade_in_Land_With_a_reprint_of_the.epub?id=a-xOnCp-3noC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=a-xOnCp-3noC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e tenure of this kind , \u003cb\u003ea\u003c/b\u003e certain quantity of land , called \u003cb\u003ea\u003c/b\u003e knight&#39;s - fee , was necessary . What the precise quantity in value of land that constituted \u003cb\u003ea\u003c/b\u003e knight&#39;s - fee was , is not clear , there being \u003cb\u003ea\u003c/b\u003e diversity of opinions on&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "gzhD6yRJaqkC",
+      "etag": "gmqcRL0OQKw",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/gzhD6yRJaqkC",
+      "volumeInfo": {
+        "title": "Man mortal: being a reply to Mr. F. W. Grant's “Life and Immortality,” etc",
+        "authors": [
+          "Robert ROBERTS (Christadelphian.)"
+        ],
+        "publishedDate": "1875",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BL:A0022673926"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 130,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.5.7.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=gzhD6yRJaqkC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=gzhD6yRJaqkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=gzhD6yRJaqkC&pg=PA104&dq=a&hl=&cd=7&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=gzhD6yRJaqkC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=gzhD6yRJaqkC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=gzhD6yRJaqkC&rdid=book-gzhD6yRJaqkC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Man_mortal_being_a_reply_to_Mr_F_W_Grant.epub?id=gzhD6yRJaqkC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=gzhD6yRJaqkC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e symbol ; for consider the objects with which it is associated : \u003cb\u003ea\u003c/b\u003e personage on horseback , with \u003cb\u003ea\u003c/b\u003e sword in his mouth , and \u003cb\u003ea\u003c/b\u003e garment wet with blood ; \u003cb\u003ea\u003c/b\u003e beast , \u003cb\u003ea\u003c/b\u003e false prophet and an image . Surely Mr. Grant would never claim \u003cb\u003ea\u003c/b\u003e&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "yFAB3dJ3HHgC",
+      "etag": "UBSmcNXQbn4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/yFAB3dJ3HHgC",
+      "volumeInfo": {
+        "title": "Rational Theology. A lecture, etc",
+        "authors": [
+          "Francis Reginald Statham"
+        ],
+        "publishedDate": "1872",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BL:A0021970424"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 20,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.6.6.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=yFAB3dJ3HHgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=yFAB3dJ3HHgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=yFAB3dJ3HHgC&pg=PA13&dq=a&hl=&cd=8&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=yFAB3dJ3HHgC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=yFAB3dJ3HHgC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=yFAB3dJ3HHgC&rdid=book-yFAB3dJ3HHgC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Rational_Theology_A_lecture_etc.epub?id=yFAB3dJ3HHgC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=yFAB3dJ3HHgC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e com- promise as is pointed at in the expression &quot; Rational Theology &quot; was not only impossible , but dangerous also . Why dangerous ? Let me make this clear by reference to \u003cb\u003ea\u003c/b\u003e known instance of an attempt at such compromise . \u003cb\u003eA\u003c/b\u003e few&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "YM_21yyfPNUC",
+      "etag": "1EwqPCgXVp4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/YM_21yyfPNUC",
+      "volumeInfo": {
+        "title": "Jesus versus Christianity. By a Cantab",
+        "authors": [
+          "CANTAB."
+        ],
+        "publishedDate": "1873",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BL:A0022696523"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 34,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.6.7.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=YM_21yyfPNUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=YM_21yyfPNUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=YM_21yyfPNUC&pg=PA7&dq=a&hl=&cd=9&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=YM_21yyfPNUC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=YM_21yyfPNUC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=YM_21yyfPNUC&rdid=book-YM_21yyfPNUC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Jesus_versus_Christianity_By_a_Cantab.epub?id=YM_21yyfPNUC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=YM_21yyfPNUC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e heart of good in it , \u003cb\u003ea\u003c/b\u003e red republican in France , an itinerant lecturer on the rights of man in England , and finally trampled to death by conservative roughs , hounded on by dignitaries of the Established Church . Confident that&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "xbVE3PulfKkC",
+      "etag": "FuoUlXZsqCc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/xbVE3PulfKkC",
+      "volumeInfo": {
+        "title": "Morning and Evening Sacrifice: a handbook for domestic worship",
+        "authors": [
+          "James Dickerson DAVIES"
+        ],
+        "publishedDate": "1871",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BL:A0021939451"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 72,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.6.6.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=xbVE3PulfKkC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=xbVE3PulfKkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=xbVE3PulfKkC&pg=PA3&dq=a&hl=&cd=10&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=xbVE3PulfKkC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=xbVE3PulfKkC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=xbVE3PulfKkC&rdid=book-xbVE3PulfKkC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/Morning_and_Evening_Sacrifice_a_handbook.epub?id=xbVE3PulfKkC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=xbVE3PulfKkC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e portion for each domestic service as shall embrace \u003cb\u003ea\u003c/b\u003e com- plete paragraph , while such passages only are omitted as are uninteresting or unsuitable in the family circle . The course of Bible reading here marked out may be commenced at&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "Bj-be5_C5NAC",
+      "etag": "i26U1ZANckM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/Bj-be5_C5NAC",
+      "volumeInfo": {
+        "title": "The Sacred Heart: a Correspondence Between ... Archbishop Manning, D.D., and the Rev. A. Nicholson, LL.D., as it Appeared in the “Guardian” Newspaper, Sept. 17th. With Notes for English Readers ... Second Edition",
+        "authors": [
+          "Henry Edward Manning"
+        ],
+        "publishedDate": "1873",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BL:A0022013016"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 40,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.5.6.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=Bj-be5_C5NAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=Bj-be5_C5NAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=Bj-be5_C5NAC&pg=PA20&dq=a&hl=&cd=11&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=Bj-be5_C5NAC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Bj-be5_C5NAC"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=Bj-be5_C5NAC&rdid=book-Bj-be5_C5NAC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.pl/books/download/The_Sacred_Heart_a_Correspondence_Betwee.epub?id=Bj-be5_C5NAC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=Bj-be5_C5NAC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ea\u003c/b\u003e matter of this great importance . It will be received , I trust , in good part , as I shall accept the like directness . If \u003cb\u003ea\u003c/b\u003e word has escaped my pen stronger than is necessary for the refuta- tion of error , I should sincerely regret&nbsp;..."
+      }
+    }
+  ]
+}
