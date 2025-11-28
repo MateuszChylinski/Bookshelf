@@ -4,8 +4,6 @@ import com.example.bookshelf.Components.RandomIndexGenerator;
 import com.example.bookshelf.Model.Book;
 import com.example.bookshelf.Model.BooksWrapper;
 import com.example.bookshelf.Utility.BookUtility;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
@@ -16,16 +14,23 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class BookService {
 
-    @Value("${books.api_key}")
-    private String apikey;
-    @Value("${books.api_base_url}")
-    private String baseUrl;
-
+    private final String apikey;
+    private final String baseUrl;
     private final RestClient restClient;
     private final RandomIndexGenerator indexGenerator;
+
+    public BookService(
+            @Value("${books.api_key}") String apikey,
+            @Value("${books.api_base_url}") String baseUrl,
+            RestClient restClient,
+            RandomIndexGenerator indexGenerator) {
+        this.apikey = apikey;
+        this.baseUrl = baseUrl;
+        this.restClient = restClient;
+        this.indexGenerator = indexGenerator;
+    }
 
     /**
      * Retrieve value entered into top navigation bar, and make an api call with it
@@ -38,18 +43,21 @@ public class BookService {
         URI uri = UriComponentsBuilder
                 .fromUriString(baseUrl)
                 .queryParam("q", userQuery)
+                .queryParam("key", apikey)
                 .encode()
                 .build().toUri();
 
-        BooksWrapper booksWrapper = restClient.get()
+        BooksWrapper wrapper = restClient.get()
                 .uri(uri)
                 .retrieve()
                 .body(BooksWrapper.class);
 
-        if (booksWrapper != null) {
-            BookUtility.changeListOfUrls(Collections.singletonList(booksWrapper));
+        if (wrapper == null || wrapper.getBookItems() == null || wrapper.getBookItems().isEmpty()) {
+            return List.of();
         }
-        return booksWrapper != null ? booksWrapper.getBookItems() : List.of();
+
+        BookUtility.changeListOfUrls(Collections.singletonList(wrapper));
+        return wrapper.getBookItems();
     }
     // TODO Add enum with categories to the database, to allow randomness
 
@@ -77,11 +85,13 @@ public class BookService {
                 .body(BooksWrapper.class);
 
 
-        if (wrapper != null) {
-            BookUtility.changeListOfUrls(Collections.singletonList(wrapper));
+        if (wrapper == null || wrapper.getBookItems() == null || wrapper.getBookItems().isEmpty()) {
+            return List.of();
         }
 
-        return wrapper != null ? wrapper.getBookItems() : List.of();
+        BookUtility.changeListOfUrls(Collections.singletonList(wrapper));
+
+        return wrapper.getBookItems();
     }
 
 
@@ -97,6 +107,7 @@ public class BookService {
         URI uri = UriComponentsBuilder
                 .fromUriString(baseUrl)
                 .path("/{id}")
+                .queryParam("key", apikey)
                 .encode()
                 .buildAndExpand(id).toUri();
 
@@ -105,9 +116,11 @@ public class BookService {
                 .retrieve()
                 .body(Book.class);
 
-        if (book != null) {
-            BookUtility.changeObjectUrl(book);
+        if (book == null || book.getVolumeInfo() == null) {
+            return new Book();
         }
-        return book != null ? book : new Book();
+        BookUtility.changeObjectUrl(book);
+
+        return book;
     }
 }

@@ -14,7 +14,7 @@ public class UserQueryController {
     private BookService bookService;
 
     @GetMapping("/books/search")
-    public String searchForQueryBooks(@RequestParam String providedQuery, Model model) {
+    public String searchForQueryBooks(@RequestParam("q") String providedQuery, Model model) {
         model.addAttribute("results", bookService.getBooksForUserQueryQuickSearch(providedQuery));
         return "/fragments/userQueryFragment";
     }

@@ -3,90 +3,39 @@ package com.example.bookshelf.Controller;
 import com.example.bookshelf.Model.Book;
 import com.example.bookshelf.Model.ErrorModels.ErrorMapper;
 import com.example.bookshelf.Service.BookService;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.bookshelf.util.TestUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.web.client.HttpClientErrorException;
-
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.stream.Stream;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @TestPropertySource("/application.properties")
 @WebMvcTest(DetailsController.class)
-@AutoConfigureMockMvc
 public class DetailedControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
     @MockitoBean
     private BookService mockService;
-    @Autowired
-    private ObjectMapper objectMapper;
 
-    private String loadJsonFromResource(String pathToFile) throws IOException {
-        Resource resource = new ClassPathResource(pathToFile);
-        return new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-    }
-
-    private <T> T loadAndMapJsonFile(String pathToFile, Class<T> tClass) throws IOException {
-        String json = loadJsonFromResource(pathToFile);
-        return objectMapper.readValue(json, tClass);
-    }
-
-    private HttpClientErrorException createHttpException(HttpStatus httpStatus, String message, String json) {
-        return HttpClientErrorException.create(
-                httpStatus, message, HttpHeaders.EMPTY,
-                json.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8
-        );
-    }
-
-    private static Stream<Arguments> errorScenarios() {
-        return Stream.of(
-                Arguments.of("jsonResponses/global/globalBadApiKey.json",
-                        HttpStatus.BAD_REQUEST,
-                        "API key not valid. Please pass a valid API key."),
-
-                Arguments.of("jsonResponses/global/globalRateLimitExceededExample.json",
-                        HttpStatus.TOO_MANY_REQUESTS, "Rate Limit Exceeded"),
-
-                Arguments.of("jsonResponses/global/globalMissingQuery.json",
-                        HttpStatus.BAD_REQUEST, "Missing query."),
-                Arguments.of(
-                        "jsonResponses/global/globalRequiredParameterQ.json",
-                        HttpStatus.BAD_REQUEST, "Required parameter: q"
-                ),
-                Arguments.of(
-                        "jsonResponses/global/globalServiceTemporarilyUnavailable.json",
-                        HttpStatus.SERVICE_UNAVAILABLE, "Service temporarily unavailable.")
-        );
-    }
-
-    // parameterize error tests
+    // get book details | parameterize error tests
     @WithMockUser
     @ParameterizedTest
-    @MethodSource("errorScenarios")
+    @MethodSource("com.example.bookshelf.util.TestUtils#errorScenarios")
     void getDetailedBook_handleErrorScenarios(String json, HttpStatus httpStatus, String message) throws Exception {
-        ErrorMapper errorMapper = loadAndMapJsonFile(json, ErrorMapper.class);
+        ErrorMapper errorMapper = TestUtils.loadJson(json, ErrorMapper.class);
 
-        when(mockService.getBookDetails("id")).thenThrow(createHttpException(httpStatus, message, errorMapper.getError().getMessage()
+        when(mockService.getBookDetails("id")).thenThrow(TestUtils.createHttpException(httpStatus, message, errorMapper.getError().getMessage()
         ));
 
         mockMvc.perform(MockMvcRequestBuilders.get("/books/details/{id}", "id"))
@@ -95,11 +44,11 @@ public class DetailedControllerTest {
                 .andExpect(model().attribute("globalExceptionHandlerMessage", httpStatus.value() + " " + errorMapper.getError().getMessage()));
     }
 
-    // make a proper call
+    // get book details | make a proper call
     @WithMockUser
     @Test
-    void getDetailedBook_shouldReturnProperCall() throws Exception {
-        Book book = loadAndMapJsonFile(
+    void getDetailedBook_shouldReturnDetailedBook() throws Exception {
+        Book book = TestUtils.loadJson(
                 "jsonResponses/getBookDetail/getBookDetailsProperCall.json",
                 Book.class);
 
@@ -111,35 +60,12 @@ public class DetailedControllerTest {
                 .andExpect(view().name("/bookDetails"))
                 .andExpect(model().attribute("bookDetails", book));
     }
+
+    // get book details | reject unauthorized user
+    @Test
+    void getDetailedBook_shouldRejectUnauthorizedUser() throws Exception{
+        mockMvc.perform(MockMvcRequestBuilders
+                .get("/books/details/{id}", "testId"))
+                .andExpect(status().isUnauthorized());
+    }
 }
-
-//    @Test
-//    @WithMockUser
-//    void getBookDetails_shouldReturnDetailedBook() throws Exception {
-//        String response = loadJsonFromResource(
-//                "jsonResponses/getBookDetail/getBookDetailsProperCall.json"
-//        );
-//
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        Book book = objectMapper.readValue(response, Book.class);
-//
-//        when(mockService.getBookDetails("zyTCAlFPjgYC")).thenReturn(book);
-//
-//        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
-//                        .get("/books/details/{id}", "zyTCAlFPjgYC"))
-//                .andExpect(status().isOk())
-//                .andExpect(view().name("/bookDetails"))
-//                .andExpect(model().attribute("bookDetails", book))
-//                .andReturn();
-//
-//        ModelAndView modelAndView = mvcResult.getModelAndView();
-//        Assertions.assertNotNull(modelAndView);
-//    }
-//
-
-
-
-
-// TODO ADD TO PARAMETRIZED getRandomBooks_shouldReturnInvalidStartingIndex
-//getRandomBooks_shouldReturnMissingParameterQException
-
