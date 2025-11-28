@@ -40,7 +40,7 @@ public class DetailedControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/books/details/{id}", "id"))
                 .andExpect(status().is(httpStatus.value()))
-                .andExpect(view().name("/error"))
+                .andExpect(view().name("error"))
                 .andExpect(model().attribute("globalExceptionHandlerMessage", httpStatus.value() + " " + errorMapper.getError().getMessage()));
     }
 
@@ -57,7 +57,7 @@ public class DetailedControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/books/details/{id}", "testId"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/bookDetails"))
+                .andExpect(view().name("bookDetails"))
                 .andExpect(model().attribute("bookDetails", book));
     }
 

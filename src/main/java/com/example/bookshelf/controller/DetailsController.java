@@ -22,6 +22,6 @@ public class DetailsController {
             @PathVariable("id") String bookId,
             Model model) {
         model.addAttribute("bookDetails", service.getBookDetails(bookId));
-        return "/bookDetails";
+        return "bookDetails";
     }
 }

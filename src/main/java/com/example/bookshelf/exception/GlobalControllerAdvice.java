@@ -6,17 +6,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpStatusCodeException;
 
 @ControllerAdvice
 public class GlobalControllerAdvice {
 
     @ExceptionHandler(HttpStatusCodeException.class)
-    public String handleHttpClientError(HttpClientErrorException httpClientErrorException, Model model, HttpServletResponse response) {
-        response.setStatus(httpClientErrorException.getStatusCode().value());
-        model.addAttribute("globalExceptionHandlerMessage", httpClientErrorException.getMessage());
-        return "/error";
+    public String handleHttpClientError(HttpStatusCodeException exception, Model model, HttpServletResponse response) {
+        response.setStatus(exception.getStatusCode().value());
+        model.addAttribute("globalExceptionHandlerMessage", exception.getMessage());
+        return "error";
     }
 
     @ModelAttribute("userTopNavbarQuery")

@@ -96,7 +96,7 @@ public class UserQueryControllerTest {
                         .get("/books/search")
                         .param("q", "userQuery"))
                 .andExpect(status().is(httpStatus.value()))
-                .andExpect(view().name("/error"))
+                .andExpect(view().name("error"))
                 .andExpect(model().attribute("globalExceptionHandlerMessage", httpStatus.value() + " " + errorMapper.getError().getMessage()));
     }
 

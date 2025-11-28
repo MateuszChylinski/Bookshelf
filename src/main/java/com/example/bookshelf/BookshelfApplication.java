@@ -9,6 +9,3 @@ public class BookshelfApplication {
         SpringApplication.run(BookshelfApplication.class, args);
     }
 }
-// TODO search bar issue
-// Required request parameter 'q' for method parameter type
-// String is not present

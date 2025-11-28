@@ -31,7 +31,7 @@ public class BookServiceTest {
     @Mock
     private RandomIndexGenerator indexGenerator;
 
-    private static MockWebServer mockWebServer;
+    private MockWebServer mockWebServer;
     private BookService service;
 
     @BeforeEach

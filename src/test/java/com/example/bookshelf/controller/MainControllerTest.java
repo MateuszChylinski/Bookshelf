@@ -46,7 +46,7 @@ public class MainControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/index"))
+                .andExpect(view().name("index"))
                 .andExpect(model().attribute("randomBooks", booksMapper.getBookItems()));
     }
 
@@ -66,7 +66,7 @@ public class MainControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().is(httpStatus.value()))
-                .andExpect(view().name("/error"))
+                .andExpect(view().name("error"))
                 .andExpect(model().attribute("globalExceptionHandlerMessage", httpStatus.value() + " " + errorMapper.getError().getMessage()));
     }
 
@@ -88,7 +88,7 @@ public class MainControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/getBooks"))
                 .andExpect(status().isBadRequest())
-                .andExpect(view().name("/error"))
+                .andExpect(view().name("error"))
                 .andExpect(model().attribute("globalExceptionHandlerMessage", invalidStartingIndex.getStatusCode().value() + " " + errorMapper.getError().getMessage()));
     }
 
@@ -101,7 +101,7 @@ public class MainControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(view().name("/index"))
+                .andExpect(view().name("index"))
                 .andExpect(model().attribute("randomBooks", Collections.emptyList()));
     }
 
@@ -120,7 +120,7 @@ public class MainControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/index"))
+                .andExpect(view().name("index"))
                 .andExpect(model().attribute("randomBooks", booksMapper.getBookItems()));
     }
 
@@ -137,7 +137,7 @@ public class MainControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/getBooks"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/index"))
+                .andExpect(view().name("index"))
                 .andExpect(model().attribute("randomBooks", booksMapper.getBookItems()));
     }
 

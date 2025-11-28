@@ -4,7 +4,6 @@ import com.example.bookshelf.components.RandomIndexGenerator;
 import com.example.bookshelf.model.Book;
 import com.example.bookshelf.model.BooksMapper;
 import com.example.bookshelf.utility.BookUtility;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
@@ -32,7 +31,6 @@ public class BookService {
         this.indexGenerator = indexGenerator;
     }
 
-    @NotNull
     private List<Book> getBooks(URI uri) {
         BooksMapper wrapper = restClient.get()
                 .uri(uri)

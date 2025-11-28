@@ -16,9 +16,9 @@ public class MainController {
         this.service = service;
     }
 
-    @RequestMapping(value = "/getBooks", method = RequestMethod.GET)
+    @GetMapping(value = "/getBooks")
     public String getRandomBooks(Model model) {
         model.addAttribute("randomBooks", service.getRandomBooks());
-        return "/index";
+        return "index";
     }
 }
