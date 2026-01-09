@@ -1,4 +1,4 @@
-package com.example.bookshelf.model;
+package com.example.bookshelf.model.rest;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;

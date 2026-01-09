@@ -1,4 +1,4 @@
-package com.example.bookshelf.model;
+package com.example.bookshelf.model.rest;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

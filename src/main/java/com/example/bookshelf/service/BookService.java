@@ -1,8 +1,8 @@
 package com.example.bookshelf.service;
 
 import com.example.bookshelf.components.RandomIndexGenerator;
-import com.example.bookshelf.model.Book;
-import com.example.bookshelf.model.BooksMapper;
+import com.example.bookshelf.model.rest.Book;
+import com.example.bookshelf.model.rest.BooksMapper;
 import com.example.bookshelf.utility.BookUtility;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

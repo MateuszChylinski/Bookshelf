@@ -1,6 +1,6 @@
 package com.example.bookshelf.utility;
 
-import com.example.bookshelf.model.Book;
+import com.example.bookshelf.model.rest.Book;
 
 public class BookUtility {
 

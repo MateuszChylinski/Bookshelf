@@ -1,7 +1,7 @@
 package com.example.bookshelf.service;
 
 import com.example.bookshelf.components.RandomIndexGenerator;
-import com.example.bookshelf.model.Book;
+import com.example.bookshelf.model.rest.Book;
 import com.example.bookshelf.util.TestUtils;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;

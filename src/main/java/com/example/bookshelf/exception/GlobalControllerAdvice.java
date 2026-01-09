@@ -1,6 +1,6 @@
 package com.example.bookshelf.exception;
 
-import com.example.bookshelf.model.UserQuery;
+import com.example.bookshelf.model.rest.UserQuery;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;

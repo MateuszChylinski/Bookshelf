@@ -1,6 +1,6 @@
 package com.example.bookshelf.controller;
 
-import com.example.bookshelf.model.Book;
+import com.example.bookshelf.model.rest.Book;
 import com.example.bookshelf.model.error.ErrorMapper;
 import com.example.bookshelf.service.BookService;
 import com.example.bookshelf.util.TestUtils;
