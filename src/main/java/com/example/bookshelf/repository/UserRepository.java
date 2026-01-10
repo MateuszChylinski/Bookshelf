@@ -3,4 +3,10 @@ package com.example.bookshelf.repository;
 import com.example.bookshelf.model.entities.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<Users, Integer> {}
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<Users, Integer> {
+    Users findByUsername(String username);
+
+    Optional<Users> findByEmail(String email);
+}
