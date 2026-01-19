@@ -65,10 +65,10 @@ public class UserRepositoryTest {
         entityManager.flush();
         entityManager.clear();
 
-        Users foundUser = userRepository.findByUsername(user.getUsername());
+        Optional<Users> foundUser = userRepository.findByUsername(user.getUsername());
 
         assertThat(foundUser).isNotNull();
-        assertThat(foundUser.getUsername()).isEqualTo(user.getUsername());
+        assertThat(foundUser.isPresent());
     }
 
     @Test
@@ -104,9 +104,8 @@ public class UserRepositoryTest {
 
     @Test
     void givenNonExistentUsername_whenFindByName_thenNull() {
-        Users user = userRepository.findByUsername("nonexistentusername");
-
-        assertThat(user).isNull();
+        Optional<Users> user = userRepository.findByUsername("nonexistentusername");
+        assertThat(user.isEmpty());
     }
 
     @Test

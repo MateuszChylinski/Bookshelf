@@ -1,6 +1,6 @@
 package com.example.bookshelf.controller;
 
-import com.example.bookshelf.service.BookService;
+import com.example.bookshelf.service.rest.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package com.example.bookshelf.service;
+package com.example.bookshelf.service.rest;
 
 import com.example.bookshelf.components.RandomIndexGenerator;
 import com.example.bookshelf.model.rest.Book;

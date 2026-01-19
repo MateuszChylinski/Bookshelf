@@ -8,6 +8,8 @@
 		<version>3.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+
 	<groupId>com.example</groupId>
 	<artifactId>bookshelf</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -27,7 +29,9 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>25</java.version>
+        <tomcat.version>10.1.47</tomcat.version>
+        <logback.version>1.5.19</logback.version>
 	</properties>
     <dependencies>
         		<dependency>
@@ -112,6 +116,14 @@
                         -javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito.version}/mockito-core-${mockito.version}.jar
                         -Xshare:off
                     </argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>25</source>
+                    <target>25</target>
                 </configuration>
             </plugin>
         </plugins>

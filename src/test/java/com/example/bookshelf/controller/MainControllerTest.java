@@ -2,7 +2,7 @@ package com.example.bookshelf.controller;
 
 import com.example.bookshelf.model.rest.BooksMapper;
 import com.example.bookshelf.model.error.ErrorMapper;
-import com.example.bookshelf.service.BookService;
+import com.example.bookshelf.service.rest.BookService;
 import com.example.bookshelf.util.TestUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
