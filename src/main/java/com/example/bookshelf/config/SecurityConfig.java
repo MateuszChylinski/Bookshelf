@@ -1,6 +1,6 @@
 package com.example.bookshelf.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,15 +11,11 @@ import org.springframework.security.core.userdetails.*;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@AllArgsConstructor
 public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
     private final PasswordEncoderConfig passwordEncoderConfig;
-
-    public SecurityConfig(UserDetailsService userDetailsService, PasswordEncoderConfig passwordEncoderConfig) {
-        this.userDetailsService = userDetailsService;
-        this.passwordEncoderConfig = passwordEncoderConfig;
-    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
