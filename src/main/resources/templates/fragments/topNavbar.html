@@ -11,11 +11,16 @@
         <div class="d-flex align-items-center">
             <p class=" mb-0 text-center me-3 mt-1">Specific query</p>
 
-            <form class="d-flex" th:action="@{/books/search}" method="get">
+            <form class="d-flex" th:action="@{/books/search}" method="post">
 
-                <input th:field="${userTopNavbarQuery.providedQuery}" class="form-control d-flex me-2 mt-1" type="text"
+                <input name="q"
+                       th:field="${userTopNavbarQuery.q}"
+                       class="form-control d-flex me-2 mt-1"
+                       type="text"
                        placeholder="Search"
-                       aria-label="Search" required>
+                       aria-label="Search"
+                       required
+                       pattern=".*\S+.*">
                 <button class="btn btn-outline-success mt-1" type="submit">Search</button>
             </form>
         </div>

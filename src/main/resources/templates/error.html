@@ -8,7 +8,12 @@
     <title>Title</title>
 </head>
 <body>
-<h1>error</h1>
-<p th:text="${globalExceptionHandlerMessage}"></p>
+<h1>We have a problem...</h1>
+
+<div th:each="error: ${customError}">
+    <p th:text = "'key: ' + ${error.key}"></p>
+    <p th:text = "'value: ' + ${error.value}"></p>
+</div>
+
 </body>
 </html>
