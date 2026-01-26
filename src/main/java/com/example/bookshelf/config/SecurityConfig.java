@@ -25,14 +25,14 @@ public class SecurityConfig {
                         .requestMatchers("/getBooks").permitAll()
                         .requestMatchers("/books/search").permitAll()
                         .requestMatchers("/books/details/{id}").permitAll()
+                        .requestMatchers("/error").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
-                                .loginPage("/login")
-                                .loginProcessingUrl("/login")
-                                .defaultSuccessUrl("/getBooks", true)
-//                .failureUrl() // todo
-//                .failureHandler() // todo
+                        .loginPage("/login")
+                        .loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/myaccount", true)
+                        .failureUrl("/login?error=true")
                 )
                 .logout(logout -> logout
                         .logoutSuccessUrl("/getBooks")

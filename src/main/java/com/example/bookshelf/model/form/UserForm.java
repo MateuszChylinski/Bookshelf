@@ -1,5 +1,7 @@
 package com.example.bookshelf.model.form;
 
+import com.example.bookshelf.annotations.UniqueEmail;
+import com.example.bookshelf.annotations.UniqueUsername;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -10,9 +12,10 @@ import lombok.*;
 @AllArgsConstructor
 @Data
 @Builder
-public class RegistrationForm {
+public class UserForm {
     @NotBlank(message = "Username cannot be empty")
     @Size(min = 5, max = 15, message = "Username needs to be 5-15 characters")
+    @UniqueUsername
     private String username;
 
     @NotBlank(message = "Password cannot be empty")
@@ -23,6 +26,7 @@ public class RegistrationForm {
     @NotBlank(message = "Email cannot be empty")
     @Email(message = "Please provide a valid email address")
     @Size(max = 254, message = "Email is too long")
+    @UniqueEmail
     private String email;
 }
 

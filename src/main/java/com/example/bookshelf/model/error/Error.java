@@ -2,17 +2,12 @@ package com.example.bookshelf.model.error;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
 @NoArgsConstructor
-@ToString
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Error {
     private int code;

@@ -9,6 +9,11 @@
 </head>
 <body>
 <h1>We have a problem...</h1>
-<p th:text="${globalExceptionHandlerMessage}"></p>
+
+<div th:each="error: ${customError}">
+    <p th:text = "'key: ' + ${error.key}"></p>
+    <p th:text = "'value: ' + ${error.value}"></p>
+</div>
+
 </body>
 </html>

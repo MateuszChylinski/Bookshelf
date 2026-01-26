@@ -2,9 +2,7 @@ package com.example.bookshelf.controller;
 
 import com.example.bookshelf.model.entities.Users;
 import com.example.bookshelf.model.form.UserForm;
-import com.example.bookshelf.service.database.UserService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,29 +11,23 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@AllArgsConstructor
-public class RegisterController {
+public class LoginController {
 
-    private final UserService userService;
-
-    @GetMapping("/register")
+    @GetMapping("/login")
     public String createUserObject(Model model) {
-        model.addAttribute("registerUser", new Users());
-        return "register";
+        model.addAttribute("loginUser", new Users());
+        return "login";
     }
 
-        @PostMapping("/register")
-    public String createNewAccount(
+    @PostMapping("/login")
+    public String sendCredentials(
             @Valid @ModelAttribute UserForm userForm,
-            BindingResult bindingResult
-    ) {
-        if (bindingResult.hasErrors()) {
-            return "index";
-        }
-        userService.registerNewAccount(userForm);
+            BindingResult bindingResult) {
 
-        // todo
+        if (bindingResult.hasErrors()){
+            return "error";
+        }
+
         return "index";
     }
 }
-
