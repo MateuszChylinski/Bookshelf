@@ -1,6 +1,5 @@
 package com.example.bookshelf.controller;
 
-import com.example.bookshelf.model.entities.Users;
 import com.example.bookshelf.model.form.UserForm;
 import com.example.bookshelf.service.database.UserService;
 import jakarta.validation.Valid;
@@ -20,22 +19,20 @@ public class RegisterController {
 
     @GetMapping("/register")
     public String createUserObject(Model model) {
-        model.addAttribute("registerUser", new Users());
+        model.addAttribute("registerUser", new UserForm());
         return "register";
     }
 
-        @PostMapping("/register")
+    @PostMapping("/register")
     public String createNewAccount(
             @Valid @ModelAttribute UserForm userForm,
             BindingResult bindingResult
     ) {
         if (bindingResult.hasErrors()) {
-            return "index";
+            return "error";
         }
         userService.registerNewAccount(userForm);
-
-        // todo
-        return "index";
+        return "redirect:/login";
     }
 }
 

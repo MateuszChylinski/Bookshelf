@@ -1,6 +1,6 @@
 package com.example.bookshelf.controller;
 
-import com.example.bookshelf.model.entities.Users;
+import com.example.bookshelf.model.entities.User;
 import com.example.bookshelf.model.form.UserForm;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public String createUserObject(Model model) {
-        model.addAttribute("loginUser", new Users());
+        model.addAttribute("loginUser", new User());
         return "login";
     }
 

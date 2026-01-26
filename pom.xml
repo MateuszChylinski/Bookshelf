@@ -31,7 +31,7 @@
 	<properties>
 		<java.version>25</java.version>
         <tomcat.version>10.1.47</tomcat.version>
-        <logback.version>1.5.19</logback.version>
+        <logback.version>1.5.26</logback.version>
 	</properties>
     <dependencies>
         		<dependency>
@@ -41,13 +41,13 @@
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
-            <version>5.0.0-alpha.12</version>
+            <version>5.3.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>mockwebserver</artifactId>
-            <version>5.0.0-alpha.12</version>
+            <version>5.3.2</version>
             <scope>test</scope>
         </dependency>
 

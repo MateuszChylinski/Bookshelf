@@ -1,6 +1,6 @@
 package com.example.bookshelf.database;
 
-import com.example.bookshelf.model.entities.Users;
+import com.example.bookshelf.model.entities.User;
 import com.example.bookshelf.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,11 +23,11 @@ public class UserRepositoryTest {
     public UserRepository userRepository;
     @Autowired
     public TestEntityManager entityManager;
-    private Users user;
+    private User user;
 
     @BeforeEach
     void prepareUserObject() {
-        user = Users.builder()
+        user = User.builder()
                 .username("username")
                 .password("password")
                 .email("email")
@@ -36,11 +36,11 @@ public class UserRepositoryTest {
 
     @Test
     void givenNewUser_whenSave_thenSuccess() {
-        Users insertedUser = userRepository.save(user);
+        User insertedUser = userRepository.save(user);
         entityManager.flush();
         entityManager.clear();
 
-        assertThat(entityManager.find(Users.class, insertedUser.getUserId())).isEqualTo(
+        assertThat(entityManager.find(User.class, insertedUser.getUserId())).isEqualTo(
                 user
         );
     }
@@ -56,7 +56,7 @@ public class UserRepositoryTest {
         entityManager.clear();
 
 
-        assertThat(entityManager.find(Users.class, user.getUserId()).getUsername()).isEqualTo(newUsername);
+        assertThat(entityManager.find(User.class, user.getUserId()).getUsername()).isEqualTo(newUsername);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class UserRepositoryTest {
         entityManager.flush();
         entityManager.clear();
 
-        Optional<Users> foundUser = userRepository.findByUsername(user.getUsername());
+        Optional<User> foundUser = userRepository.findByUsername(user.getUsername());
 
         assertThat(foundUser).isNotNull();
         assertThat(foundUser.isPresent());
@@ -77,7 +77,7 @@ public class UserRepositoryTest {
         entityManager.flush();
         entityManager.clear();
 
-        Optional<Users> foundUser = userRepository.findByEmail(user.getEmail());
+        Optional<User> foundUser = userRepository.findByEmail(user.getEmail());
 
         assertThat(foundUser).isPresent();
         assertThat(foundUser.get().getEmail()).isEqualTo(user.getEmail());
@@ -97,20 +97,20 @@ public class UserRepositoryTest {
 
     @Test
     void givenNoUser_whenFindById_thenEmpty() {
-        Optional<Users> user = userRepository.findById(123);
+        Optional<User> user = userRepository.findById(123);
 
         assertThat(user).isEmpty();
     }
 
     @Test
     void givenNonExistentUsername_whenFindByName_thenNull() {
-        Optional<Users> user = userRepository.findByUsername("nonexistentusername");
+        Optional<User> user = userRepository.findByUsername("nonexistentusername");
         assertThat(user.isEmpty());
     }
 
     @Test
     void givenNonExistentUserEmail_whenFindByEmail_thenEmpty() {
-        Optional<Users> user = userRepository.findByEmail("nonexistentemail@abc.com");
+        Optional<User> user = userRepository.findByEmail("nonexistentemail@abc.com");
 
         assertThat(user).isEmpty();
     }
@@ -121,7 +121,7 @@ public class UserRepositoryTest {
         entityManager.flush();
         entityManager.clear();
 
-        Users secondUser = Users.builder()
+        User secondUser = User.builder()
                 .username("username2")
                 .password("password2")
                 .email("email")
@@ -140,7 +140,7 @@ public class UserRepositoryTest {
         entityManager.flush();
         entityManager.clear();
 
-        Users secondUser = Users.builder()
+        User secondUser = User.builder()
                 .username("username")
                 .password("password123")
                 .email("email123")

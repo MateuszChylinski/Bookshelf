@@ -1,6 +1,6 @@
 package com.example.bookshelf.controller;
 
-import com.example.bookshelf.model.entities.Users;
+import com.example.bookshelf.model.entities.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -18,7 +18,7 @@ public class UserConsoleController {
 
         if (authenticator != null && authenticator.isAuthenticated()) {
 
-            Users user = new Users();
+            User user = new User();
             user.setUsername(authenticator.getName());
             model.addAttribute("loggedInUser", user);
         }

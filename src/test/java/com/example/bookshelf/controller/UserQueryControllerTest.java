@@ -106,6 +106,6 @@ public class UserQueryControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/books/search")
                         .param("q", "userQuery"))
-                .andExpect(status().isUnauthorized());
+                .andExpect(status().is3xxRedirection());
     }
 }

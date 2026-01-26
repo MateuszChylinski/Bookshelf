@@ -3,30 +3,28 @@ package com.example.bookshelf.model.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
 @NoArgsConstructor
-@ToString
+@AllArgsConstructor
+@Data
+@Builder
 @Entity
 @Table(name = "UserBooks")
 public class UserBooks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private Users users;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
-    private Books books;
+    private Book book;
 
     @Column(columnDefinition = "ENUM('READING', 'FINISHED', 'WANT')")
     @Enumerated(EnumType.STRING)
@@ -39,15 +37,5 @@ public class UserBooks {
     private String notes;
     @Column(name = "added_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime added_at;
-
-    public UserBooks(int id, Users users, Books books, Status status, int rating, String notes, LocalDateTime addedAt) {
-        this.id = id;
-        this.users = users;
-        this.books = books;
-        this.status = status;
-        this.rating = rating;
-        this.notes = notes;
-        this.added_at = addedAt;
-    }
 }
 

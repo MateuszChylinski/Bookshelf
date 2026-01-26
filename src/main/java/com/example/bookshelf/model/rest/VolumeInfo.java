@@ -15,7 +15,8 @@ import java.util.List;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VolumeInfo {
-    private String title, publisher, publishedDate, description, pageCount;
+    private String title, publisher, publishedDate, description;
+    private int pageCount;
     private List<String> authors;
     private ImageLinks imageLinks;
     private List<String> categories;

@@ -8,12 +8,12 @@ import lombok.*;
 @Data
 @Builder
 @Entity
-@Table(name = "Books")
-public class Books {
+@Table(name = "Book")
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int savedBookId;
+    private Integer savedBookId;
     @Column(name = "api_id", unique = true)
     private String apiId;
     @Column(name = "title")
