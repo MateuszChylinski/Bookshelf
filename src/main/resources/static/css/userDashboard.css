@@ -1,0 +1,149 @@
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Syne', serif;
+    font-size: 26px;
+}
+
+p {
+    font-family: 'Syne', serif;
+    font-size: 20px;
+}
+
+
+.body-background {
+    background-color: #f8f9fa;
+}
+
+.primary-text-dark {
+    color: #1e293b;
+}
+
+.secondary-text-light {
+    color: #7a7a9a;
+}
+
+.borders-light {
+    background-color: #e8eaef;
+}
+
+.border-dark {
+    background-color: #2a2a4a;
+}
+
+
+.sidebar-background {
+    background-color: #1e293b;
+    width: 280px;
+    color: white;
+}
+
+.sidebar-accent-dark {
+    color: #f59e0b
+}
+
+.sidebar-accent-light {
+    color: #fbbf24;
+}
+
+
+.top-bar-parent {
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #f8f9fc;
+}
+
+.top-bar-style {
+    height: 56px;
+    border: 2px solid #e8eaef;
+    background-color: #f0f2f7;
+}
+
+.profile-card-style {
+    border: 2px solid #e8eaef;
+    background-color: #f0f2f7;
+    border-radius: 25px;
+
+    height: 180px;
+
+    margin-top: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.profile-card-icon {
+    height: 80px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: #fbbf24;
+}
+
+
+.navigation-card-section-top {
+    width: 250px;
+    margin-left: 10px;
+
+    border: 2px solid #e8eaef;
+    border-radius: 25px;
+
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #1e293b;
+}
+
+.navigation-card-section-top-background {
+    background-color: #f0f2f7;
+    border-radius: 25px 25px 0 0;;
+}
+
+.navigation-card-section-top-text {
+    margin: 12px;
+    padding: 2px;
+}
+
+.navigation-card-section-radio {
+    font-family: 'Syne', serif;
+    font-size: 19px;
+    color: #7a7a9a;
+}
+
+
+.content-card {
+    border: dotted 5px #e8eaef;
+    border-radius: 25px;
+    background-color: #f8f9fa;
+
+    height: 450px;
+    overflow: auto;
+    flex: 1;
+
+    flex-shrink: 0;
+    color: #1e293b;
+    margin-right:10px;
+}
+
+.content-card-top-background {
+    height: 50px;
+    background-color: #f0f2f7;
+    border-radius: 25px 25px 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+.content-card-top-text {
+    padding: 2px;
+    margin-left: 5px;
+}
+
+.content-card-text {
+    font-family: 'Syne', serif;
+    font-size: 19px;
+    color: #7a7a9a;
+    padding: 2px;
+    margin: 15px;
+}

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-public class UserConsoleController {
+public class UserDashboardController {
 
     @GetMapping("/myaccount")
     public String prepareUser(Model model) {
@@ -22,7 +22,6 @@ public class UserConsoleController {
             user.setUsername(authenticator.getName());
             model.addAttribute("loggedInUser", user);
         }
-        return "userConsole";
+        return "userDashboard";
     }
-
 }
