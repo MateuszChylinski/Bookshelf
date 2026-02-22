@@ -2,6 +2,7 @@ package com.example.bookshelf.exception;
 
 import com.example.bookshelf.model.rest.UserQuery;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -21,5 +22,12 @@ public class GlobalControllerAdvice {
     @ModelAttribute("userTopNavbarQuery")
     public UserQuery getUserInput() {
         return new UserQuery();
+    }
+
+    @ExceptionHandler(BookAlreadyInFavoritesException.class)
+    public String handleAlreadyInFavorites(BookAlreadyInFavoritesException exception, Model model, HttpServletResponse response){
+        response.setStatus(HttpStatus.CONFLICT.value());
+        model.addAttribute("globalExceptionHandlerMessage", exception.getMessage());
+        return "error";
     }
 }

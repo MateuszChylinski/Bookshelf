@@ -27,7 +27,7 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class BookServiceTest {
+public class BookServiceDatabaseTest {
 
     @Mock
     private RandomIndexGenerator indexGenerator;

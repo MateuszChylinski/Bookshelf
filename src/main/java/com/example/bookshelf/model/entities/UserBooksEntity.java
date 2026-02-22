@@ -13,18 +13,18 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @Table(name = "UserBooks")
-public class UserBooks {
+public class UserBooksEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private UserEntity userEntity;
 
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
-    private Book book;
+    private BookEntity bookEntity;
 
     @Column(columnDefinition = "ENUM('READING', 'FINISHED', 'WANT')")
     @Enumerated(EnumType.STRING)
@@ -37,5 +37,7 @@ public class UserBooks {
     private String notes;
     @Column(name = "added_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime added_at;
+    @Column(name = "is_favorite")
+    private Boolean isFavorite;
 }
 

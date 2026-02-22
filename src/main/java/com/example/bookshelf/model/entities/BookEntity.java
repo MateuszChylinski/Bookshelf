@@ -9,7 +9,7 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "Book")
-public class Book {
+public class BookEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class Book {
     private int pages;
     @Column(name = "description")
     private String description;
-    @Column(name = "thumbnail_url", unique = true)
+    @Column(name = "thumbnail_url", unique = true, length = 1000)
     private String thumbnailUrl;
 }
 

@@ -1,12 +1,11 @@
 package com.example.bookshelf.controller;
 
-import com.example.bookshelf.model.entities.User;
+import com.example.bookshelf.model.entities.UserEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 
 @Controller
 public class UserDashboardController {
@@ -18,9 +17,9 @@ public class UserDashboardController {
 
         if (authenticator != null && authenticator.isAuthenticated()) {
 
-            User user = new User();
-            user.setUsername(authenticator.getName());
-            model.addAttribute("loggedInUser", user);
+            UserEntity userEntity = new UserEntity();
+            userEntity.setUsername(authenticator.getName());
+            model.addAttribute("loggedInUser", userEntity);
         }
         return "userDashboard";
     }
