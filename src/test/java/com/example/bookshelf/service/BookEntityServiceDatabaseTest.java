@@ -2,7 +2,7 @@ package com.example.bookshelf.service;
 
 import com.example.bookshelf.components.RandomIndexGenerator;
 import com.example.bookshelf.model.rest.Book;
-import com.example.bookshelf.service.rest.BookService;
+import com.example.bookshelf.service.rest.BookRestService;
 import com.example.bookshelf.util.TestUtils;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -27,13 +27,13 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class BookServiceDatabaseTest {
+public class BookEntityServiceDatabaseTest {
 
     @Mock
     private RandomIndexGenerator indexGenerator;
 
     private MockWebServer mockWebServer;
-    private BookService service;
+    private BookRestService service;
 
     @BeforeEach
     void setupServer() throws IOException {
@@ -43,7 +43,7 @@ public class BookServiceDatabaseTest {
         String baseUrl = mockWebServer.url("/").toString();
         RestClient restClient = RestClient.builder().build();
 
-        service = new BookService(("testApiKey"), baseUrl, restClient, indexGenerator);
+        service = new BookRestService(("testApiKey"), baseUrl, restClient, indexGenerator);
     }
 
     @AfterEach

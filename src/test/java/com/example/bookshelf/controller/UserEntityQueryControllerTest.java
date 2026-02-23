@@ -2,7 +2,7 @@ package com.example.bookshelf.controller;
 
 import com.example.bookshelf.model.rest.BooksMapper;
 import com.example.bookshelf.model.error.ErrorMapper;
-import com.example.bookshelf.service.rest.BookService;
+import com.example.bookshelf.service.rest.BookRestService;
 import com.example.bookshelf.util.TestUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,13 +21,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @TestPropertySource("/application.properties")
 @WebMvcTest(UserQueryController.class)
-public class UserQueryControllerTest {
+public class UserEntityQueryControllerTest {
 
 
     @Autowired
     private MockMvc mockMvc;
     @MockitoBean
-    private BookService mockService;
+    private BookRestService mockService;
 
     // user query | prepare a call with long query. Should return 0 items
     @Test

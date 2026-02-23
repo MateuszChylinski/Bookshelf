@@ -1,7 +1,7 @@
 package com.example.bookshelf.controller;
 
 import com.example.bookshelf.model.form.UserForm;
-import com.example.bookshelf.service.database.UserService;
+import com.example.bookshelf.service.database.UserDatabaseService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @AllArgsConstructor
 public class RegisterController {
 
-    private final UserService userService;
+    private final UserDatabaseService userDatabaseService;
 
     @GetMapping("/register")
     public String createUserObject(Model model) {
@@ -31,7 +31,7 @@ public class RegisterController {
         if (bindingResult.hasErrors()) {
             return "error";
         }
-        userService.registerNewAccount(userForm);
+        userDatabaseService.registerNewAccount(userForm);
         return "redirect:/login";
     }
 }

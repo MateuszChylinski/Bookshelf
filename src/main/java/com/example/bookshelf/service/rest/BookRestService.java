@@ -13,14 +13,14 @@ import java.net.URI;
 import java.util.List;
 
 @Service
-public class BookService {
+public class BookRestService {
 
     private final String apikey;
     private final String baseUrl;
     private final RestClient restClient;
     private final RandomIndexGenerator indexGenerator;
 
-    public BookService(
+    public BookRestService(
             @Value("${books.api_key}") String apikey,
             @Value("${books.api_base_url}") String baseUrl,
             RestClient restClient,

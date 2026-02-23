@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class BookServiceDatabase {
+public class BookDatabaseService {
 
     private final BooksRepository booksRepository;
 

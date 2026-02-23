@@ -3,8 +3,8 @@ package com.example.bookshelf.controller;
 import com.example.bookshelf.model.entities.BookEntity;
 import com.example.bookshelf.model.entities.UserEntity;
 import com.example.bookshelf.model.rest.Book;
-import com.example.bookshelf.service.database.UserBooksService;
-import com.example.bookshelf.service.rest.BookService;
+import com.example.bookshelf.service.database.UserBooksDatabaseService;
+import com.example.bookshelf.service.rest.BookRestService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class DetailsController {
 
-    private final BookService service;
-    private final UserBooksService userBooksService;
+    private final BookRestService service;
+    private final UserBooksDatabaseService userBooksDatabaseService;
 
     @GetMapping("/books/details/{id}")
     public String getBookDetails(
@@ -35,7 +35,7 @@ public class DetailsController {
             @AuthenticationPrincipal UserEntity userEntity) {
 
         BookEntity mappedBook = Book.mapToEntity(book);
-        userBooksService.addToFavoritesOrThrow(userEntity, mappedBook);
+        userBooksDatabaseService.addToFavoritesOrThrow(userEntity, mappedBook);
 
         return ResponseEntity.status(HttpStatus.CREATED).body("Book added to favorites");
     }

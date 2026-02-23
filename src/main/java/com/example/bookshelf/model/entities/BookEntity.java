@@ -24,7 +24,7 @@ public class BookEntity {
     private int pages;
     @Column(name = "description")
     private String description;
-    @Column(name = "thumbnail_url", unique = true, length = 1000)
+    @Column(name = "thumbnail_url", length = 1000)
     private String thumbnailUrl;
 }
 

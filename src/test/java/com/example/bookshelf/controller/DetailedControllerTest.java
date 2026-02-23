@@ -2,7 +2,7 @@ package com.example.bookshelf.controller;
 
 import com.example.bookshelf.model.rest.Book;
 import com.example.bookshelf.model.error.ErrorMapper;
-import com.example.bookshelf.service.rest.BookService;
+import com.example.bookshelf.service.rest.BookRestService;
 import com.example.bookshelf.util.TestUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -26,7 +26,7 @@ public class DetailedControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockitoBean
-    private BookService mockService;
+    private BookRestService mockService;
 
     // get book details | parameterize error tests
     @WithMockUser

@@ -13,16 +13,16 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class UserBooksService {
+public class UserBooksDatabaseService {
 
     private UserBooksRepository userBooksRepository;
-    private BookServiceDatabase bookService;
+    private BookDatabaseService bookService;
 
     public UserBooksEntity addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity) {
 
         BookEntity savedBookEntity = bookService.saveOrGetBook(bookEntity);
 
-        Optional<UserBooksEntity> findUserAndBook = userBooksRepository.findByUserAndBookEntity(userEntity, savedBookEntity);
+        Optional<UserBooksEntity> findUserAndBook = userBooksRepository.findByUserEntityAndBookEntity(userEntity, savedBookEntity);
 
         if (findUserAndBook.isPresent()) {
             throw new BookAlreadyInFavoritesException("Book already in favorites");
