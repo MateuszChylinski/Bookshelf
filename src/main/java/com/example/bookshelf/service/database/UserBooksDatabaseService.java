@@ -1,14 +1,17 @@
 package com.example.bookshelf.service.database;
 
 import com.example.bookshelf.exception.BookAlreadyInFavoritesException;
+import com.example.bookshelf.exception.BookNotFoundInFavoritesException;
+import com.example.bookshelf.exception.BookNotRemovedFromFavoritesException;
 import com.example.bookshelf.model.entities.BookEntity;
 import com.example.bookshelf.model.entities.UserEntity;
 import com.example.bookshelf.model.entities.UserBooksEntity;
 import com.example.bookshelf.repository.UserBooksRepository;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -37,5 +40,16 @@ public class UserBooksDatabaseService {
             return userBooksRepository.save(userBooksEntity);
         }
     }
+
+    @Transactional
+    public void deleteFromFavorites(UserEntity userEntity, String bookId) {
+
+        List<UserBooksEntity> toDelete = userBooksRepository.deleteByUserEntityAndBookEntity_ApiId(userEntity, bookId);
+
+        if (toDelete.size() != 1){
+            throw new BookNotRemovedFromFavoritesException("Couldn't remove book from favorites");
+        }
+    }
 }
+
 

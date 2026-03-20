@@ -16,16 +16,15 @@ public class BookEntity {
     private Integer savedBookId;
     @Column(name = "api_id", unique = true)
     private String apiId;
-    @Column(name = "title")
+    @Column(name = "title", length = 1024)
     private String title;
     @Column(name = "authors")
     private String authors;
     @Column(name = "pages")
     private int pages;
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
-    @Column(name = "thumbnail_url", length = 1000)
+    @Column(name = "thumbnail_url", columnDefinition = "TEXT")
     private String thumbnailUrl;
 }
-
 

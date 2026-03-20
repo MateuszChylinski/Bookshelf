@@ -33,10 +33,17 @@ public class DetailsController {
     public ResponseEntity<String> addBookToFavorites(
             @RequestBody Book book,
             @AuthenticationPrincipal UserEntity userEntity) {
-
         BookEntity mappedBook = Book.mapToEntity(book);
-        userBooksDatabaseService.addToFavoritesOrThrow(userEntity, mappedBook);
 
+        userBooksDatabaseService.addToFavoritesOrThrow(userEntity, mappedBook);
         return ResponseEntity.status(HttpStatus.CREATED).body("Book added to favorites");
+    }
+
+    @DeleteMapping("/favorites/{id}")
+    public ResponseEntity<String> deleteFromFavorites(
+            @PathVariable("id") String bookId,
+            @AuthenticationPrincipal UserEntity userEntity) {
+        userBooksDatabaseService.deleteFromFavorites(userEntity, bookId);
+        return ResponseEntity.status(HttpStatus.OK).body("Book has been removed from favorites");
     }
 }

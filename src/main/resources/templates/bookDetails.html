@@ -55,7 +55,7 @@
                 <div class="col-12 col-md-7 col-lg-8">
 
                     <p class="text-muted"
-                       th:text="'Categories: ' + (*{#strings.listJoin(volumeInfo?.categories, ', ')} ?: 'Unknown categories')"></p>
+                        th:text="'Categories: ' + (*{#strings.listJoin(volumeInfo?.categories, ', ')} ?: 'Unknown categories')"></p>
 
                     <h1 class="bookEntity-title" th:text="*{volumeInfo?.title} ?: 'Unknown title'"></h1>
                     <h4 th:text="'Published by: ' + (*{volumeInfo?.publisher} ?: 'Unknown publisher')"></h4>

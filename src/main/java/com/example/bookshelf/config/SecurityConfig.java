@@ -39,6 +39,7 @@ public class SecurityConfig {
                         .logoutSuccessUrl("/getBooks")
                         .permitAll()
                 );
+
         return security.build();
     }
 
