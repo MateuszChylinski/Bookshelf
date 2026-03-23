@@ -17,6 +17,12 @@ function addDeleteFromFavorites(element) {
         }
     };
 
+    // check if user has chosen status for the book
+    if(!element.dataset.status){
+        alert("Before adding book to your favorites, be sure to pick a book status!")
+        return;
+    }
+
     // book already in favorites
     if (element.classList.contains("bi-heart-fill")) {
         const bookId = element.dataset.apiId;
@@ -53,4 +59,8 @@ function addDeleteFromFavorites(element) {
                 }
             });
     }
+}
+
+function test(element) {
+    document.getElementById("heartIcon").dataset.status = element.dataset.status;
 }

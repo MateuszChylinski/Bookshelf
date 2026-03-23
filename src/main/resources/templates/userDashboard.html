@@ -20,7 +20,6 @@
         <div class="d-flex flex-column flex-shrink-0 p-3 vh-100 sidebar-background">
             <div class="align-items-center d-flex justify-content-center p-1">
                 <a th:href="@{/getBooks}" style="text-decoration: none; color: white"> <h1>Book<span class="sidebar-accent-dark">Shelf</span></h1></a>
-<!--                TODO IMPROVE STYLING-->
             </div>
             <hr/>
             <ul class="nav nav-pills flex-column mb-auto">
@@ -63,18 +62,18 @@
 
 
         <!--TOP BAR-->
-        <div class="flex-grow-1 vh-100 top-bar-parent">
+        <div class="flex-grow-1 vh-100 top-bar-parent" th:object="${loggedUser}" th:action="@{/myaccount}">
             <div class="d-flex align-items-center p-5 top-bar-style">
                 <div>
-                    <h3 class="mb-0 primary-text-dark">Welcome</h3>
-                    <h4 class="mb-0 secondary-text-light">User</h4>
+                    <h3 class="mb-0 primary-text-dark">Welcome,</h3>
+                    <h4 class="mb-0 secondary-text-light" th:text="*{username}"></h4>
                 </div>
             </div>
             <!-- END OF THE TOP BAR-->
 
 
             <!-- PROFILE CARD-->
-            <div class="d-flex align-items-center p-3 profile-card-style">
+            <div class="d-flex align-items-center p-3 profile-card-style" th:object="${loggedUser}" th:action="@{/myaccount}">
                 <div class="d-flex align-items-center justify-content-center profile-card-icon">
                     <i class="bi bi-bookEntity" style="font-size: 36px; color: white"></i>
                 </div>

@@ -29,15 +29,35 @@
         No results found.
     </div>
 
-    <i onclick="addDeleteFromFavorites(this)"
-       th:data-api-id="*{id}"
-       th:data-title="*{volumeInfo?.title}"
-       th:data-authors="*{volumeInfo?.authors}"
-       th:data-pages="*{volumeInfo?.pageCount}"
-       th:data-description="*{volumeInfo?.description}"
-       th:data-thumbnail-url="*{volumeInfo?.imageLinks?.thumbnail}"
 
-       class="bi bi-heart" style="font-size: 54px; cursor: pointer;"></i>
+    <i
+            id="heartIcon"
+            onclick="addDeleteFromFavorites(this)"
+            th:data-api-id="*{id}"
+            th:data-title="*{volumeInfo?.title}"
+            th:data-authors="*{volumeInfo?.authors}"
+            th:data-pages="*{volumeInfo?.pageCount}"
+            th:data-description="*{volumeInfo?.description}"
+            th:data-thumbnail-url="*{volumeInfo?.imageLinks?.thumbnail}"
+
+            class="bi bi-heart"
+            style="font-size: 54px; cursor: pointer;"></i>
+
+    <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#"
+           id="bookStateEnum" data-bs-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+            Book Status
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="bookStateEnum">
+            <a class="dropdown-item" href="#"
+               th:each="status: ${bookStatus}"
+               th:text="${status.name}"
+               th:data-status="${status}"
+               onclick="test(this)"></a>
+        </div>
+    </div>
 
 
     <div th:if="${bookDetails} != null">
@@ -55,7 +75,7 @@
                 <div class="col-12 col-md-7 col-lg-8">
 
                     <p class="text-muted"
-                        th:text="'Categories: ' + (*{#strings.listJoin(volumeInfo?.categories, ', ')} ?: 'Unknown categories')"></p>
+                       th:text="'Categories: ' + (*{#strings.listJoin(volumeInfo?.categories, ', ')} ?: 'Unknown categories')"></p>
 
                     <h1 class="bookEntity-title" th:text="*{volumeInfo?.title} ?: 'Unknown title'"></h1>
                     <h4 th:text="'Published by: ' + (*{volumeInfo?.publisher} ?: 'Unknown publisher')"></h4>
@@ -72,9 +92,7 @@
             </div>
         </div>
     </div>
-
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
