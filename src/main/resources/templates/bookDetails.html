@@ -21,8 +21,6 @@
 <body>
 
 <div th:replace="~{fragments/topNavbar :: top-navbar}"></div>
-
-
 <div th:object="${bookDetails}">
 
     <div th:if="${bookDetails} == null" class="alert alert-info">
@@ -38,6 +36,7 @@
             th:data-authors="*{volumeInfo?.authors}"
             th:data-pages="*{volumeInfo?.pageCount}"
             th:data-description="*{volumeInfo?.description}"
+            th:data-genres="*{volumeInfo?.categories}"
             th:data-thumbnail-url="*{volumeInfo?.imageLinks?.thumbnail}"
 
             class="bi bi-heart"
@@ -87,7 +86,6 @@
 
                     <p class="bookEntity-description mt-3"
                        th:text="*{volumeInfo?.description} ?: 'Description not available'"></p>
-
                 </div>
             </div>
         </div>

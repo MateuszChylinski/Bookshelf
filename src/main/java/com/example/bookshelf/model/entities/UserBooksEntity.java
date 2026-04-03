@@ -17,15 +17,12 @@ public class UserBooksEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity userEntity;
-
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
     private BookEntity bookEntity;
-
     @Column(columnDefinition = "ENUM('READING', 'FINISHED', 'WANT')")
     @Enumerated(EnumType.STRING)
     private Status status;
@@ -37,7 +34,5 @@ public class UserBooksEntity {
     private String notes;
     @Column(name = "added_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime added_at;
-    @Column(name = "is_favorite")
-    private Boolean isFavorite;
 }
 

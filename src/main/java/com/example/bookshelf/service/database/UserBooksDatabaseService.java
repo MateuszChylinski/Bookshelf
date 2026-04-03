@@ -1,15 +1,16 @@
 package com.example.bookshelf.service.database;
 
 import com.example.bookshelf.exception.BookAlreadyInFavoritesException;
-import com.example.bookshelf.exception.BookNotFoundInFavoritesException;
 import com.example.bookshelf.exception.BookNotRemovedFromFavoritesException;
 import com.example.bookshelf.model.entities.BookEntity;
+import com.example.bookshelf.model.entities.Status;
 import com.example.bookshelf.model.entities.UserEntity;
 import com.example.bookshelf.model.entities.UserBooksEntity;
 import com.example.bookshelf.repository.UserBooksRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +22,9 @@ public class UserBooksDatabaseService {
     private UserBooksRepository userBooksRepository;
     private BookDatabaseService bookService;
 
-    public UserBooksEntity addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity) {
+    public UserBooksEntity addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity, Status bookStatus) {
+
+        System.out.println(bookEntity.toString());
 
         BookEntity savedBookEntity = bookService.saveOrGetBook(bookEntity);
 
@@ -33,9 +36,10 @@ public class UserBooksDatabaseService {
             UserBooksEntity userBooksEntity = UserBooksEntity.builder()
                     .userEntity(userEntity)
                     .bookEntity(savedBookEntity)
-                    .isFavorite(true)
+                    .status(bookStatus)
                     .added_at(LocalDateTime.now())
                     .build();
+            //TODO add rating and notes
 
             return userBooksRepository.save(userBooksEntity);
         }
@@ -46,10 +50,8 @@ public class UserBooksDatabaseService {
 
         List<UserBooksEntity> toDelete = userBooksRepository.deleteByUserEntityAndBookEntity_ApiId(userEntity, bookId);
 
-        if (toDelete.size() != 1){
+        if (toDelete.size() != 1) {
             throw new BookNotRemovedFromFavoritesException("Couldn't remove book from favorites");
         }
     }
 }
-
-

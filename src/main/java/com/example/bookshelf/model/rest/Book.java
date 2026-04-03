@@ -18,14 +18,15 @@ public class Book {
     private Status status;
     private VolumeInfo volumeInfo;
 
-    public static BookEntity mapToEntity(Book book){
+    public static BookEntity mapToEntity(Book book) {
         return BookEntity.builder()
                 .apiId(book.getId())
                 .title(book.getVolumeInfo().getTitle())
                 .authors(String.join(", ", book.getVolumeInfo().getAuthors()))
-                .pages(book.getVolumeInfo().getPageCount())
+                .pagesCount(book.getVolumeInfo().getPageCount())
                 .description(book.getVolumeInfo().getDescription())
                 .thumbnailUrl(book.getVolumeInfo().getImageLinks().getThumbnail())
+                .categories(String.join(", ", book.getVolumeInfo().getCategories()))
                 .build();
     }
 }

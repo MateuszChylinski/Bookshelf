@@ -6,11 +6,13 @@ function addDeleteFromFavorites(element) {
     // prepare book object
     const book = {
         id: element.dataset.apiId,
+        status: element.dataset.status,
         volumeInfo: {
             title: element.dataset.title,
             authors: [element.dataset.authors],
             pageCount: element.dataset.pages,
             description: element.dataset.description,
+            categories: [element.dataset.genres],
             imageLinks: {
                 thumbnail: element.dataset.thumbnailUrl
             }
@@ -18,7 +20,7 @@ function addDeleteFromFavorites(element) {
     };
 
     // check if user has chosen status for the book
-    if(!element.dataset.status){
+    if (!element.dataset.status) {
         alert("Before adding book to your favorites, be sure to pick a book status!")
         return;
     }

@@ -20,11 +20,13 @@ public class BookEntity {
     private String title;
     @Column(name = "authors")
     private String authors;
-    @Column(name = "pages")
-    private int pages;
+    @Column(name = "pagesCount")
+    private int pagesCount;
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
     @Column(name = "thumbnail_url", columnDefinition = "TEXT")
     private String thumbnailUrl;
+    @Column(name = "genres", columnDefinition = "TEXT")
+    private String categories;
 }
 

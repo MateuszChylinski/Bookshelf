@@ -36,8 +36,7 @@ public class DetailsController {
             @AuthenticationPrincipal UserEntity userEntity) {
         BookEntity mappedBook = Book.mapToEntity(book);
 
-
-        userBooksDatabaseService.addToFavoritesOrThrow(userEntity, mappedBook);
+        userBooksDatabaseService.addToFavoritesOrThrow(userEntity, mappedBook, book.getStatus());
         return ResponseEntity.status(HttpStatus.CREATED).body("Book added to favorites");
     }
 
