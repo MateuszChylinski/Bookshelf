@@ -26,7 +26,7 @@ public class BookEntity {
     private String description;
     @Column(name = "thumbnail_url", columnDefinition = "TEXT")
     private String thumbnailUrl;
-    @Column(name = "genres", columnDefinition = "TEXT")
+    @Column(name = "genres")
     private String categories;
 }
 

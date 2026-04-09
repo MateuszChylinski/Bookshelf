@@ -6,9 +6,11 @@ import com.example.bookshelf.model.entities.BookEntity;
 import com.example.bookshelf.model.entities.Status;
 import com.example.bookshelf.model.entities.UserEntity;
 import com.example.bookshelf.model.entities.UserBooksEntity;
+import com.example.bookshelf.model.records.UserStatistics;
 import com.example.bookshelf.repository.UserBooksRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -22,12 +24,18 @@ public class UserBooksDatabaseService {
     private UserBooksRepository userBooksRepository;
     private BookDatabaseService bookService;
 
+    public Record getUserStatistics(UserEntity userEntity) {
+        PageRequest pageRequest = PageRequest.of(0, 1);
+
+        return new UserStatistics(
+                userBooksRepository.getFavoriteGenre(userEntity, Status.FINISHED, pageRequest),
+                userBooksRepository.countAllBookPagesRead(userEntity, Status.FINISHED),
+                userBooksRepository.getAllBooksRead(userEntity, Status.FINISHED),
+                userBooksRepository.getCountOfFavoritesBooks(userEntity));
+    }
+
     public UserBooksEntity addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity, Status bookStatus) {
-
-        System.out.println(bookEntity.toString());
-
         BookEntity savedBookEntity = bookService.saveOrGetBook(bookEntity);
-
         Optional<UserBooksEntity> findUserAndBook = userBooksRepository.findByUserEntityAndBookEntity(userEntity, savedBookEntity);
 
         if (findUserAndBook.isPresent()) {
@@ -47,7 +55,6 @@ public class UserBooksDatabaseService {
 
     @Transactional
     public void deleteFromFavorites(UserEntity userEntity, String bookId) {
-
         List<UserBooksEntity> toDelete = userBooksRepository.deleteByUserEntityAndBookEntity_ApiId(userEntity, bookId);
 
         if (toDelete.size() != 1) {

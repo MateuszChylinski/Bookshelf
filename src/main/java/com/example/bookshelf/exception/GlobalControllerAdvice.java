@@ -25,7 +25,7 @@ public class GlobalControllerAdvice {
     }
 
     @ExceptionHandler(BookAlreadyInFavoritesException.class)
-    public String handleAlreadyInFavorites(BookAlreadyInFavoritesException exception, Model model, HttpServletResponse response){
+    public String handleAlreadyInFavorites(BookAlreadyInFavoritesException exception, Model model, HttpServletResponse response) {
         response.setStatus(HttpStatus.CONFLICT.value());
         model.addAttribute("globalExceptionHandlerMessage", exception.getMessage());
         return "error";

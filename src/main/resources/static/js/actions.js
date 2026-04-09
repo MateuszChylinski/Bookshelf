@@ -63,6 +63,7 @@ function addDeleteFromFavorites(element) {
     }
 }
 
-function test(element) {
+//todo
+function getStatus(element) {
     document.getElementById("heartIcon").dataset.status = element.dataset.status;
 }
