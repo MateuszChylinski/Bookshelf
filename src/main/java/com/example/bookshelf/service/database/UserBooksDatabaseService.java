@@ -24,6 +24,7 @@ public class UserBooksDatabaseService {
     private UserBooksRepository userBooksRepository;
     private BookDatabaseService bookService;
 
+
     public Record getUserStatistics(UserEntity userEntity) {
         PageRequest pageRequest = PageRequest.of(0, 1);
 
@@ -60,5 +61,11 @@ public class UserBooksDatabaseService {
         if (toDelete.size() != 1) {
             throw new BookNotRemovedFromFavoritesException("Couldn't remove book from favorites");
         }
+    }
+
+    public List<BookEntity> getFavoriteBooks(UserEntity userEntity) {
+        System.out.println(userBooksRepository.getFinishedBooks(
+                Status.FINISHED, userEntity));
+        return userBooksRepository.getFinishedBooks(Status.FINISHED, userEntity);
     }
 }

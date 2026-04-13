@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,4 +28,8 @@ public interface UserBooksRepository extends JpaRepository<UserBooksEntity, Inte
 
     @Query("SELECT COUNT(ub.status) FROM UserBooksEntity ub WHERE ub.userEntity = :entity")
     Integer getCountOfFavoritesBooks(@Param("entity") UserEntity userEntity);
+
+    @Query("SELECT ub.bookEntity FROM UserBooksEntity ub WHERE ub.status = :status AND ub.userEntity = :user")
+    List<BookEntity> getFinishedBooks(@Param("status") Status status, @Param("user") UserEntity userEntity);
+
 }

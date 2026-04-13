@@ -28,6 +28,7 @@ public class UserDashboardController {
 
             model.addAttribute("statistics", userBooksDatabaseService.getUserStatistics(userEntity));
             model.addAttribute("loggedUser", userEntity);
+            model.addAttribute("test123", userBooksDatabaseService.getFavoriteBooks(userEntity));
         }
         return "userDashboard";
     }

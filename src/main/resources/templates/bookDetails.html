@@ -27,13 +27,12 @@
         No results found.
     </div>
 
-
     <i
             id="heartIcon"
             onclick="addDeleteFromFavorites(this)"
             th:data-api-id="*{id}"
             th:data-title="*{volumeInfo?.title}"
-            th:data-authors="*{volumeInfo?.authors}"
+            th:data-authors="*{#strings.listJoin(volumeInfo?.authors, ', ')}"
             th:data-pages="*{volumeInfo?.pageCount}"
             th:data-description="*{volumeInfo?.description}"
             th:data-genres="*{volumeInfo?.categories}"
@@ -57,7 +56,6 @@
                onclick="getStatus(this)"></a>
         </div>
     </div>
-
 
     <div th:if="${bookDetails} != null">
         <div class="container mt-5">

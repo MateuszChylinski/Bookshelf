@@ -24,7 +24,7 @@ public class LoginController {
             @Valid @ModelAttribute UserForm userForm,
             BindingResult bindingResult) {
 
-        if (bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             return "error";
         }
         return "index";
