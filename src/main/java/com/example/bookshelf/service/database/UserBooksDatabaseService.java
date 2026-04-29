@@ -35,7 +35,7 @@ public class UserBooksDatabaseService {
                 userBooksRepository.getCountOfFavoritesBooks(userEntity));
     }
 
-    public UserBooksEntity addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity, Status bookStatus) {
+    public UserBooksEntity addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity, Status bookStatus, int rating) {
         BookEntity savedBookEntity = bookService.saveOrGetBook(bookEntity);
         Optional<UserBooksEntity> findUserAndBook = userBooksRepository.findByUserEntityAndBookEntity(userEntity, savedBookEntity);
 
@@ -47,8 +47,8 @@ public class UserBooksDatabaseService {
                     .bookEntity(savedBookEntity)
                     .status(bookStatus)
                     .added_at(LocalDateTime.now())
+                    .rating(rating)
                     .build();
-            //TODO add rating and notes
 
             return userBooksRepository.save(userBooksEntity);
         }

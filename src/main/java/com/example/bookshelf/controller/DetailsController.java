@@ -35,10 +35,11 @@ public class DetailsController {
     @PostMapping("/favorites")
     public ResponseEntity<String> addBookToFavorites(
             @RequestBody Book book,
-            @AuthenticationPrincipal UserEntity userEntity) {
+            @RequestParam(value = "rating", required = false) Integer rating,
+            @AuthenticationPrincipal UserEntity userEntity, Map map) {
         BookEntity mappedBook = Book.mapToEntity(book);
 
-        userBooksDatabaseService.addToFavoritesOrThrow(userEntity, mappedBook, book.getStatus());
+        userBooksDatabaseService.addToFavoritesOrThrow(userEntity, mappedBook, book.getStatus(), rating);
         return ResponseEntity.status(HttpStatus.CREATED).body("Book added to favorites");
     }
 

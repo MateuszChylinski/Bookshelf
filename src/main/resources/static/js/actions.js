@@ -1,5 +1,10 @@
-function addDeleteFromFavorites(element) {
+let bookRating = 0;
+const rating = document.querySelector(".bookRate")
+rating.addEventListener('change.coreui.rating', bookRate => {
+    bookRating = bookRate.value
+})
 
+function addDeleteFromFavorites(element) {
     // get token from book details page
     const token = document.head.querySelector("[name~=_csrf][content]").content;
 
@@ -46,7 +51,7 @@ function addDeleteFromFavorites(element) {
     }
     // book is not in favorites
     else {
-        fetch('/favorites', {
+        fetch(`/favorites?rating=${bookRating}`, {
             method: 'POST',
             headers: {
                 'X-CSRF-TOKEN': token,

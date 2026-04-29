@@ -10,3 +10,4 @@ public class BookshelfApplication {
     }
 }
 
+//TODO ADD utility method for formatting authors, description, categories
