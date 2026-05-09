@@ -21,7 +21,7 @@ public class BookEntity {
     @Column(name = "authors")
     private String authors;
     @Column(name = "pagesCount")
-    private int pagesCount;
+    private Integer pagesCount;
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
     @Column(name = "thumbnail_url", columnDefinition = "TEXT")

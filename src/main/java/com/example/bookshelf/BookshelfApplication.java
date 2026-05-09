@@ -9,5 +9,3 @@ public class BookshelfApplication {
         SpringApplication.run(BookshelfApplication.class, args);
     }
 }
-
-//TODO ADD utility method for formatting authors, description, categories

@@ -23,15 +23,17 @@ public class UserBooksEntity {
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
     private BookEntity bookEntity;
-    @Column(columnDefinition = "ENUM('READING', 'FINISHED', 'WANT')")
+    @Column(columnDefinition = "ENUM('READING', 'FINISHED', 'WANT')", nullable = true)
     @Enumerated(EnumType.STRING)
     private Status status;
     @Min(1)
     @Max(5)
-    @Column(name = "rating")
+    @Column(name = "rating", nullable = true)
     private Integer rating;
-    @Column(name = "notes")
+    @Column(name = "notes", nullable = true)
     private String notes;
+    @Column(name = "favorite", nullable = true)
+    private Boolean isFavorite;
     @Column(name = "added_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime added_at;
 }

@@ -24,7 +24,6 @@ public class UserBooksDatabaseService {
     private UserBooksRepository userBooksRepository;
     private BookDatabaseService bookService;
 
-
     public Record getUserStatistics(UserEntity userEntity) {
         PageRequest pageRequest = PageRequest.of(0, 1);
 
@@ -35,7 +34,7 @@ public class UserBooksDatabaseService {
                 userBooksRepository.getCountOfFavoritesBooks(userEntity));
     }
 
-    public UserBooksEntity addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity, Status bookStatus, int rating) {
+    public UserBooksEntity addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity, Status bookStatus, Integer rating) {
         BookEntity savedBookEntity = bookService.saveOrGetBook(bookEntity);
         Optional<UserBooksEntity> findUserAndBook = userBooksRepository.findByUserEntityAndBookEntity(userEntity, savedBookEntity);
 
@@ -64,8 +63,6 @@ public class UserBooksDatabaseService {
     }
 
     public List<BookEntity> getFavoriteBooks(UserEntity userEntity) {
-        System.out.println(userBooksRepository.getFinishedBooks(
-                Status.FINISHED, userEntity));
         return userBooksRepository.getFinishedBooks(Status.FINISHED, userEntity);
     }
 }

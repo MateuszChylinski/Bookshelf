@@ -14,8 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @Controller
 @AllArgsConstructor
 public class DetailsController {
@@ -36,7 +34,10 @@ public class DetailsController {
     public ResponseEntity<String> addBookToFavorites(
             @RequestBody Book book,
             @RequestParam(value = "rating", required = false) Integer rating,
-            @AuthenticationPrincipal UserEntity userEntity, Map map) {
+            @RequestParam(value = "status", required = false) String bookStatus,
+            @AuthenticationPrincipal UserEntity userEntity) {
+
+        book.setStatus(Status.valueOf(bookStatus));
         BookEntity mappedBook = Book.mapToEntity(book);
 
         userBooksDatabaseService.addToFavoritesOrThrow(userEntity, mappedBook, book.getStatus(), rating);
