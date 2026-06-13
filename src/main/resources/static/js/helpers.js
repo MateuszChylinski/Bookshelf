@@ -1,5 +1,5 @@
 function prepareBook() {
-    const view = document.getElementById("heartIcon");
+    const view = document.getElementById("book-information")
 
     return {
         id: view.dataset.apiId,

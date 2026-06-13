@@ -34,7 +34,19 @@ public class UserBooksDatabaseService {
                 userBooksRepository.getCountOfFavoritesBooks(userEntity));
     }
 
-    public UserBooksEntity addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity, Status bookStatus, Integer rating) {
+    public String checkIfBookInDatabase(UserEntity userEntity, BookEntity bookEntity) {
+        Optional<UserBooksEntity> entity =
+                userBooksRepository.findByUserEntityAndBookEntity_ApiId(
+                userEntity, bookEntity.getApiId());
+
+        if (entity.isPresent()){
+            return entity.get().getBookEntity().getApiId();
+        }
+        return "";
+    }
+
+    @Transactional
+    public void addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity, Status status, Integer rating, Boolean isFavorite) {
         BookEntity savedBookEntity = bookService.saveOrGetBook(bookEntity);
         Optional<UserBooksEntity> findUserAndBook = userBooksRepository.findByUserEntityAndBookEntity(userEntity, savedBookEntity);
 
@@ -44,12 +56,13 @@ public class UserBooksDatabaseService {
             UserBooksEntity userBooksEntity = UserBooksEntity.builder()
                     .userEntity(userEntity)
                     .bookEntity(savedBookEntity)
-                    .status(bookStatus)
                     .added_at(LocalDateTime.now())
+                    .status(status)
                     .rating(rating)
+                    .isFavorite(isFavorite)
                     .build();
 
-            return userBooksRepository.save(userBooksEntity);
+            userBooksRepository.save(userBooksEntity);
         }
     }
 

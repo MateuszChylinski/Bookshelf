@@ -35,12 +35,15 @@ public class DetailsController {
             @RequestBody Book book,
             @RequestParam(value = "rating", required = false) Integer rating,
             @RequestParam(value = "status", required = false) String bookStatus,
+            @RequestParam(value = "isFavorite", required = false) Boolean isFavorite,
             @AuthenticationPrincipal UserEntity userEntity) {
 
-        book.setStatus(Status.valueOf(bookStatus));
+        if (book.getStatus() != null) book.setStatus(Status.valueOf(bookStatus));
         BookEntity mappedBook = Book.mapToEntity(book);
 
-        userBooksDatabaseService.addToFavoritesOrThrow(userEntity, mappedBook, book.getStatus(), rating);
+        //TODO check if book is in database already
+
+        userBooksDatabaseService.addToFavoritesOrThrow(userEntity, mappedBook, book.getStatus(), rating, isFavorite);
         return ResponseEntity.status(HttpStatus.CREATED).body("Book added to favorites");
     }
 

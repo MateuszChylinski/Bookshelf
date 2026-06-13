@@ -28,34 +28,40 @@
     <div th:if="${bookDetails} == null" class="alert alert-info">
         No results found.
     </div>
+    <div class="book-card"
+         id="book-information"
+         th:data-api-id="*{id}"
+         th:data-title="*{volumeInfo?.title}"
+         th:data-authors="*{#strings.listJoin(volumeInfo?.authors, ', ')}"
+         th:data-pages="*{volumeInfo?.pageCount}"
+         th:data-description="*{volumeInfo?.description}"
+         th:data-genres="*{#strings.listJoin(volumeInfo?.categories, ', ')}"
+         th:data-thumbnail-url="*{volumeInfo?.imageLinks?.thumbnail}">
 
-    <i
-            id="heartIcon"
-            onclick="addDeleteFromFavorites(this)"
-            th:data-api-id="*{id}"
-            th:data-title="*{volumeInfo?.title}"
-            th:data-authors="*{#strings.listJoin(volumeInfo?.authors, ', ')}"
-            th:data-pages="*{volumeInfo?.pageCount}"
-            th:data-description="*{volumeInfo?.description}"
-            th:data-genres="*{volumeInfo?.categories}"
-            th:data-thumbnail-url="*{volumeInfo?.imageLinks?.thumbnail}"
+        <i
+                class="bi-eye"
+                id="testing123"
+                onclick="addDeleteFromFavorites(this)"
+                style="font-size: 60px; cursor: pointer">
 
-            class="bi bi-heart"
-            style="font-size: 54px; cursor: pointer;"></i>
+        </i>
 
-    <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#"
-           id="bookStateEnum" data-bs-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-            Book Status
-        </a>
+        <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle"
+               href="#"
+               id="bookStateEnum" data-bs-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                Book Status
+            </a>
 
-        <div class="dropdown-menu" aria-labelledby="bookStateEnum">
-            <a class="dropdown-item" href="#"
-               id="bookStatusEnum"
-               th:each="status: ${bookStatus}"
-               th:text="${status.name}"
-               th:data-status="${status}"></a>
+            <div class="dropdown-menu" aria-labelledby="bookStateEnum">
+                <a class="dropdown-item" href="#"
+                   id="bookStatusEnum"
+                   onclick="addDeleteFromFavorites(this)"
+                   th:each="status: ${bookStatus}"
+                   th:text="${status.name}"
+                   th:data-status="${status}"></a>
+            </div>
         </div>
     </div>
 
@@ -81,7 +87,9 @@
                     <h4 th:text="'Publish date: ' + (*{volumeInfo?.publishedDate} ?: 'Unknown publish date')"></h4>
                     <h4 th:text="'Number of pages: ' + (*{volumeInfo?.pageCount} ?: 'Unknown number of pages')"></h4>
 
-                    <div class="bookRate" data-coreui-toggle="rating" data-coreui-value="0"></div>
+                    <div class="bookRate" data-coreui-toggle="rating" data-coreui-value="0"
+                         onclick="addDeleteFromFavorites(this)"
+                    ></div>
                     <p class="bookEntity-description mt-3"
                        th:text="*{volumeInfo?.description} ?: 'Description not available'"></p>
                 </div>

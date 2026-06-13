@@ -26,6 +26,7 @@ public class BookDatabaseService {
         } else {
             bookEntity.setCategories("Unknown categories");
         }
+
         return booksRepository.save(bookEntity);
     }
 }

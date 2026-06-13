@@ -14,6 +14,7 @@ import java.util.Optional;
 
 public interface UserBooksRepository extends JpaRepository<UserBooksEntity, Integer> {
     Optional<UserBooksEntity> findByUserEntityAndBookEntity(UserEntity userEntity, BookEntity bookEntity);
+    Optional<UserBooksEntity> findByUserEntityAndBookEntity_ApiId(UserEntity userEntity, String bookEntityApiId);
 
     List<UserBooksEntity> deleteByUserEntityAndBookEntity_ApiId(UserEntity userEntity, String bookEntityApiId);
 
@@ -31,5 +32,4 @@ public interface UserBooksRepository extends JpaRepository<UserBooksEntity, Inte
 
     @Query("SELECT ub.bookEntity FROM UserBooksEntity ub WHERE ub.status = :status AND ub.userEntity = :user")
     List<BookEntity> getFinishedBooks(@Param("status") Status status, @Param("user") UserEntity userEntity);
-
 }
