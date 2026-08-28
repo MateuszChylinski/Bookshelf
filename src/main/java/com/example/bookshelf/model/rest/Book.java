@@ -1,5 +1,7 @@
 package com.example.bookshelf.model.rest;
 
+import com.example.bookshelf.model.entities.BookEntity;
+import com.example.bookshelf.model.entities.Status;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +15,18 @@ import lombok.ToString;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Book {
     private String id;
+    private Status status;
     private VolumeInfo volumeInfo;
 
+    public static BookEntity mapToEntity(Book book) {
+        return BookEntity.builder()
+                .apiId(book.getId())
+                .title(book.getVolumeInfo().getTitle())
+                .authors(String.join(", ", book.getVolumeInfo().getAuthors()))
+                .pagesCount(book.getVolumeInfo().getPageCount())
+                .description(book.getVolumeInfo().getDescription())
+                .thumbnailUrl(book.getVolumeInfo().getImageLinks().getThumbnail())
+                .categories(String.join(", ", book.getVolumeInfo().getCategories()))
+                .build();
+    }
 }

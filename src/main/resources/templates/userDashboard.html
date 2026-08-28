@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link th:href="@{/css/userDashboard.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <title>Title</title>
+</head>
+<body>
+
+<div class="body-background">
+    <!--SIDEBAR-->
+    <main class="d-flex flex-nowrap vh-100">
+        <div class="d-flex flex-column flex-shrink-0 p-3 vh-100 sidebar-background">
+            <div class="align-items-center d-flex justify-content-center p-1">
+                <a th:href="@{/getBooks}" style="text-decoration: none; color: white"><h1>Book<span
+                        class="sidebar-accent-dark">Shelf</span></h1></a>
+            </div>
+            <hr/>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        Reading List
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        Favorites
+                    </a>
+                </li>
+            </ul>
+            <hr/>
+            <div class="dropdown">
+                <a
+                        href="#"
+                        class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                >
+                    <img
+                            src="https://github.com/mdo.png"
+                            alt=""
+                            width="32"
+                            height="32"
+                            class="rounded-circle me-2"
+                    />
+                    <strong>mdo</strong>
+                </a>
+            </div>
+        </div>
+        <!-- END OF THE SIDEBAR-->
+
+
+        <!--TOP BAR-->
+        <div class="flex-grow-1 vh-100 top-bar-parent" th:object="${loggedUser}" th:action="@{/myaccount}">
+            <div class="d-flex align-items-center p-5 top-bar-style">
+                <div>
+                    <h3 class="mb-0 primary-text-dark">Welcome,</h3>
+                    <h4 class="mb-0 secondary-text-light" th:text="*{username}"></h4>
+                </div>
+            </div>
+            <!-- END OF THE TOP BAR-->
+
+
+            <!-- PROFILE CARD-->
+            <div class="d-flex align-items-center p-3 profile-card-style" th:object="${loggedUser}"
+                 th:action="@{/myaccount}">
+                <div class="d-flex align-items-center justify-content-center profile-card-icon">
+                    <i class="bi bi-bookEntity" style="font-size: 36px; color: white"></i>
+                </div>
+
+                <div th:object="${statistics}">
+
+                    <div class="d-flex align-items-center ">
+                        <div class="px-4 py-2">
+                            <h3 class="mb-0 primary-text-dark">Favorite Genre</h3>
+                            <h4 class="mb-0 secondary-text-light" th:text="*{favoriteGenre}"></h4>
+                        </div>
+
+                        <div class="px-4 py-2">
+                            <h3 class="mb-0 primary-text-dark">Finished books</h3>
+                            <h4 class="mb-0 secondary-text-light" th:text="*{finishedBooks}"></h4>
+                        </div>
+
+                        <div class="px-4 py-2">
+                            <h3 class="mb-0 primary-text-dark">Read pages</h3>
+                            <h4 class="mb-0 secondary-text-light" th:text="*{totalPagesRead}"></h4>
+                        </div>
+
+                        <div class="px-4 py-2">
+                            <h3 class="mb-0 primary-text-dark">Favorite books</h3>
+                            <h4 class="mb-0 secondary-text-light" th:text="*{favoriteBooks}"></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF THE PROFILE CARD-->
+
+            <div class="d-flex align-items-start p-3 rounded mb-5"
+                 style="margin-top: 40px; margin-left: 6px; gap: 50px;">
+
+                <!-- First card: Sections -->
+                <div class="navigation-card-section-top">
+                    <div class="d-flex align-items-center navigation-card-section-top-background">
+                        <h3 class="navigation-card-section-top-text">Sections</h3>
+                    </div>
+
+                    <div class="form-check border-bottom px-5 py-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="booksDiary">
+                        <label class="form-check-label navigation-card-section-radio ms-2" for="booksDiary">
+                            Books Diary
+                        </label>
+                    </div>
+
+                    <div class="form-check border-bottom px-5 py-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="ratedBooks">
+                        <label class="form-check-label navigation-card-section-radio ms-2" for="ratedBooks">
+                            Rated Books
+                        </label>
+                    </div>
+
+                    <div class="form-check border-bottom px-5 py-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="favoriteBooks">
+                        <label class="form-check-label navigation-card-section-radio ms-2" for="favoriteBooks">
+                            Favorite Books
+                        </label>
+                    </div>
+
+                    <div class="form-check px-5 py-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="finishedBooks">
+                        <label class="form-check-label navigation-card-section-radio ms-2" for="finishedBooks">
+                            Finished Books
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Second card: Content -->
+                <div class="content-card">
+                    <div class="content-card-top-background">
+                        <h2 class="content-card-top-text">Books Diary</h2>
+                    </div>
+                    <div class="content-card-text">
+                        <div th:replace="~{fragments/bookCardsFragmentDatabase
+                        :: bookDashboardCards(${test123})}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer mt-auto py-4" style="background-color: coral">
+        <div class="container">
+        <span class="text-body-secondary"
+        >Place sticky footer content here.</span>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

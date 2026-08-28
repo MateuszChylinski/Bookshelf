@@ -2,7 +2,7 @@ package com.example.bookshelf.controller;
 
 import com.example.bookshelf.model.rest.BooksMapper;
 import com.example.bookshelf.model.error.ErrorMapper;
-import com.example.bookshelf.service.rest.BookService;
+import com.example.bookshelf.service.rest.BookRestService;
 import com.example.bookshelf.util.TestUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -29,7 +29,7 @@ public class MainControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockitoBean
-    private BookService mockService;
+    private BookRestService mockService;
 
     // get random books | proper call for getting random books
     @Test

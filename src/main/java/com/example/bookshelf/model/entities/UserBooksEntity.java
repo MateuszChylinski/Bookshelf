@@ -12,29 +12,30 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 @Entity
-@Table(name = "UserBooks")
-public class UserBooks {
+@Table(name = "UserBooks",
+        uniqueConstraints = @UniqueConstraint
+                (columnNames = {"user_id", "book_id"}))
+public class UserBooksEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
-
+    private UserEntity userEntity;
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
-    private Book book;
-
-    @Column(columnDefinition = "ENUM('READING', 'FINISHED', 'WANT')")
+    private BookEntity bookEntity;
+    @Column(columnDefinition = "ENUM('READING', 'FINISHED', 'WANT')", nullable = true)
     @Enumerated(EnumType.STRING)
     private Status status;
     @Min(1)
     @Max(5)
-    @Column(name = "rating")
+    @Column(name = "rating", nullable = true)
     private Integer rating;
-    @Column(name = "notes")
+    @Column(name = "notes", nullable = true)
     private String notes;
+    @Column(name = "favorite", nullable = true)
+    private Boolean isFavorite;
     @Column(name = "added_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime added_at;
 }

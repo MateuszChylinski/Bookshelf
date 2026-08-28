@@ -1,6 +1,6 @@
 package com.example.bookshelf.service.database;
 
-import com.example.bookshelf.model.entities.User;
+import com.example.bookshelf.model.entities.UserEntity;
 import com.example.bookshelf.model.form.UserForm;
 import com.example.bookshelf.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -12,31 +12,25 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class UserService implements UserDetailsService {
+public class UserDatabaseService implements UserDetailsService {
 
     private final PasswordEncoder passwordEncoder;
     private final UserRepository repository;
 
     public void registerNewAccount(UserForm userForm) {
 
-        User user = User.builder()
+        UserEntity userEntity = UserEntity.builder()
                 .username(userForm.getUsername())
                 .password(passwordEncoder.encode(userForm.getPassword()))
                 .email(userForm.getEmail())
                 .build();
 
-        repository.save(user);
+        repository.save(userEntity);
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = repository.findByUsername(username)
+        return repository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Not found"));
-
-        return org.springframework.security.core.userdetails.User.builder()
-                .username(user.getUsername())
-                .password(user.getPassword())
-                .roles("USER") // consider adding roles
-                .build();
     }
 }

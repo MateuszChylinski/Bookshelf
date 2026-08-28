@@ -1,6 +1,6 @@
 package com.example.bookshelf.database;
 
-import com.example.bookshelf.model.entities.User;
+import com.example.bookshelf.model.entities.UserEntity;
 import com.example.bookshelf.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,17 +17,17 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class UserRepositoryTest {
+public class UserEntityRepositoryTest {
 
     @Autowired
     public UserRepository userRepository;
     @Autowired
     public TestEntityManager entityManager;
-    private User user;
+    private UserEntity userEntity;
 
     @BeforeEach
     void prepareUserObject() {
-        user = User.builder()
+        userEntity = UserEntity.builder()
                 .username("username")
                 .password("password")
                 .email("email")
@@ -36,36 +36,36 @@ public class UserRepositoryTest {
 
     @Test
     void givenNewUser_whenSave_thenSuccess() {
-        User insertedUser = userRepository.save(user);
+        UserEntity insertedUserEntity = userRepository.save(userEntity);
         entityManager.flush();
         entityManager.clear();
 
-        assertThat(entityManager.find(User.class, insertedUser.getUserId())).isEqualTo(
-                user
+        assertThat(entityManager.find(UserEntity.class, insertedUserEntity.getUserId())).isEqualTo(
+                userEntity
         );
     }
 
     @Test
     void givenUserCreated_whenUpdate_thenSuccess() {
-        entityManager.persist(user);
+        entityManager.persist(userEntity);
         entityManager.flush();
 
         String newUsername = "new username";
-        user.setUsername(newUsername);
+        userEntity.setUsername(newUsername);
         entityManager.flush();
         entityManager.clear();
 
 
-        assertThat(entityManager.find(User.class, user.getUserId()).getUsername()).isEqualTo(newUsername);
+        assertThat(entityManager.find(UserEntity.class, userEntity.getUserId()).getUsername()).isEqualTo(newUsername);
     }
 
     @Test
     void givenUser_whenFindByUsername_thenUserIsFound() {
-        entityManager.persist(user);
+        entityManager.persist(userEntity);
         entityManager.flush();
         entityManager.clear();
 
-        Optional<User> foundUser = userRepository.findByUsername(user.getUsername());
+        Optional<UserEntity> foundUser = userRepository.findByUsername(userEntity.getUsername());
 
         assertThat(foundUser).isNotNull();
         assertThat(foundUser.isPresent());
@@ -73,62 +73,62 @@ public class UserRepositoryTest {
 
     @Test
     void givenUser_whenFindByEmail_thenUserIsFound() {
-        entityManager.persist(user);
+        entityManager.persist(userEntity);
         entityManager.flush();
         entityManager.clear();
 
-        Optional<User> foundUser = userRepository.findByEmail(user.getEmail());
+        Optional<UserEntity> foundUser = userRepository.findByEmail(userEntity.getEmail());
 
         assertThat(foundUser).isPresent();
-        assertThat(foundUser.get().getEmail()).isEqualTo(user.getEmail());
+        assertThat(foundUser.get().getEmail()).isEqualTo(userEntity.getEmail());
     }
 
     @Test
     void givenUser_whenDelete_thenUserIsGone() {
-        entityManager.persist(user);
+        entityManager.persist(userEntity);
         entityManager.flush();
 
-        userRepository.delete(user);
+        userRepository.delete(userEntity);
         entityManager.flush();
         entityManager.clear();
 
-        assertThat(userRepository.findById(user.getUserId())).isEmpty();
+        assertThat(userRepository.findById(userEntity.getUserId())).isEmpty();
     }
 
     @Test
     void givenNoUser_whenFindById_thenEmpty() {
-        Optional<User> user = userRepository.findById(123);
+        Optional<UserEntity> user = userRepository.findById(123);
 
         assertThat(user).isEmpty();
     }
 
     @Test
     void givenNonExistentUsername_whenFindByName_thenNull() {
-        Optional<User> user = userRepository.findByUsername("nonexistentusername");
+        Optional<UserEntity> user = userRepository.findByUsername("nonexistentusername");
         assertThat(user.isEmpty());
     }
 
     @Test
     void givenNonExistentUserEmail_whenFindByEmail_thenEmpty() {
-        Optional<User> user = userRepository.findByEmail("nonexistentemail@abc.com");
+        Optional<UserEntity> user = userRepository.findByEmail("nonexistentemail@abc.com");
 
         assertThat(user).isEmpty();
     }
 
     @Test
     void givenDuplicatedEmail_whenSave_thenThrows() {
-        userRepository.save(user);
+        userRepository.save(userEntity);
         entityManager.flush();
         entityManager.clear();
 
-        User secondUser = User.builder()
+        UserEntity secondUserEntity = UserEntity.builder()
                 .username("username2")
                 .password("password2")
                 .email("email")
                 .build();
 
         assertThrows(DataIntegrityViolationException.class, () -> {
-            userRepository.save(secondUser);
+            userRepository.save(secondUserEntity);
             entityManager.flush();
             entityManager.clear();
         });
@@ -136,18 +136,18 @@ public class UserRepositoryTest {
 
     @Test
     void givenDuplicatedUsername_whenSave_thenThrows() {
-        entityManager.persist(user);
+        entityManager.persist(userEntity);
         entityManager.flush();
         entityManager.clear();
 
-        User secondUser = User.builder()
+        UserEntity secondUserEntity = UserEntity.builder()
                 .username("username")
                 .password("password123")
                 .email("email123")
                 .build();
 
         assertThrows(DataIntegrityViolationException.class, () -> {
-            userRepository.save(secondUser);
+            userRepository.save(secondUserEntity);
             entityManager.flush();
             entityManager.clear();
         });

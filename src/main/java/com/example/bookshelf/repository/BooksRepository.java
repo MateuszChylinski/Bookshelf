@@ -1,6 +1,13 @@
 package com.example.bookshelf.repository;
 
-import com.example.bookshelf.model.entities.Book;
+import com.example.bookshelf.model.entities.BookEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BooksRepository extends JpaRepository<Book, Integer> {}
+import java.util.Optional;
+
+public interface BooksRepository extends JpaRepository<BookEntity, Integer> {
+
+    boolean findByTitle(String title);
+
+    Optional<BookEntity> findByApiId(String apiId);
+}

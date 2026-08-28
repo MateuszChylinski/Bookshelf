@@ -7,30 +7,30 @@ body {
     height: auto;
 }
 
-.book-title{
+.book-title {
     font-size: 36px;
     margin-top: 10px;
     color: #333;
 }
 
-.stars{
+.stars {
     color: gold;
     font-size: 24px;
     margin: 15px 0;
 }
 
-.add-btn{
+.add-btn {
     background-color: dodgerblue;
     color: white;
     padding: 10px 30px;
     border: none;
 }
 
-.add-btn:hover{
+.add-btn:hover {
     background-color: #b8956f;
 }
 
-.book-description{
+.book-description {
     color: #555;
     line-height: 1.8;
 }

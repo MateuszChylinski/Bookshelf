@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search results</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Fragment declaration -->
+<div th:fragment="bookDashboardCards(books)">
+
+    <!-- If the data is null, or empty, display alert -->
+    <div th:if="${books == null or #lists.isEmpty(books)}"
+         class="alert alert-info">No results found
+    </div>
+
+    <div class="d-flex flex-row flex-wrap gap-4">
+
+        <!-- Iterate through books data -->
+        <div th:if="${books != null and !#lists.isEmpty(books)}"
+             th:each="book: ${books}"
+             class="card"
+             style="width: 13rem;">
+
+            <!-- Display book cover. If the link will be corrupted, then display static png file  -->
+            <div style="height: 16rem; overflow:hidden;">
+                <img th:src="${book?.thumbnailUrl ?: 'static/images/bookCoverNotFound.png'}"
+                     th:alt="${book?.title ?: 'Book Cover'}"
+                     class="card-imt-top img-fluid w-100"
+                     style="object-fit: cover">
+            </div>
+
+            <!-- Display basic info about book -->
+            <div class="card-body d-flex flex-column">
+                <h4 class="card-title" th:text="${book?.title ?: 'Unknown Title'}"></h4>
+            </div>
+
+            <p class="card-text text-muted"
+               th:if="${book?.authors != null and !#lists.isEmpty(book?.authors)}"
+               th:text="${#strings.listJoin(book?.authors, ', ')}"></p>
+
+
+            <!--            // TODO ?-->
+            <!--            <p class="cards-text text-muted"-->
+            <!--               th:unless="${book?.authors == null and #lists.isEmpty(book?.authors)}"></p>-->
+
+            <!-- Send user to book details fragment. -->
+            <form th:action="@{/books/details/{id}(id=${book?.apiId})}" method="get">
+                <button class="btn btn-primary mt-auto" type="submit">Details</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

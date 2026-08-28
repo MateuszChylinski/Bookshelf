@@ -1,0 +1,24 @@
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.stars label {
+    color: gray;
+    cursor: pointer;
+}
+
+.stars input{
+    display: none;
+}
+
+
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+    color: gold;
+}
+
+.body-background{
+    color: crimson;
+}
