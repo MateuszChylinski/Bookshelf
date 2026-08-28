@@ -1,11 +1,11 @@
 package com.example.bookshelf.service.database;
 
-import com.example.bookshelf.exception.BookAlreadyInFavoritesException;
 import com.example.bookshelf.exception.BookNotRemovedFromFavoritesException;
 import com.example.bookshelf.model.entities.BookEntity;
 import com.example.bookshelf.model.entities.Status;
 import com.example.bookshelf.model.entities.UserEntity;
 import com.example.bookshelf.model.entities.UserBooksEntity;
+import com.example.bookshelf.model.records.UserBookDetailsRecord;
 import com.example.bookshelf.model.records.UserStatistics;
 import com.example.bookshelf.repository.UserBooksRepository;
 import jakarta.transaction.Transactional;
@@ -34,25 +34,29 @@ public class UserBooksDatabaseService {
                 userBooksRepository.getCountOfFavoritesBooks(userEntity));
     }
 
-    public String checkIfBookInDatabase(UserEntity userEntity, BookEntity bookEntity) {
-        Optional<UserBooksEntity> entity =
-                userBooksRepository.findByUserEntityAndBookEntity_ApiId(
-                userEntity, bookEntity.getApiId());
-
-        if (entity.isPresent()){
-            return entity.get().getBookEntity().getApiId();
-        }
-        return "";
+    public Optional<UserBookDetailsRecord> findEntry(UserEntity userEntity, BookEntity bookEntity) {
+        return userBooksRepository.findByUserEntityAndBookEntity(userEntity, bookEntity)
+                .map(entry -> new UserBookDetailsRecord(
+                        entry.getStatus(),
+                        entry.getRating(),
+                        entry.getIsFavorite()
+                ));
     }
 
     @Transactional
-    public void addToFavoritesOrThrow(UserEntity userEntity, BookEntity bookEntity, Status status, Integer rating, Boolean isFavorite) {
+    public void addOnShelfOrUpdate(UserEntity userEntity, BookEntity bookEntity, Status status, Integer rating, Boolean isFavorite) {
         BookEntity savedBookEntity = bookService.saveOrGetBook(bookEntity);
         Optional<UserBooksEntity> findUserAndBook = userBooksRepository.findByUserEntityAndBookEntity(userEntity, savedBookEntity);
 
-        if (findUserAndBook.isPresent()) {
-            throw new BookAlreadyInFavoritesException("Book already in favorites");
-        } else {
+        // Update existing book
+        findUserAndBook.ifPresentOrElse(entity -> {
+            if (status != null) entity.setStatus(status);
+            if (rating != null) entity.setRating(rating);
+            if (isFavorite != null) entity.setIsFavorite(isFavorite);
+            userBooksRepository.save(entity);
+        }, () -> {
+
+            // Add book on the shelf
             UserBooksEntity userBooksEntity = UserBooksEntity.builder()
                     .userEntity(userEntity)
                     .bookEntity(savedBookEntity)
@@ -61,9 +65,8 @@ public class UserBooksDatabaseService {
                     .rating(rating)
                     .isFavorite(isFavorite)
                     .build();
-
             userBooksRepository.save(userBooksEntity);
-        }
+        });
     }
 
     @Transactional

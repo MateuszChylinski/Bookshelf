@@ -21,7 +21,7 @@ public class BookDatabaseService {
             return existingBook.get();
         }
 
-        if (genre != null) {
+        if (genre != null && !genre.equals("null")) { // sometimes categories might be null, as a String, hence second null check
             bookEntity.setCategories(genre.substring(genre.indexOf('[') + 1, genre.indexOf('/') - 1));
         } else {
             bookEntity.setCategories("Unknown categories");

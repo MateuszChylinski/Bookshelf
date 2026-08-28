@@ -12,7 +12,9 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 @Entity
-@Table(name = "UserBooks")
+@Table(name = "UserBooks",
+        uniqueConstraints = @UniqueConstraint
+                (columnNames = {"user_id", "book_id"}))
 public class UserBooksEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
