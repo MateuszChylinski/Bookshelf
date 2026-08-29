@@ -10,9 +10,10 @@
 <body>
 <h1>We have a problem...</h1>
 
-<div th:each="error: ${customError}">
-    <p th:text="'key: ' + ${error.key}"></p>
-    <p th:text="'value: ' + ${error.value}"></p>
+
+<div th:each="error: ${globalAdviceRequestFailed}">
+    <p th:text="'Obtained code is: '+${error.key}"></p>
+    <p th:text="'Which basically means that:'+${error.value}"></p>
 </div>
 
 </body>
