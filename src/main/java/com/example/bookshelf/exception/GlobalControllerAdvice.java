@@ -3,14 +3,12 @@ package com.example.bookshelf.exception;
 import com.example.bookshelf.model.rest.UserQuery;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.server.ServletServerHttpResponse;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.client.HttpStatusCodeException;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
