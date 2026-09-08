@@ -15,6 +15,12 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalControllerAdvice {
 
+    @ExceptionHandler(BookNotOnTheShelfException.class)
+    public String handleBookNotOnTheShelfException(BookNotOnTheShelfException exception, Model model, HttpServletResponse response) {
+        model.addAttribute("globalExceptionHandlerMessage", exception.getMessage());
+        return "error";
+    }
+
     @ExceptionHandler(HttpStatusCodeException.class)
     public String handleHttpError(HttpStatusCodeException exception, Model model, HttpServletResponse response) {
         Map<Integer, String> errors = new HashMap<>();

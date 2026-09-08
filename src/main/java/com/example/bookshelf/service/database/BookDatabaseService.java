@@ -4,7 +4,6 @@ import com.example.bookshelf.model.entities.BookEntity;
 import com.example.bookshelf.repository.BooksRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service
