@@ -1,44 +1,51 @@
 package com.example.bookshelf.exception;
 
+import com.example.bookshelf.model.error.ErrorMapper;
+import com.example.bookshelf.model.records.HttpError;
 import com.example.bookshelf.model.rest.UserQuery;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.client.HttpStatusCodeException;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
 
-import java.util.HashMap;
-import java.util.Map;
-
+@AllArgsConstructor
 @ControllerAdvice
 public class GlobalControllerAdvice {
 
+    private final JsonMapper jsonMapper;
+
     @ExceptionHandler(BookNotOnTheShelfException.class)
     public String handleBookNotOnTheShelfException(BookNotOnTheShelfException exception, Model model, HttpServletResponse response) {
+        response.setStatus(HttpStatus.NOT_FOUND.value());
         model.addAttribute("globalExceptionHandlerMessage", exception.getMessage());
         return "error";
     }
 
     @ExceptionHandler(HttpStatusCodeException.class)
     public String handleHttpError(HttpStatusCodeException exception, Model model, HttpServletResponse response) {
-        Map<Integer, String> errors = new HashMap<>();
 
-        if (exception.getStatusCode().is4xxClientError()) {
-            errors.put(exception.getStatusCode().value(),
-                    "The request could not be processed, because of the client side error. (" + exception.getStatusText() + ")");
+        String errorMessage = exception.getStatusText();
 
-        } else if (exception.getStatusCode().is5xxServerError()) {
-            errors.put(exception.getStatusCode().value(),
-                    "The request could not be processed, because of the server side error. (" + exception.getStatusText() + ")");
-        } else {
-            errors.put(exception.getStatusCode().value(),
-                    "The request could not be processed, because of the unknown error. (" + exception.getStatusText() + ")");
+        try {
+            ErrorMapper errorMapper = jsonMapper.readValue(exception.getResponseBodyAsString(), ErrorMapper.class);
+
+            if (errorMapper != null && errorMapper.getError() != null) {
+                errorMessage = errorMapper.getError().getMessage();
+            }
+        } catch (JacksonException e) {
+            // errorMessage will stay as it is, as a fallback.
         }
-
+        HttpError error = new HttpError(exception.getStatusCode().value(),
+                errorMessage);
         response.setStatus(exception.getStatusCode().value());
-        model.addAttribute("globalAdviceRequestFailed", errors);
+        model.addAttribute("globalAdviceRequestFailed", error);
+
         return "error";
     }
 

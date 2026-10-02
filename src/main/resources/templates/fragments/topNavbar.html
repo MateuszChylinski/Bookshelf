@@ -11,9 +11,9 @@
         <div class="d-flex align-items-center">
             <p class=" mb-0 text-center me-3 mt-1">Specific query</p>
 
-            <form class="d-flex" th:action="@{/books/search}" method="post">
+            <form class="d-flex" th:action="@{/books/search}" method="get">
 
-                <input name="q"
+                <input
                        th:field="${userTopNavbarQuery.q}"
                        class="form-control d-flex me-2 mt-1"
                        type="text"
