@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
           rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.24.2/dist/css/coreui.min.css" rel="stylesheet">
+    <link th:href="@{/css/bookDetails.css}" rel="stylesheet">
 
     <title>Search results</title>
 
@@ -29,7 +30,6 @@
         No results found.
     </div>
 
-<!--    TODO - -->
     <div class="book-card"
          id="book-information"
          th:data-api-id="*{id}"
@@ -72,6 +72,18 @@
                     </div>
                     <div id="bookRate" th:data-coreui-value="${shelfBookData?.bookRating}" class="bookRate"
                          data-coreui-toggle="rating"></div>
+
+                    <form id="bookNotesForm" action="#"
+                          th:classappend="${shelfBookData == null} ? 'd-none'"
+                          th:action="@{/books/details/{id}/note(id=${bookDetails?.id})}" method="POST">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"
+                                  id="inputGroup-sizing-default">Share your <br> thoughts: </span>
+                            <input name="note" type="text" class="form-control" aria-label="Sizing example input"
+                                   aria-describedby="inputGroup-sizing-default"/>
+                            <button class="btn btn-outline-secondary" type="submit" id="saveBookNote">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

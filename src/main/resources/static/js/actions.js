@@ -13,6 +13,7 @@ function removeFromTheShelf(bookApiId) {
                     setIsBookFavoriteState(false);
                     setBookStatusState("Book Status");
                     setBookRatingState();
+                    setBookNotesVisibility(false)
                 } else {
                     //TODO flag error response
                 }
@@ -45,6 +46,8 @@ function addOnTheShelfOrDescribe(field) {
         .then(response => {
             if (response.ok) {
                 console.log(response)
+                setBookNotesVisibility(true)
+
             } else {
                 // TODO flag error response.
                 console.log("error")

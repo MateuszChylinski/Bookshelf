@@ -1,6 +1,7 @@
 package com.example.bookshelf.service;
 
 import com.example.bookshelf.components.RandomIndexGenerator;
+import com.example.bookshelf.model.error.ErrorMapper;
 import com.example.bookshelf.model.rest.Book;
 import com.example.bookshelf.service.rest.BookRestService;
 import com.example.bookshelf.util.TestUtils;
@@ -14,7 +15,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestClient;
 
@@ -27,7 +27,7 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class BookEntityServiceDatabaseTest {
+public class BookRestServiceTest {
 
     @Mock
     private RandomIndexGenerator indexGenerator;
@@ -43,7 +43,7 @@ public class BookEntityServiceDatabaseTest {
         String baseUrl = mockWebServer.url("/").toString();
         RestClient restClient = RestClient.builder().build();
 
-        service = new BookRestService(("testApiKey"), baseUrl, restClient, indexGenerator);
+        service = new BookRestService("testApiKey", baseUrl, restClient, indexGenerator);
     }
 
     @AfterEach
@@ -58,15 +58,15 @@ public class BookEntityServiceDatabaseTest {
     @MethodSource("com.example.bookshelf.util.TestUtils#errorScenarios")
     void getRandomBooks_parameterizedTests(
             String jsonFile,
-            HttpStatus httpStatus,
-            String errorMessage
+            HttpStatus httpStatus
     ) throws Exception {
-        String response = TestUtils.loadJsonFromResource(jsonFile);
+
+        ErrorMapper errorMapper = TestUtils.loadJson(jsonFile, ErrorMapper.class);
 
         mockWebServer.enqueue(new MockResponse()
                 .setResponseCode(httpStatus.value())
                 .addHeader("Content-Type", "application/json")
-                .setBody(response)
+                .setBody(TestUtils.loadJsonFromResource(jsonFile))
         );
 
         assertThatThrownBy(() -> service.getRandomBooks())
@@ -74,7 +74,7 @@ public class BookEntityServiceDatabaseTest {
                 .satisfies(exception -> {
                     HttpStatusCodeException statusCodeException = (HttpStatusCodeException) exception;
                     assertThat(statusCodeException.getStatusCode()).isEqualTo(httpStatus);
-                    assertThat(statusCodeException.getResponseBodyAsString()).contains(errorMessage);
+                    assertThat(statusCodeException.getResponseBodyAsString()).contains(errorMapper.getError().getMessage());
                 });
     }
 
@@ -105,34 +105,9 @@ public class BookEntityServiceDatabaseTest {
         assertThat(books.getFirst().getVolumeInfo().getTitle()).isEqualTo("Grammaire analytique et pratique de la langue polonaise a l'usage des francais par N. Orda");
     }
 
-    // get random books | invalid starting index of -1. Call cannot succeed
-    @Test
-    void getRandomBooks_shouldReturnErrorInvalidValueAtStartingIndex() throws IOException {
-
-        // Given
-        String response = TestUtils.loadJsonFromResource(
-                "jsonResponses/getRandomBooks/getRandomBooksStartingIndex=-1.json"
-        );
-
-        // When
-        mockWebServer.enqueue(new MockResponse()
-                .setResponseCode(400)
-                .addHeader("Content-Type", "application/json")
-                .setBody(response));
-
-        // Then
-        assertThatThrownBy(() -> service.getRandomBooks())
-                .isInstanceOf(HttpClientErrorException.class)
-                .satisfies(ex -> {
-                    HttpClientErrorException httpExc = (HttpClientErrorException) ex;
-                    assertThat(httpExc.getStatusCode().value()).isEqualTo(400);
-                    assertThat(httpExc.getResponseBodyAsString()).isEqualTo(response);
-                });
-    }
-
     // get random book | set starting index as 999, return totalItems object with value of zero, due to api limit results
     @Test
-    void getRandomBooks_shouldReturnZeroTotalItems() throws IOException, InterruptedException {
+    void getRandomBooks_tooHighStartingIndex_shouldReturnZeroTotalItems() throws IOException, InterruptedException {
 
         // Given
         String response = TestUtils.loadJsonFromResource(
@@ -145,7 +120,7 @@ public class BookEntityServiceDatabaseTest {
                 .setBody(response)
         );
 
-        when(indexGenerator.generateStartIndex(anyInt(), anyInt())).thenReturn(5);
+        when(indexGenerator.generateStartIndex(anyInt(), anyInt())).thenReturn(999);
 
         // When
         List<Book> books = service.getRandomBooks();
@@ -153,9 +128,8 @@ public class BookEntityServiceDatabaseTest {
         // Then
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         assertThat(recordedRequest.getPath()).contains("q=a");
-        assertThat(recordedRequest.getPath()).contains("startIndex=5");
+        assertThat(recordedRequest.getPath()).contains("startIndex=999");
         assertThat(recordedRequest.getPath()).contains("key=testApiKey");
-
         assertThat(books).isEmpty();
     }
 
@@ -193,22 +167,22 @@ public class BookEntityServiceDatabaseTest {
     @MethodSource("com.example.bookshelf.util.TestUtils#errorScenarios")
     void getDetailedBook_parameterizedTests(
             String json,
-            HttpStatus httpStatus,
-            String errorMessage
+            HttpStatus httpStatus
     ) throws IOException {
-        String response = TestUtils.loadJsonFromResource(json);
+
+        ErrorMapper errorMapper = TestUtils.loadJson(json, ErrorMapper.class);
 
         mockWebServer.enqueue(new MockResponse()
                 .setResponseCode(httpStatus.value())
                 .addHeader("Content-Type", "application/json")
-                .setBody(response));
+                .setBody(TestUtils.loadJsonFromResource(json)));
 
         assertThatThrownBy(() -> service.getBookDetails("testId"))
                 .isInstanceOf(HttpStatusCodeException.class)
                 .satisfies(exc -> {
                             HttpStatusCodeException errorException = (HttpStatusCodeException) exc;
                             assertThat(errorException.getStatusCode().value()).isEqualTo(httpStatus.value());
-                            assertThat(errorException.getResponseBodyAsString()).contains(errorMessage);
+                            assertThat(errorException.getResponseBodyAsString()).contains(errorMapper.getError().getMessage());
                         }
                 );
     }
@@ -220,16 +194,14 @@ public class BookEntityServiceDatabaseTest {
     @MethodSource("com.example.bookshelf.util.TestUtils#errorScenarios")
     void userSearch_parameterizedTests(
             String filePath,
-            HttpStatus httpStatus,
-            String errorMessage
+            HttpStatus httpStatus
     ) throws IOException {
-        String response = TestUtils.loadJsonFromResource(filePath);
 
+        ErrorMapper errorMapper = TestUtils.loadJson(filePath, ErrorMapper.class);
         mockWebServer.enqueue(new MockResponse()
                 .setResponseCode(httpStatus.value())
                 .addHeader("Content-Type", "application/json")
-                .setBody(response)
-        );
+                .setBody(TestUtils.loadJsonFromResource(filePath)));
 
         assertThatThrownBy(() ->
                 service.getBooksForUserQueryQuickSearch("userSearch"))
@@ -237,7 +209,7 @@ public class BookEntityServiceDatabaseTest {
                 .satisfies(exc -> {
                     HttpStatusCodeException codeException = (HttpStatusCodeException) exc;
                     assertThat(codeException.getStatusCode().value()).isEqualTo(httpStatus.value());
-                    assertThat(codeException.getResponseBodyAsString()).contains(errorMessage);
+                    assertThat(codeException.getResponseBodyAsString()).contains(errorMapper.getError().getMessage());
                 });
     }
 

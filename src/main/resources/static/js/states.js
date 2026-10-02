@@ -35,3 +35,19 @@ function setBookRatingState() {
     coreui.Rating.getInstance("#bookRate").reset()
     suppressEvent = false;
 }
+
+function setBookNotesVisibility(isBookOnTheShelf){
+
+    const notesView = document.getElementById("bookNotesForm")
+    notesView.classList.toggle("d-none", !isBookOnTheShelf)
+    // notesView.style.display = isBookOnTheShelf ? "block" : "none"
+    // console.log("ADSADSDASDSDSA "+isBookOnTheShelf)
+    // console.log("ADSADSDASDSDSA "+typeof isBookOnTheShelf)
+}
+// function setShelfButtonState(isBookOnTheShelf) {
+//     const shelfButton = document.getElementById("shelfButton")
+//     shelfButton.dataset.isOnTheShelf = isBookOnTheShelf ? "true" : "false"
+//
+//     if (isBookOnTheShelf) shelfButton.textContent = "Remove"
+//     else shelfButton.textContent = "Add"
+// }

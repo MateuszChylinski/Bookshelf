@@ -1,5 +1,6 @@
 package com.example.bookshelf.service.database;
 
+import com.example.bookshelf.exception.BookNotOnTheShelfException;
 import com.example.bookshelf.exception.BookNotRemovedFromFavoritesException;
 import com.example.bookshelf.model.entities.BookEntity;
 import com.example.bookshelf.model.entities.Status;
@@ -7,6 +8,7 @@ import com.example.bookshelf.model.entities.UserEntity;
 import com.example.bookshelf.model.entities.UserBooksEntity;
 import com.example.bookshelf.model.records.UserBookDetailsRecord;
 import com.example.bookshelf.model.records.UserStatistics;
+import com.example.bookshelf.repository.BooksRepository;
 import com.example.bookshelf.repository.UserBooksRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -22,6 +24,7 @@ import java.util.Optional;
 public class UserBooksDatabaseService {
 
     private UserBooksRepository userBooksRepository;
+    private BooksRepository booksRepository;
     private BookDatabaseService bookService;
 
     public Record getUserStatistics(UserEntity userEntity) {
@@ -32,6 +35,20 @@ public class UserBooksDatabaseService {
                 userBooksRepository.countAllBookPagesRead(userEntity, Status.FINISHED),
                 userBooksRepository.getAllBooksRead(userEntity, Status.FINISHED),
                 userBooksRepository.getCountOfFavoritesBooks(userEntity));
+    }
+
+    @Transactional
+    public void updateUserNote(UserEntity userEntity, String bookApiId, String note) {
+
+        // we may imply that whenever user will drop his thoughts about specific book, it has to be already on the shelf
+        Optional<UserBooksEntity> findUserAndBook = userBooksRepository.findByUserEntityAndBookEntity_ApiId(userEntity, bookApiId);
+
+        findUserAndBook.ifPresentOrElse(entity -> {
+            // if user has specific book on a bookshelf
+            entity.setNotes(note);
+        }, () -> {
+            throw new BookNotOnTheShelfException("Book not found on the shelf.");
+        });
     }
 
     public Optional<UserBookDetailsRecord> findEntry(UserEntity userEntity, BookEntity bookEntity) {
@@ -80,5 +97,12 @@ public class UserBooksDatabaseService {
 
     public List<BookEntity> getFavoriteBooks(UserEntity userEntity) {
         return userBooksRepository.getFinishedBooks(Status.FINISHED, userEntity);
+    }
+
+    public UserBookDetailsRecord recordTest(UserEntity userEntity, String bookApiId) {
+        return booksRepository.findByApiId(bookApiId)
+                .flatMap(bookEntity ->
+                        findEntry(userEntity, bookEntity))
+                .orElse(null);
     }
 }

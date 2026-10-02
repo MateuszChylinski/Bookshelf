@@ -27,6 +27,7 @@ public class SecurityConfig {
                         .requestMatchers("/getBooks").permitAll()
                         .requestMatchers("/books/search").permitAll()
                         .requestMatchers("/books/details/{id}").permitAll()
+                        .requestMatchers("/books/details/{id}/note").permitAll()
                         .requestMatchers("/error").permitAll()
                         .anyRequest().authenticated()
                 )
@@ -38,8 +39,7 @@ public class SecurityConfig {
                 )
                 .logout(logout -> logout
                         .logoutSuccessUrl("/getBooks")
-                        .permitAll()
-                );
+                        .permitAll());
 
         return security.build();
     }

@@ -1,7 +1,6 @@
 package com.example.bookshelf.components;
 
 import org.springframework.stereotype.Component;
-
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component

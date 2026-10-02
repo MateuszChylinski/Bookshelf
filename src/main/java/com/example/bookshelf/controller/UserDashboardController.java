@@ -29,7 +29,7 @@ public class UserDashboardController {
             model.addAttribute("statistics", userBooksDatabaseService.getUserStatistics(userEntity));
             model.addAttribute("loggedUser", userEntity);
 
-            //TODO to delete.
+            //TODO
             model.addAttribute("test123", userBooksDatabaseService.getFavoriteBooks(userEntity));
         }
         return "userDashboard";

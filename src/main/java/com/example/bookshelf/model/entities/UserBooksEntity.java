@@ -14,13 +14,13 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "UserBooks",
         uniqueConstraints = @UniqueConstraint
-                (columnNames = {"user_id", "book_id"}))
+                (columnNames = {"users_id", "book_id"}))
 public class UserBooksEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "users_id", nullable = false)
     private UserEntity userEntity;
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
